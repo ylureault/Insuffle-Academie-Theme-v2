@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Galerie Formation
  * Plugin URI: https://github.com/ylureault/Galerie-Formation-Plugin
- * Description: Gestionnaire de galerie d'images pour vos formations. Uploadez, organisez et affichez vos réalisations avec un design professionnel.
- * Version: 1.0.0
+ * Description: Gestionnaire de galerie d'images avec backoffice dédié - Uploadez, organisez et affichez vos réalisations
+ * Version: 2.0.0
  * Author: Yoan Lureault
  * Author URI: https://github.com/ylureault
  * License: GPL v2 or later
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Constantes du plugin
-define('GFM_VERSION', '1.0.0');
+define('GFM_VERSION', '2.0.0');
 define('GFM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('GFM_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('GFM_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -54,9 +54,10 @@ class Galerie_Formation {
      * Charge les fichiers nécessaires
      */
     private function load_dependencies() {
+        require_once GFM_PLUGIN_DIR . 'includes/class-formations-scanner.php';
         require_once GFM_PLUGIN_DIR . 'includes/class-gallery-manager.php';
+        require_once GFM_PLUGIN_DIR . 'includes/class-galerie-admin.php';
         require_once GFM_PLUGIN_DIR . 'includes/class-shortcode.php';
-        require_once GFM_PLUGIN_DIR . 'includes/class-admin-interface.php';
     }
 
     /**
@@ -68,7 +69,6 @@ class Galerie_Formation {
 
         // Scripts et styles
         add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend_assets'));
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_assets'));
     }
 
     /**
@@ -79,9 +79,10 @@ class Galerie_Formation {
         load_plugin_textdomain('galerie-formation', false, dirname(GFM_PLUGIN_BASENAME) . '/languages');
 
         // Initialiser les composants
+        GFM_Formations_Scanner::get_instance();
         GFM_Gallery_Manager::get_instance();
+        GFM_Galerie_Admin::get_instance();
         GFM_Shortcode::get_instance();
-        GFM_Admin_Interface::get_instance();
     }
 
     /**
@@ -104,44 +105,6 @@ class Galerie_Formation {
             GFM_VERSION,
             true
         );
-    }
-
-    /**
-     * Enregistre les assets admin
-     */
-    public function enqueue_admin_assets($hook) {
-        // Charger uniquement sur les pages de posts/pages
-        global $post_type;
-        if (!in_array($hook, array('post.php', 'post-new.php'))) {
-            return;
-        }
-
-        // Média uploader WordPress
-        wp_enqueue_media();
-
-        // Styles admin
-        wp_enqueue_style(
-            'gfm-admin',
-            GFM_PLUGIN_URL . 'assets/css/admin.css',
-            array(),
-            GFM_VERSION
-        );
-
-        // Scripts admin
-        wp_enqueue_script(
-            'gfm-admin',
-            GFM_PLUGIN_URL . 'assets/js/admin.js',
-            array('jquery', 'jquery-ui-sortable'),
-            GFM_VERSION,
-            true
-        );
-
-        // Localisation
-        wp_localize_script('gfm-admin', 'gfmAdmin', array(
-            'confirmDelete' => __('Êtes-vous sûr de vouloir supprimer cette image ?', 'galerie-formation'),
-            'uploadTitle' => __('Choisir une image', 'galerie-formation'),
-            'uploadButton' => __('Utiliser cette image', 'galerie-formation'),
-        ));
     }
 }
 

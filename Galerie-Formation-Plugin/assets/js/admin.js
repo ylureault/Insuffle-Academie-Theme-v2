@@ -6,12 +6,11 @@
     'use strict';
 
     let imageIndex = 1000;
-    let currentFrame;
+    let mediaFrame;
 
     $(document).ready(function() {
         initSortable();
-        initAddImage();
-        initChangeImage();
+        initAddImages();
         initRemoveImage();
     });
 
@@ -19,7 +18,7 @@
      * Initialise le tri des images par glisser-déposer
      */
     function initSortable() {
-        $('#gfm-images-sortable').sortable({
+        $('#gfm-images-list').sortable({
             handle: '.gfm-image-handle',
             placeholder: 'gfm-sortable-placeholder',
             axis: 'y',
@@ -32,93 +31,61 @@
     }
 
     /**
-     * Ajoute une nouvelle image
+     * Ajoute de nouvelles images (sélection multiple)
      */
-    function initAddImage() {
-        $('.gfm-add-image').on('click', function(e) {
+    function initAddImages() {
+        $('.gfm-add-images').on('click', function(e) {
             e.preventDefault();
 
-            // Créer le media frame
-            if (currentFrame) {
-                currentFrame.open();
+            // Créer le media frame avec sélection multiple
+            if (mediaFrame) {
+                mediaFrame.open();
                 return;
             }
 
-            currentFrame = wp.media({
+            mediaFrame = wp.media({
                 title: gfmAdmin.uploadTitle,
                 button: {
                     text: gfmAdmin.uploadButton
                 },
-                multiple: false
+                multiple: true, // Permettre sélection multiple
+                library: {
+                    type: 'image'
+                }
             });
 
-            currentFrame.on('select', function() {
-                const attachment = currentFrame.state().get('selection').first().toJSON();
+            mediaFrame.on('select', function() {
+                const selection = mediaFrame.state().get('selection');
 
-                // Récupérer le template
-                const template = $('#gfm-image-template').html();
-                const html = template.replace(/\{\{INDEX\}\}/g, imageIndex);
+                selection.forEach(function(attachment) {
+                    attachment = attachment.toJSON();
 
-                // Créer un élément temporaire
-                const $newItem = $(html);
+                    // Récupérer le template
+                    const template = $('#gfm-image-template').html();
+                    const html = template.replace(/\{\{INDEX\}\}/g, imageIndex);
 
-                // Définir l'ID de l'image
-                $newItem.find('.gfm-image-id').val(attachment.id);
+                    // Créer un élément temporaire
+                    const $newItem = $(html);
 
-                // Définir l'aperçu
-                const thumbnailUrl = attachment.sizes.thumbnail ? attachment.sizes.thumbnail.url : attachment.url;
-                $newItem.find('.gfm-image-preview').html('<img src="' + thumbnailUrl + '" alt="">');
+                    // Définir l'ID de l'image
+                    $newItem.find('.gfm-image-id').val(attachment.id);
 
-                // Ajouter au DOM
-                $('#gfm-images-sortable').append($newItem);
+                    // Définir l'aperçu
+                    const thumbnailUrl = attachment.sizes && attachment.sizes.thumbnail ? attachment.sizes.thumbnail.url : attachment.url;
+                    $newItem.find('.gfm-image-preview').html('<img src="' + thumbnailUrl + '" alt="">');
 
-                // Incrémenter l'index
-                imageIndex++;
+                    // Ajouter au DOM
+                    $('#gfm-images-list').append($newItem);
+
+                    // Incrémenter l'index
+                    imageIndex++;
+                });
 
                 // Réinitialiser les événements
-                initChangeImage();
                 initRemoveImage();
-
-                // Scroll vers le nouvel élément
-                $('html, body').animate({
-                    scrollTop: $newItem.offset().top - 100
-                }, 500);
             });
 
-            currentFrame.open();
-        });
-    }
-
-    /**
-     * Change une image existante
-     */
-    function initChangeImage() {
-        $('.gfm-change-image').off('click').on('click', function(e) {
-            e.preventDefault();
-
-            const $button = $(this);
-            const $item = $button.closest('.gfm-image-item');
-
-            const frame = wp.media({
-                title: gfmAdmin.uploadTitle,
-                button: {
-                    text: gfmAdmin.uploadButton
-                },
-                multiple: false
-            });
-
-            frame.on('select', function() {
-                const attachment = frame.state().get('selection').first().toJSON();
-
-                // Mettre à jour l'ID
-                $item.find('.gfm-image-id').val(attachment.id);
-
-                // Mettre à jour l'aperçu
-                const thumbnailUrl = attachment.sizes.thumbnail ? attachment.sizes.thumbnail.url : attachment.url;
-                $item.find('.gfm-image-preview').html('<img src="' + thumbnailUrl + '" alt="">');
-            });
-
-            frame.open();
+            mediaFrame.open();
         });
     }
 
@@ -142,7 +109,7 @@
      * Réindexe les images après tri ou suppression
      */
     function reindexImages() {
-        $('#gfm-images-sortable .gfm-image-item').each(function(index) {
+        $('#gfm-images-list .gfm-image-item').each(function(index) {
             $(this).attr('data-index', index);
             $(this).find('input, textarea').each(function() {
                 const name = $(this).attr('name');
