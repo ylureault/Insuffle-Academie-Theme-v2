@@ -188,10 +188,12 @@
     line-height: 1.7;
     background: rgba(255, 212, 102, 0.2);
     border-left: 4px solid var(--pfm-secondary);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .pfm-objectif-box p {
     margin: 0;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .pfm-objectif-label {
