@@ -40,9 +40,24 @@ class FFM_Shortcode {
         // Récupérer les données
         $data = FFM_Formateur_Manager::get_formateur_data($post_id);
 
+        // Debug: afficher les données récupérées
+        if (current_user_can('manage_options')) {
+            echo '<!-- DEBUG FFM: post_id=' . $post_id . ' -->';
+            echo '<!-- DEBUG FFM: data=' . print_r($data, true) . ' -->';
+        }
+
         // Démarrer la sortie
         ob_start();
         ?>
+
+        <!-- DEBUG: Shortcode fiche_formateur appelé pour post_id=<?php echo $post_id; ?> -->
+        <div class="ffm-debug-info" style="background: #ffeb3b; padding: 10px; margin: 10px 0; border: 2px solid #f57c00;">
+            <strong>DEBUG MODE:</strong> Shortcode fiche_formateur appelé<br>
+            Post ID: <?php echo $post_id; ?><br>
+            Nom: <?php echo esc_html($data['nom'] ?? 'vide'); ?><br>
+            Photo ID: <?php echo esc_html($data['photo_id'] ?? '0'); ?><br>
+            Nombre de stats: <?php echo count($data['stats'] ?? []); ?>
+        </div>
 
         <div class="ffm-fiche-container">
 
