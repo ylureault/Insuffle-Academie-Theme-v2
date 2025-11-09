@@ -33,12 +33,24 @@ class FFM_Shortcode {
 
         $post_id = intval($atts['post_id']);
 
-        if (!$post_id) {
-            return '<p class="ffm-error">' . __('ID de post invalide.', 'fiche-formateur') . '</p>';
-        }
-
-        // Récupérer les données
+        // Récupérer les données pour le post_id actuel
         $data = FFM_Formateur_Manager::get_formateur_data($post_id);
+
+        // Si pas de données sur la page actuelle, chercher un formateur avec des données
+        if (empty($data['nom']) && empty($data['photo_id']) && empty($data['stats'])) {
+            $formateurs = FFM_Formateurs_Scanner::get_formateurs();
+
+            foreach ($formateurs as $formateur) {
+                $formateur_data = FFM_Formateur_Manager::get_formateur_data($formateur->ID);
+
+                // Si on trouve un formateur avec des données, l'utiliser
+                if (!empty($formateur_data['nom']) || !empty($formateur_data['photo_id']) || !empty($formateur_data['stats'])) {
+                    $post_id = $formateur->ID;
+                    $data = $formateur_data;
+                    break;
+                }
+            }
+        }
 
         // Debug: afficher les données récupérées
         if (current_user_can('manage_options')) {
