@@ -1,0 +1,267 @@
+/**
+ * Fiche Formateur - Frontend Styles
+ * Design identique au HTML de référence avec préfixe "ffm-"
+ */
+
+:root {
+    --ffm-primary: #8E2183;
+    --ffm-secondary: #FFD466;
+    --ffm-accent: #FFC0CB;
+    --ffm-light: #FFFFFF;
+    --ffm-dark: #333333;
+    --ffm-grey: #F5F5F5;
+}
+
+/* Container principal */
+.ffm-fiche-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Header avec photo */
+.ffm-header-section {
+    background: linear-gradient(135deg, var(--ffm-primary) 0%, #6d1a66 100%);
+    padding: 60px 50px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ffm-header-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,212,102,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.ffm-photo-container {
+    position: relative;
+    z-index: 2;
+}
+
+.ffm-photo-frame {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid var(--ffm-secondary);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.ffm-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ffm-header-content {
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.ffm-badge {
+    display: inline-block;
+    background: var(--ffm-secondary);
+    color: var(--ffm-primary);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ffm-header-content .ffm-nom {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    color: white;
+}
+
+.ffm-header-content .ffm-tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--ffm-secondary);
+}
+
+.ffm-header-content .ffm-description {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    line-height: 1.7;
+}
+
+.ffm-description strong {
+    color: var(--ffm-secondary);
+}
+
+/* Chiffres clés */
+.ffm-stats-section {
+    background: linear-gradient(135deg, var(--ffm-primary) 0%, #6d1a66 100%);
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ffm-stats-section::before {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,212,102,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.ffm-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.ffm-stat-item {
+    text-align: center;
+    color: white;
+}
+
+.ffm-stat-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--ffm-secondary);
+    line-height: 1;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.ffm-stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+/* Citations */
+.ffm-quote-section {
+    padding: 60px 50px;
+    background: white;
+    text-align: center;
+}
+
+.ffm-quote-box {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.ffm-quote-icon {
+    font-size: 4rem;
+    color: var(--ffm-secondary);
+    opacity: 0.5;
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+}
+
+.ffm-quote-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ffm-primary);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.ffm-quote-author {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ffm-header-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 30px;
+    }
+
+    .ffm-photo-frame {
+        margin: 0 auto;
+    }
+
+    .ffm-header-content .ffm-nom {
+        font-size: 2.5rem;
+    }
+
+    .ffm-header-content .ffm-tagline {
+        font-size: 1.2rem;
+    }
+
+    .ffm-quote-section {
+        padding: 40px 30px;
+    }
+
+    .ffm-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .ffm-stat-number {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ffm-fiche-container {
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+
+    .ffm-header-section {
+        padding: 30px 20px;
+    }
+
+    .ffm-photo-frame {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ffm-header-content .ffm-nom {
+        font-size: 2rem;
+    }
+
+    .ffm-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .ffm-quote-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Message d'erreur */
+.ffm-error {
+    padding: 20px;
+    background: #fee;
+    border-left: 4px solid #c00;
+    color: #c00;
+    margin: 20px 0;
+}
