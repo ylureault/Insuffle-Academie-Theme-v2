@@ -1,0 +1,196 @@
+/**
+ * Galerie Formation - Frontend Styles
+ * Styles identiques au HTML avec préfixe "gfm-"
+ */
+
+/* Section galerie */
+.gfm-gallery-section {
+    padding: 80px 0;
+}
+
+.gfm-gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Titres de section */
+.gfm-section-subtitle {
+    color: #8E2183;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.gfm-section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #333333;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.gfm-section-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Grille d'images */
+.gfm-image-grid {
+    display: grid;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.gfm-columns-2 {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.gfm-columns-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gfm-columns-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gfm-columns-5 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Item de galerie */
+.gfm-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+}
+
+.gfm-gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Image */
+.gfm-gallery-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.gfm-gallery-item:hover .gfm-gallery-image {
+    filter: brightness(0.7);
+}
+
+/* Overlay (titre et description au survol) */
+.gfm-gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(142,33,131,0.9) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gfm-gallery-item:hover .gfm-gallery-overlay {
+    opacity: 1;
+}
+
+.gfm-gallery-title {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.gfm-gallery-description {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Notice */
+.gfm-notice {
+    background: #f7f7f7;
+    padding: 20px;
+    border-left: 4px solid #8E2183;
+    border-radius: 4px;
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gfm-gallery-section {
+        padding: 60px 0;
+    }
+
+    .gfm-section-title {
+        font-size: 2rem;
+    }
+
+    .gfm-section-description {
+        font-size: 1rem;
+    }
+
+    .gfm-image-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .gfm-gallery-image {
+        height: 250px;
+    }
+
+    .gfm-gallery-overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(142,33,131,0.8) 0%, transparent 70%);
+    }
+}
+
+@media (max-width: 480px) {
+    .gfm-gallery-container {
+        padding: 0 10px;
+    }
+
+    .gfm-section-title {
+        font-size: 1.8rem;
+    }
+
+    .gfm-gallery-image {
+        height: 200px;
+    }
+
+    .gfm-gallery-overlay {
+        padding: 15px;
+    }
+
+    .gfm-gallery-title {
+        font-size: 1rem;
+    }
+
+    .gfm-gallery-description {
+        font-size: 0.85rem;
+    }
+}
