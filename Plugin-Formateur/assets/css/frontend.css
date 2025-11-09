@@ -1,0 +1,386 @@
+/**
+ * Styles Frontend - Plugin Formateur
+ * Design basé sur les templates Insuffle Académie
+ */
+
+:root {
+    --primary: #8E2183;
+    --secondary: #FFD466;
+    --accent: #FFC0CB;
+    --light: #FFFFFF;
+    --dark: #333333;
+    --grey: #F5F5F5;
+}
+
+/* ========================================
+   Section Formateur
+   ======================================== */
+.formateur-section {
+    padding: 80px 0;
+    background-color: var(--grey);
+}
+
+.formateur-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   Titres de section
+   ======================================== */
+.formateur-subtitle {
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.formateur-section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 40px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* ========================================
+   Highlight Box (carte formateur)
+   ======================================== */
+.formateur-highlight-box {
+    background: linear-gradient(135deg, rgba(142,33,131,0.05) 0%, rgba(255,212,102,0.05) 100%);
+    padding: 50px 40px;
+    border-radius: 12px;
+    border: 2px solid var(--primary);
+    max-width: 900px;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+/* ========================================
+   Photo du formateur
+   ======================================== */
+.formateur-photo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formateur-photo-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(142,33,131,0.3);
+}
+
+/* ========================================
+   Nom et titre
+   ======================================== */
+.formateur-nom {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+    font-weight: 800;
+    text-align: center;
+}
+
+.formateur-titre {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.formateur-titre strong {
+    font-weight: 700;
+}
+
+/* ========================================
+   Citation (Quote Block)
+   ======================================== */
+.formateur-quote-block {
+    background: linear-gradient(135deg, rgba(142,33,131,0.08) 0%, rgba(255,212,102,0.08) 100%);
+    padding: 30px 40px;
+    border-left: 5px solid var(--primary);
+    margin: 30px 0;
+    font-style: italic;
+    font-size: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    position: relative;
+    line-height: 1.6;
+}
+
+.formateur-quote-block::before {
+    content: '🪶';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    opacity: 0.3;
+}
+
+/* ========================================
+   Biographie
+   ======================================== */
+.formateur-biographie {
+    margin-top: 25px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--dark);
+}
+
+.formateur-biographie p {
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   Expérience
+   ======================================== */
+.formateur-experience {
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.formateur-experience strong {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* ========================================
+   Spécialités et Certifications
+   ======================================== */
+.formateur-specialites,
+.formateur-certifications {
+    margin-top: 30px;
+}
+
+.formateur-specialites h4,
+.formateur-certifications h4 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.formateur-specialites ul,
+.formateur-certifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.formateur-specialites li,
+.formateur-certifications li {
+    padding: 12px 12px 12px 40px;
+    position: relative;
+    background: var(--light);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.formateur-specialites li:hover,
+.formateur-certifications li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(142,33,131,0.1);
+}
+
+.formateur-specialites li::before,
+.formateur-certifications li::before {
+    content: '✓';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, var(--primary) 0%, #a52a9a 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   Contact
+   ======================================== */
+.formateur-contact {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(142,33,131,0.2);
+}
+
+.formateur-contact h4 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.formateur-contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.formateur-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--light);
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.formateur-contact-link:hover {
+    background: var(--primary);
+    color: var(--light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(142,33,131,0.3);
+}
+
+.formateur-contact-link .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+/* ========================================
+   Liste de formateurs (multiple)
+   ======================================== */
+.formateurs-liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.formateurs-liste .formateur-section {
+    padding: 0;
+}
+
+.formateurs-liste .formateur-highlight-box {
+    margin: 0;
+}
+
+/* ========================================
+   Message d'erreur
+   ======================================== */
+.formateur-error {
+    padding: 20px;
+    background: #f9e5e5;
+    border-left: 4px solid #dc3232;
+    color: #dc3232;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+    .formateur-section {
+        padding: 50px 0;
+    }
+
+    .formateur-section-title {
+        font-size: 2rem;
+    }
+
+    .formateur-nom {
+        font-size: 1.6rem;
+    }
+
+    .formateur-titre {
+        font-size: 1rem;
+    }
+
+    .formateur-quote-block {
+        font-size: 1.1rem;
+        padding: 20px 25px;
+    }
+
+    .formateur-highlight-box {
+        padding: 30px 20px;
+    }
+
+    .formateur-photo-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .formateur-contact-links {
+        flex-direction: column;
+    }
+
+    .formateur-contact-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .formateurs-liste {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .formateur-quote-block::before {
+        display: none;
+    }
+
+    .formateur-section-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.formateur-highlight-box {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ========================================
+   Compatibilité thème
+   ======================================== */
+.formateur-section * {
+    box-sizing: border-box;
+}
+
+.formateur-section img {
+    max-width: 100%;
+    height: auto;
+}
