@@ -18,7 +18,7 @@
      */
     function initPhotoUpload() {
         // Upload photo
-        $('.ffm-upload-photo').on('click', function(e) {
+        $('#ffm-upload-photo').on('click', function(e) {
             e.preventDefault();
 
             if (mediaFrame) {
@@ -31,7 +31,10 @@
                 button: {
                     text: ffmAdmin.uploadButton
                 },
-                multiple: false
+                multiple: false,
+                library: {
+                    type: 'image'
+                }
             });
 
             mediaFrame.on('select', function() {
@@ -42,28 +45,44 @@
 
                 // Mettre à jour l'aperçu
                 const thumbnailUrl = attachment.sizes.medium ? attachment.sizes.medium.url : attachment.url;
-                $('#ffm-photo-preview').html('<img src="' + thumbnailUrl + '" alt="">');
+                $('#ffm-photo-preview-img').replaceWith(
+                    '<img id="ffm-photo-preview-img" src="' + thumbnailUrl + '" alt="">'
+                );
 
                 // Afficher le bouton retirer
-                $('.ffm-remove-photo').show();
+                if ($('#ffm-remove-photo').length === 0) {
+                    $('#ffm-upload-photo').after(
+                        '<button type="button" class="button button-secondary" id="ffm-remove-photo">' +
+                        '<span class="dashicons dashicons-no"></span> ' +
+                        ffmAdmin.removePhoto +
+                        '</button>'
+                    );
+                    initRemovePhoto();
+                }
             });
 
             mediaFrame.open();
         });
 
-        // Retirer photo
-        $('.ffm-remove-photo').on('click', function(e) {
+        initRemovePhoto();
+    }
+
+    /**
+     * Retirer photo
+     */
+    function initRemovePhoto() {
+        $('#ffm-remove-photo').off('click').on('click', function(e) {
             e.preventDefault();
 
             if (confirm(ffmAdmin.confirmDelete)) {
                 $('#ffm-photo-id').val('');
-                $('#ffm-photo-preview').html(
-                    '<div class="ffm-photo-placeholder">' +
-                    '<span class="dashicons dashicons-format-image"></span>' +
-                    '<p>Aucune photo sélectionnée</p>' +
+                $('#ffm-photo-preview-img').replaceWith(
+                    '<div id="ffm-photo-preview-img" class="ffm-no-photo">' +
+                    '<span class="dashicons dashicons-businessman"></span>' +
+                    '<p>Aucune photo</p>' +
                     '</div>'
                 );
-                $(this).hide();
+                $(this).remove();
             }
         });
     }
@@ -73,7 +92,7 @@
      */
     function initStats() {
         // Initialiser le tri
-        $('#ffm-stats-container').sortable({
+        $('#ffm-stats-list').sortable({
             handle: '.ffm-stat-handle',
             placeholder: 'ffm-sortable-placeholder',
             axis: 'y',
@@ -91,7 +110,7 @@
             const template = $('#ffm-stat-template').html();
             const html = template.replace(/\{\{INDEX\}\}/g, statIndex);
 
-            $('#ffm-stats-container').append(html);
+            $('#ffm-stats-list').append(html);
 
             statIndex++;
 
@@ -123,7 +142,7 @@
      * Réindexe les stats après tri ou suppression
      */
     function reindexStats() {
-        $('#ffm-stats-container .ffm-stat-item').each(function(index) {
+        $('#ffm-stats-list .ffm-stat-item').each(function(index) {
             $(this).attr('data-index', index);
             $(this).find('input').each(function() {
                 const name = $(this).attr('name');

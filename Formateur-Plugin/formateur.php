@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Fiche Formateur
  * Plugin URI: https://www.insuffle-academie.com
- * Description: Gestion des fiches formateurs avec photo, stats et citation
- * Version: 1.0.0
+ * Description: Gestion des fiches formateurs avec backoffice dédié - Photo, stats et citation
+ * Version: 2.0.0
  * Author: Yoan Lureault
  * Author URI: https://www.insuffle-academie.com
  * License: GPL v2 or later
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Définir les constantes
-define('FFM_VERSION', '1.0.0');
+define('FFM_VERSION', '2.0.0');
 define('FFM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('FFM_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -52,9 +52,10 @@ class Fiche_Formateur {
      * Charge les dépendances
      */
     private function load_dependencies() {
+        require_once FFM_PLUGIN_DIR . 'includes/class-formateurs-scanner.php';
         require_once FFM_PLUGIN_DIR . 'includes/class-formateur-manager.php';
+        require_once FFM_PLUGIN_DIR . 'includes/class-formateur-admin.php';
         require_once FFM_PLUGIN_DIR . 'includes/class-shortcode.php';
-        require_once FFM_PLUGIN_DIR . 'includes/class-admin-interface.php';
     }
 
     /**
@@ -64,13 +65,11 @@ class Fiche_Formateur {
         // Charger les assets frontend
         add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend_assets'));
 
-        // Charger les assets admin
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_assets'));
-
         // Initialiser les classes
+        FFM_Formateurs_Scanner::get_instance();
         FFM_Formateur_Manager::get_instance();
+        FFM_Formateur_Admin::get_instance();
         FFM_Shortcode::get_instance();
-        FFM_Admin_Interface::get_instance();
     }
 
     /**
@@ -91,41 +90,6 @@ class Fiche_Formateur {
             FFM_VERSION,
             true
         );
-    }
-
-    /**
-     * Charge les assets admin
-     */
-    public function enqueue_admin_assets($hook) {
-        // Charger uniquement sur les pages de posts/pages
-        if ('post.php' !== $hook && 'post-new.php' !== $hook) {
-            return;
-        }
-
-        // Charger la médiathèque WordPress
-        wp_enqueue_media();
-
-        wp_enqueue_style(
-            'ffm-admin',
-            FFM_PLUGIN_URL . 'assets/css/admin.css',
-            array(),
-            FFM_VERSION
-        );
-
-        wp_enqueue_script(
-            'ffm-admin',
-            FFM_PLUGIN_URL . 'assets/js/admin.js',
-            array('jquery', 'jquery-ui-sortable'),
-            FFM_VERSION,
-            true
-        );
-
-        // Localisation pour JS
-        wp_localize_script('ffm-admin', 'ffmAdmin', array(
-            'confirmDelete' => __('Êtes-vous sûr de vouloir supprimer cet élément ?', 'fiche-formateur'),
-            'uploadTitle' => __('Choisir une image', 'fiche-formateur'),
-            'uploadButton' => __('Utiliser cette image', 'fiche-formateur'),
-        ));
     }
 }
 
