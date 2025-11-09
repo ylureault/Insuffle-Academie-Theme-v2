@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Formation Kanban | Insuffle Académie - Maîtrisez le flux avec le Sushi Kanban Game</title>
+    <meta name="description" content="Formation Kanban avec Insuffle Académie à Deauville. Apprenez la méthode Kanban en 2 jours avec le Sushi Kanban Game. Formation immersive et pratique pour optimiser vos processus.">
+    <meta name="keywords" content="formation kanban, méthode kanban, sushi kanban game, gestion de flux, amélioration continue, agile, lean, Insuffle Académie, formation kanban deauville, wip limits, flux tiré">
+    <meta name="author" content="Insuffle Académie">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Formation Kanban | Insuffle Académie">
+    <meta property="og:description" content="Apprenez Kanban en 2 jours avec le Sushi Kanban Game. Formation immersive en gestion de flux par Insuffle Académie.">
+    <meta property="og:url" content="https://www.insuffle-academie.com/formation-kanban">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.insuffle-academie.com/formation-kanban">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Formation Kanban - Maîtriser Kanban avec le Sushi Kanban Game",
+      "description": "Formation professionnelle pour maîtriser la méthode Kanban de la théorie à la pratique",
+      "provider": {
+        "@type": "Organization",
+        "name": "Insuffle Académie",
+        "url": "https://www.insuffle-academie.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "410 RUE DE LA PRINCESSE TROUBETSKOI",
+          "addressLocality": "Deauville",
+          "postalCode": "14800",
+          "addressCountry": "FR"
+        },
+        "telephone": "+33980808962",
+        "email": "contact@insuffle-academie.com"
+      },
+      "courseCode": "KANBAN-2025",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "duration": "P2D",
+        "inLanguage": "fr"
+      },
+      "teaches": [
+        "Kanban",
+        "Gestion de flux",
+        "Amélioration continue",
+        "Lean",
+        "Agile",
+        "Visualisation de processus"
+      ],
+      "educationalLevel": "Débutant à Intermédiaire",
+      "timeRequired": "PT14H"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #8E2183;
+            --secondary: #FFD466;
+            --accent: #FFC0CB;
+            --light: #FFFFFF;
+            --dark: #333333;
+            --grey: #F5F5F5;
+            --kanban-blue: #3498db;
+            --kanban-orange: #e67e22;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .nav-logo {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-cta {
+            background-color: var(--secondary);
+            color: var(--primary) !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--light);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #6d1a66 100%);
+            color: var(--light);
+            padding: 100px 0 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,212,102,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+        
+        .hero-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .info-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border-color: var(--primary);
+        }
+        
+        .info-card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .info-card p, .info-card ul {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-card ul li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .info-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Approach Section */
+        .approach-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .approach-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .pillar {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pillar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+        
+        .pillar.head::before {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .pillar.body::before {
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .pillar.heart::before {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .pillar-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .pillar h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .pillar-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .pillar ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pillar ul li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+        }
+        
+        .pillar ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Objectives */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .objective-card {
+            background: var(--light);
+            border-left: 5px solid var(--primary);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .objective-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        
+        .objective-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .objective-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Program Section */
+        .program-intro {
+            background: linear-gradient(135deg, var(--primary) 0%, #6d1a66 100%);
+            color: var(--light);
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .program-intro h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .program-intro p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .modules-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .day-separator {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 20px 40px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 60px 0 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .module {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--grey);
+        }
+        
+        .module-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, #6d1a66 100%);
+            color: var(--light);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        
+        .module-title h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .module-duration {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .module-content h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        
+        .module-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .module-content ul li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .module-content ul li::before {
+            content: "✔︎";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .quote-block {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid var(--secondary);
+            padding: 20px 30px;
+            margin-top: 25px;
+            border-radius: 10px;
+            font-style: italic;
+        }
+        
+        .quote-block strong {
+            color: var(--primary);
+            font-style: normal;
+        }
+        
+        .sushi-game-box {
+            background: linear-gradient(135deg, var(--kanban-orange) 0%, #d35400 100%);
+            color: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .sushi-game-box h4 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .sushi-game-box p, .sushi-game-box ul li {
+            color: var(--light);
+            opacity: 0.95;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #6d1a66 100%);
+            color: var(--light);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn:hover {
+            background-color: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid var(--light);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .module-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="https://www.insuffle-academie.com">
+                    <img src="https://www.insuffle-academie.com/img/Logo-Insuffle-Academie.png" alt="Insuffle Académie Logo" class="nav-logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#informations">Informations</a></li>
+                    <li><a href="#objectifs">Objectifs</a></li>
+                    <li><a href="#approche">Notre approche</a></li>
+                    <li><a href="#programme">Programme</a></li>
+                    <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Formation certifiée Qualiopi</div>
+                <div class="hero-emoji">🍣</div>
+                <h1>Maîtriser Kanban : De la théorie à la pratique avec le Sushi Kanban Game</h1>
+                <p class="hero-description">
+                    Optimisez vos flux de travail et améliorez l'efficacité de vos équipes grâce à une formation immersive et ludique où vous apprendrez Kanban... en fabriquant des sushis !
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Jours intensifs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">70%</span>
+                        <span class="stat-label">Pratique</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Fun garanti</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informations Générales -->
+    <section id="informations">
+        <div class="container">
+            <div class="section-subtitle">Informations pratiques</div>
+            <h2 class="section-title">Tout savoir sur la formation</h2>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">👥</div>
+                    <h3>Public visé</h3>
+                    <ul>
+                        <li>Managers et chefs de projet</li>
+                        <li>Product Owners et Scrum Masters</li>
+                        <li>Membres d'équipes agiles</li>
+                        <li>Coachs agiles et facilitateurs</li>
+                        <li>Toute personne impliquée dans l'amélioration des processus</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">✅</div>
+                    <h3>Prérequis</h3>
+                    <ul>
+                        <li>Aucun prérequis technique</li>
+                        <li>Curiosité et volonté d'expérimenter</li>
+                        <li>Participation active aux ateliers</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Effectif</h3>
+                    <ul>
+                        <li>Minimum : 6 participants</li>
+                        <li>Maximum : 16 participants</li>
+                        <li>Idéal : 12 participants</li>
+                        <li>Organisation en équipes de 4 à 6 personnes</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">⏱️</div>
+                    <h3>Durée et modalités</h3>
+                    <ul>
+                        <li>Durée : 2 jours (14 heures)</li>
+                        <li>Présentiel à Deauville ou sur site</li>
+                        <li>Horaires : 9h00-12h30 / 14h00-17h30</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">♿</div>
+                    <h3>Accessibilité</h3>
+                    <p>Formation accessible aux personnes en situation de handicap. Contactez-nous en amont pour adapter les modalités pédagogiques à vos besoins spécifiques.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">💰</div>
+                    <h3>Tarif et financement</h3>
+                    <ul>
+                        <li>Sur devis personnalisé</li>
+                        <li>Éligible CPF</li>
+                        <li>Éligible OPCO</li>
+                        <li>Plan de développement des compétences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectifs Pédagogiques -->
+    <section id="objectifs" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="section-subtitle">Objectifs pédagogiques</div>
+            <h2 class="section-title">Ce que vous allez apprendre</h2>
+            <p class="section-description">À l'issue de cette formation, vous serez capable de mettre en place et d'animer une démarche Kanban dans votre organisation.</p>
+            
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="objective-number">1</div>
+                    <p><strong>Comprendre et appliquer</strong> les principes fondamentaux de la méthode Kanban</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">2</div>
+                    <p><strong>Visualiser</strong> un flux de travail existant sur un tableau Kanban</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">3</div>
+                    <p><strong>Identifier et gérer</strong> les goulots d'étranglement dans un processus</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">4</div>
+                    <p><strong>Mettre en place</strong> des limites de travail en cours (WIP limits) pertinentes</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">5</div>
+                    <p><strong>Mesurer et optimiser</strong> le flux de valeur dans votre contexte professionnel</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">6</div>
+                    <p><strong>Faciliter</strong> l'amélioration continue au sein de vos équipes</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">7</div>
+                    <p><strong>Animer</strong> une démarche Kanban dans votre organisation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approche Pédagogique -->
+    <section id="approche" class="approach-section">
+        <div class="container">
+            <div class="section-subtitle">Notre philosophie</div>
+            <h2 class="section-title">"On n'apprend pas à nager dans un livre"</h2>
+            <p class="section-description">
+                Cette formation incarne les valeurs d'Insuffle Académie à travers une approche pédagogique unique qui mobilise la tête, le corps et le cœur.
+            </p>
+            
+            <div class="approach-pillars">
+                <div class="pillar head">
+                    <div class="pillar-icon">🧠</div>
+                    <h3>TÊTE</h3>
+                    <p class="pillar-subtitle">Le Savoir</p>
+                    <ul>
+                        <li>Concepts théoriques essentiels de Kanban</li>
+                        <li>Cadre méthodologique structurant</li>
+                        <li>Principes Lean et Agile appliqués</li>
+                        <li>4 principes fondamentaux</li>
+                        <li>6 pratiques essentielles</li>
+                    </ul>
+                </div>
+                
+                <div class="pillar body">
+                    <div class="pillar-icon">💪</div>
+                    <h3>CORPS</h3>
+                    <p class="pillar-subtitle">L'Action</p>
+                    <ul>
+                        <li>Expérimentation immédiate par le jeu</li>
+                        <li>Manipulation physique d'éléments</li>
+                        <li>Sushi Kanban Game comme fil rouge</li>
+                        <li>Mouvement et dynamique de groupe</li>
+                        <li>Mise en pratique sur cas réels</li>
+                    </ul>
+                </div>
+                
+                <div class="pillar heart">
+                    <div class="pillar-icon">❤️</div>
+                    <h3>CŒUR</h3>
+                    <p class="pillar-subtitle">Les Émotions</p>
+                    <ul>
+                        <li>Plaisir et fun dans l'apprentissage</li>
+                        <li>Frustrations et découvertes partagées</li>
+                        <li>Succès collectifs célébrés</li>
+                        <li>Engagement émotionnel fort</li>
+                        <li>Expérience mémorable</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 30px; font-size: 1.8rem;">Techniques pédagogiques mobilisées</h3>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h3>Training from the back of the room</h3>
+                        <p>L'apprenant au centre, le formateur en facilitateur</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Pédagogie inversée</h3>
+                        <p>Découverte par l'expérience avant la théorie</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Apprentissage par le jeu</h3>
+                        <p>Sushi Kanban Game comme fil rouge immersif</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Intelligence collective</h3>
+                        <p>Co-construction des savoirs en groupe</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Réflexivité</h3>
+                        <p>Débriefing structuré après chaque expérimentation</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Ancrage pratique</h3>
+                        <p>Application immédiate aux contextes professionnels</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Détaillé -->
+    <section id="programme">
+        <div class="container">
+            <div class="section-subtitle">Programme complet</div>
+            <h2 class="section-title">2 jours pour maîtriser Kanban</h2>
+            
+            <div class="program-intro">
+                <h3>🍣 Une pédagogie unique et immersive</h3>
+                <p>Vous allez apprendre Kanban en gérant un véritable restaurant de sushi ! À travers 4 rounds progressifs du Sushi Kanban Game, vous expérimenterez tous les concepts clés de la méthode : visualisation, flux tiré, WIP limits, amélioration continue...</p>
+            </div>
+            
+            <div class="modules-container">
+                <!-- JOUR 1 -->
+                <div class="day-separator">
+                    📅 JOUR 1 : DÉCOUVRIR ET EXPÉRIMENTER KANBAN
+                </div>
+                
+                <!-- Module 1 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">1</div>
+                        <div class="module-title">
+                            <h3>Accueil et Ouverture</h3>
+                            <div class="module-duration">9h00 - 9h30 | 30 minutes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <h4>🎯 Objectifs :</h4>
+                        <ul>
+                            <li>Créer un climat de confiance et de sécurité psychologique</li>
+                            <li>Recueillir les attentes individuelles</li>
+                            <li>Poser le cadre et les règles du jeu</li>
+                        </ul>
+                        
+                        <h4>📖 Déroulé :</h4>
+                        <ul>
+                            <li>Accueil café et réseau</li>
+                            <li>Ice breaker énergisant : "Le Kanban de ma vie"</li>
+                            <li>Tour de table interactif avec la technique du Future Perfect</li>
+                            <li>Présentation du programme co-construit</li>
+                            <li>Signature du contrat d'apprentissage collectif</li>
+                        </ul>
+                        
+                        <div class="quote-block">
+                            <strong>Livrable :</strong> Carnet d'apprentissage personnalisé Insuffle Académie
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Module 2 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">2</div>
+                        <div class="module-title">
+                            <h3>Les Origines et Fondamentaux de Kanban</h3>
+                            <div class="module-duration">9h30 - 10h30 | 1 heure</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <h4>🎯 Objectifs :</h4>
+                        <ul>
+                            <li>Comprendre l'histoire et la philosophie Kanban</li>
+                            <li>Identifier les différences avec Scrum et autres méthodes agiles</li>
+                            <li>Découvrir les 4 principes et 6 pratiques fondamentales</li>
+                        </ul>
+                        
+                        <h4>📖 Contenu théorique :</h4>
+                        <ul>
+                            <li><strong>Histoire du Kanban :</strong> Origines Toyota et Lean Manufacturing, adaptation au travail du savoir par David Anderson</li>
+                            <li><strong>Les 4 Principes Fondamentaux :</strong> Commencer par ce que vous faites actuellement, poursuivre le changement de manière incrémentale, respecter le processus actuel, encourager les actes de leadership</li>
+                            <li><strong>Les 6 Pratiques Essentielles :</strong> Visualiser le flux, limiter le WIP, gérer le flux, rendre les règles explicites, mettre en place des boucles de feedback, améliorer collaborativement</li>
+                        </ul>
+                        
+                        <div class="quote-block">
+                            <strong>Modalité :</strong> Présentation visuelle dynamique, facilitation graphique en direct, questions-réponses interactives
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Module 3 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">3</div>
+                        <div class="module-title">
+                            <h3>🍣 SUSHI KANBAN GAME - Round 1 & 2</h3>
+                            <div class="module-duration">10h45 - 12h30 | 1h45</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <div class="sushi-game-box">
+                            <h4>🍣 Bienvenue dans votre restaurant de sushi !</h4>
+                            <p>Les participants incarnent une équipe de sushi chefs. Leur mission : produire le maximum de sushis de qualité tout en minimisant le gaspillage !</p>
+                            
+                            <h4 style="margin-top: 20px;">Matériel fourni par équipe :</h4>
+                            <ul>
+                                <li>Post-its de 3 couleurs (saumon, avocat/concombre, thon)</li>
+                                <li>Feuilles A4 blanches (riz/nori)</li>
+                                <li>Ciseaux, marqueurs, scotch</li>
+                                <li>Chronomètre et plateau de "cuisson"</li>
+                                <li>Fiche recette des sushis</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>🎮 ROUND 1 : Processus émergent (30 min)</h4>
+                        <p><strong>Objectif :</strong> Faire émerger un processus "naturel" sans contrainte Kanban</p>
+                        <ul>
+                            <li>Découverte du matériel et des recettes</li>
+                            <li>7 minutes de production intensive</li>
+                            <li>Comptage des points (souvent négatifs !)</li>
+                            <li>Débriefing : identification des frustrations et blocages</li>
+                        </ul>
+                        
+                        <h4>🎮 ROUND 2 : Visualisation et WIP Limits (45 min)</h4>
+                        <p><strong>Objectif :</strong> Introduire la visualisation du flux et les limites WIP</p>
+                        <ul>
+                            <li>Création d'un tableau Kanban visible</li>
+                            <li>Définition de limites de travail en cours</li>
+                            <li>Introduction d'une nouvelle recette (complexité)</li>
+                            <li>Amélioration significative des résultats</li>
+                        </ul>
+                        
+                        <div class="quote-block">
+                            <strong>Objectif pédagogique :</strong> À l'issue de cette séquence, les participants comprennent viscéralement l'importance de visualiser le flux et de limiter le travail en cours.
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Module 4 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">4</div>
+                        <div class="module-title">
+                            <h3>Les Métriques Kanban</h3>
+                            <div class="module-duration">14h00 - 15h30 | 1h30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <h4>📖 Contenu du module :</h4>
+                        <ul>
+                            <li>Le Lead Time et le Cycle Time : définitions et différences</li>
+                            <li>Le débit (Throughput) : mesurer la vélocité réelle</li>
+                            <li>Le Work In Progress (WIP) : au-delà de la simple limite</li>
+                            <li>Les diagrammes de flux cumulés (CFD)</li>
+                            <li>Cas pratiques : analyser vos propres métriques</li>
+                        </ul>
+                        
+                        <div class="quote-block">
+                            <strong>Objectif pédagogique :</strong> Comprendre et utiliser les métriques essentielles pour piloter l'amélioration continue.
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Module 5 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">5</div>
+                        <div class="module-title">
+                            <h3>🍣 SUSHI KANBAN GAME - Round 3</h3>
+                            <div class="module-duration">15h45 - 17h30 | 1h45</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <div class="sushi-game-box">
+                            <h4>🎮 ROUND 3 : Flux tiré et Classes de Service</h4>
+                            <p><strong>Objectif :</strong> Expérimenter le flux tiré et gérer plusieurs types de demandes</p>
+                        </div>
+                        
+                        <ul>
+                            <li>Introduction du principe de "pull" (tirer plutôt que pousser)</li>
+                            <li>Mise en place de classes de service (urgent, standard, économique)</li>
+                            <li>Gestion de la priorisation en temps réel</li>
+                            <li>Optimisation du système par l'équipe</li>
+                            <li>Débriefing approfondi sur les découvertes</li>
+                        </ul>
+                        
+                        <div class="quote-block">
+                            <strong>Objectif pédagogique :</strong> Maîtriser les concepts de flux tiré et de priorisation par classes de service.
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- JOUR 2 -->
+                <div class="day-separator">
+                    📅 JOUR 2 : APPROFONDIR ET DÉPLOYER KANBAN
+                </div>
+                
+                <!-- Module 6 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">6</div>
+                        <div class="module-title">
+                            <h3>Réveil énergique et Rétrospective J1</h3>
+                            <div class="module-duration">9h00 - 9h30 | 30 minutes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <ul>
+                            <li>Energizer matinal : activité ludique et dynamique</li>
+                            <li>Rétrospective express du Jour 1</li>
+                            <li>Questions émergentes et clarifications</li>
+                            <li>Ajustements du programme en fonction des besoins</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <!-- Module 7 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">7</div>
+                        <div class="module-title">
+                            <h3>🍣 SUSHI KANBAN GAME - Round 4 Final</h3>
+                            <div class="module-duration">9h30 - 11h00 | 1h30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <div class="sushi-game-box">
+                            <h4>🎮 ROUND 4 : Amélioration continue et Complexité maximale</h4>
+                            <p><strong>Objectif :</strong> Gérer un système complexe en amélioration continue</p>
+                        </div>
+                        
+                        <ul>
+                            <li>Introduction d'événements imprévus (blocages, absences...)</li>
+                            <li>Gestion de demandes urgentes et changeantes</li>
+                            <li>Réunions quotidiennes (Daily Standup) en cours de production</li>
+                            <li>Adaptation du système en temps réel</li>
+                            <li>Célébration des résultats et débriefing final du jeu</li>
+                        </ul>
+                        
+                        <div class="quote-block">
+                            <strong>Objectif pédagogique :</strong> Vivre l'amélioration continue et l'adaptation à la complexité en contexte réaliste.
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Module 8 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">8</div>
+                        <div class="module-title">
+                            <h3>Les Rituels et Cadences Kanban</h3>
+                            <div class="module-duration">11h15 - 12h30 | 1h15</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <h4>📖 Contenu du module :</h4>
+                        <ul>
+                            <li><strong>Daily Standup Kanban :</strong> Se synchroniser quotidiennement devant le tableau</li>
+                            <li><strong>Replenishment Meeting :</strong> Prioriser et alimenter le système</li>
+                            <li><strong>Service Delivery Review :</strong> Analyser les métriques et partager avec les stakeholders</li>
+                            <li><strong>Operations Review :</strong> Améliorer le système de manière collaborative</li>
+                            <li><strong>Risk Review :</strong> Anticiper et gérer les blocages</li>
+                        </ul>
+                        
+                        <h4>🎯 Atelier pratique :</h4>
+                        <p>Simulation d'un Daily Standup et d'une Operations Review sur les cas réels des participants</p>
+                        
+                        <div class="quote-block">
+                            <strong>Objectif pédagogique :</strong> Savoir animer les principaux rituels Kanban dans son équipe.
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Module 9 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">9</div>
+                        <div class="module-title">
+                            <h3>Conception de VOTRE Tableau Kanban</h3>
+                            <div class="module-duration">14h00 - 15h30 | 1h30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <h4>🎨 Atelier de co-création :</h4>
+                        <ul>
+                            <li>Par équipe ou individuellement : cartographie de votre flux actuel</li>
+                            <li>Identification des étapes, des points de décision, des handoffs</li>
+                            <li>Définition des colonnes de votre tableau Kanban</li>
+                            <li>Choix des WIP limits adaptés à votre contexte</li>
+                            <li>Définition des classes de service pertinentes</li>
+                            <li>Design visuel de votre tableau (physique ou numérique)</li>
+                        </ul>
+                        
+                        <h4>🛠️ Outils et templates fournis :</h4>
+                        <ul>
+                            <li>Canvas de conception de tableau Kanban</li>
+                            <li>Guide de questionnement pour mapper son flux</li>
+                            <li>Exemples de tableaux Kanban dans différents contextes</li>
+                        </ul>
+                        
+                        <div class="quote-block">
+                            <strong>Objectif pédagogique :</strong> Repartir avec un tableau Kanban personnalisé prêt à être déployé dans votre contexte professionnel.
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Module 10 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">10</div>
+                        <div class="module-title">
+                            <h3>Déployer et Faire Évoluer Kanban</h3>
+                            <div class="module-duration">15h45 - 16h45 | 1 heure</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <h4>📖 Contenu du module :</h4>
+                        <ul>
+                            <li><strong>Change Management :</strong> Les 4 principes du changement évolutif</li>
+                            <li><strong>Résistances typiques :</strong> Comment les anticiper et les gérer</li>
+                            <li><strong>Quick Wins :</strong> Les premiers succès à viser</li>
+                            <li><strong>Évolution du système :</strong> Quand et comment faire évoluer son Kanban</li>
+                            <li><strong>Communauté de pratique :</strong> S'entourer et continuer à apprendre</li>
+                        </ul>
+                        
+                        <h4>💡 Partage d'expériences :</h4>
+                        <p>Retours d'expérience du formateur et études de cas réels de déploiements Kanban réussis (et ratés !)</p>
+                        
+                        <div class="quote-block">
+                            <strong>Objectif pédagogique :</strong> Avoir une stratégie claire pour introduire et faire évoluer Kanban dans son organisation.
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Module 11 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-number">11</div>
+                        <div class="module-title">
+                            <h3>Plan d'Action et Clôture</h3>
+                            <div class="module-duration">16h45 - 17h30 | 45 minutes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <h4>🎯 Ateliers de clôture :</h4>
+                        <ul>
+                            <li><strong>Plan d'action individuel :</strong> Mes 3 prochaines actions concrètes</li>
+                            <li><strong>Engagement public :</strong> Partage de son intention de mise en œuvre</li>
+                            <li><strong>Buddy System :</strong> Constitution de binômes d'entraide post-formation</li>
+                            <li><strong>Évaluation de la formation :</strong> Feedback à chaud</li>
+                            <li><strong>Remise des attestations de formation</strong></li>
+                            <li><strong>Célébration collective :</strong> Reconnaissance des apprentissages</li>
+                        </ul>
+                        
+                        <h4>📦 Ressources remises :</h4>
+                        <ul>
+                            <li>Livre numérique : "Kanban - L'essentiel en 30 pages"</li>
+                            <li>Templates de tableaux Kanban</li>
+                            <li>Bibliographie commentée</li>
+                            <li>Accès à la communauté Insuffle (Slack/Discord)</li>
+                            <li>Invitation à la Facilitation Clinic mensuelle (3 mois offerts)</li>
+                        </ul>
+                        
+                        <div class="quote-block">
+                            <strong>Citation de clôture :</strong> "Kanban commence là où vous êtes. Alors commençons ensemble !" - L'équipe Insuffle Académie
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formateur -->
+    <section style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="section-subtitle">Votre formateur</div>
+            <h2 class="section-title">Un praticien-facilitateur expert</h2>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">💼</div>
+                    <h3>Expérience terrain</h3>
+                    <p>Plus de 5 ans de pratique Kanban en entreprise sur des projets réels</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🎓</div>
+                    <h3>Formation continue</h3>
+                    <p>Formé aux méthodes actives (Training from the Back of the Room) et certifié facilitateur en intelligence collective</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🌱</div>
+                    <h3>Veille active</h3>
+                    <p>Participation à conférences, meetups agiles et lecture continue de la littérature Lean-Kanban</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">❤️</div>
+                    <h3>Authenticité</h3>
+                    <p>Partage d'échecs et vulnérabilité - Posture de facilitateur plus que de sachant</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; font-style: italic; color: #666;">
+                <p>Nos formateurs sont des coachs agiles, consultants et facilitateurs en activité qui interviennent quotidiennement sur le terrain avec des équipes réelles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <div class="section-subtitle" style="color: var(--secondary);">Rejoignez-nous</div>
+                <h2 class="section-title">Prêt à transformer votre façon de travailler ?</h2>
+                <p>Inscrivez-vous à notre prochaine session de formation Kanban et apprenez à optimiser vos flux de travail de manière ludique et pratique avec le Sushi Kanban Game.</p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:contact@insuffle-academie.com?subject=Demande d'information - Formation Kanban" class="btn">Demander des informations</a>
+                    <a href="tel:+33980808962" class="btn btn-outline">☎ 09 80 80 89 62</a>
+                </div>
+                
+                <p style="margin-top: 40px; font-size: 0.95rem; opacity: 0.9;">
+                    Formation accessible aux personnes en situation de handicap.<br>
+                    Adaptation possible sur demande - Contact sous 15 jours avant la formation.
+                </p>
+                
+                <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px;">
+                    <h3 style="color: var(--secondary); margin-bottom: 15px;">🎯 Résultats garantis</h3>
+                    <p style="margin-bottom: 10px;">À la fin de ces 2 jours, vous :</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; max-width: 600px; margin: 20px auto;">
+                        <li style="padding: 5px 0;">✅ Comprenez intimement comment Kanban fonctionne</li>
+                        <li style="padding: 5px 0;">✅ Avez conçu VOTRE tableau Kanban personnalisé</li>
+                        <li style="padding: 5px 0;">✅ Savez animer les rituels Kanban essentiels</li>
+                        <li style="padding: 5px 0;">✅ Disposez d'un plan d'action concret pour lundi</li>
+                        <li style="padding: 5px 0;">✅ Êtes connecté·e à une communauté d'entraide</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Insuffle Académie</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle-academie.com">Notre approche</a></li>
+                        <li><a href="https://www.insuffle-academie.com#formations">Nos formations</a></li>
+                        <li><a href="https://www.insuffle-academie.com#testimonials">Témoignages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Nos formations</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle.com/formation/facilitation-bootcamp-formation-facilitation/">Facilitation Bootcamp</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-manager-facilitateur/">Manager Facilitateur</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-sketchnote/">Sketchnote</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-facilitation/">Les fondamentaux de la facilitation</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-intelligence-collective-facilitation/">Facilitation et intelligence collective</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Informations légales</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle-academie.com/mentions-legales">Mentions légales</a></li>
+                        <li><a href="https://www.insuffle-academie.com/politique-confidentialite">Politique de confidentialité</a></li>
+                        <li><a href="https://www.insuffle-academie.com/conditions-generales">Conditions générales</a></li>
+                        <li><a href="https://www.insuffle-academie.com/accessibilite">Accessibilité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <div class="footer-contact">
+                        <p><strong>Insuffle Académie</strong></p>
+                        <p>410 RUE DE LA PRINCESSE TROUBETSKOI</p>
+                        <p>14800 Deauville, France</p>
+                        <p>Tél: <a href="tel:+33980808962" style="color: var(--secondary);">09 80 80 89 62</a></p>
+                        <p>Email: <a href="mailto:contact@insuffle-academie.com" style="color: var(--secondary);">contact@insuffle-academie.com</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <img src="https://www.insuffle-academie.com/img/Logo-Insuffle-Academie.png" alt="Insuffle Académie" class="footer-logo">
+                <p class="copyright">© 2025 Insuffle Académie - Organisme de formation professionnelle certifié Qualiopi en facilitation et intelligence collective à Deauville - Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SEO Hidden Keywords -->
+    <div style="display:none;">
+        <p>formation kanban deauville, formation kanban normandie, méthode kanban, sushi kanban game, gestion de flux, amélioration continue, formation agile, lean management, wip limits, flux tiré, tableau kanban, formation kanban insuffle, kanban professionnel, formation visualisation processus, kanban entreprise, coach agile deauville</p>
+    </div>
+</body>
+</html>

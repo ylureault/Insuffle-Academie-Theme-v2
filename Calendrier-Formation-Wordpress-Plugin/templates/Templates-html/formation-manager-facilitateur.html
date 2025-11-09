@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Manager Boussole | Insuffle Académie - Formation Manager Facilitateur</title>
+    <meta name="description" content="MANAGER BOUSSOLE par Insuffle Académie : La formation qui transforme votre posture managériale. Développez un leadership collaboratif basé sur la Boussole 4C et révélez l'intelligence collective de vos équipes.">
+    <meta name="keywords" content="formation manager facilitateur, manager boussole, leadership collaboratif, management participatif, intelligence collective, formation management, Insuffle Académie, boussole 4C">
+    <meta name="author" content="Insuffle Académie">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Manager Boussole | Formation Manager Facilitateur">
+    <meta property="og:description" content="Devenez Manager Boussole : Orientez sans imposer, révélez sans contrôler. Formation immersive en leadership collaboratif.">
+    <meta property="og:url" content="https://www.insuffle-academie.com/manager-boussole">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.insuffle-academie.com/manager-boussole">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Manager Boussole - Du Leadership Directif à la Facilitation Transformante",
+      "description": "Formation professionnelle pour développer un leadership basé sur la facilitation et l'intelligence collective avec la méthode Boussole 4C",
+      "provider": {
+        "@type": "Organization",
+        "name": "Insuffle Académie",
+        "url": "https://www.insuffle-academie.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "410 RUE DE LA PRINCESSE TROUBETSKOI",
+          "addressLocality": "Deauville",
+          "postalCode": "14800",
+          "addressCountry": "FR"
+        },
+        "telephone": "+33980808962",
+        "email": "contact@insuffle-academie.com"
+      },
+      "courseCode": "MANAGER-BOUSSOLE-2025",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "duration": "P3D",
+        "inLanguage": "fr"
+      },
+      "teaches": [
+        "Leadership collaboratif",
+        "Facilitation en management",
+        "Intelligence collective",
+        "Animation d'équipe",
+        "Boussole 4C",
+        "Posture de manager facilitateur"
+      ],
+      "educationalLevel": "Managers et Leaders d'équipe",
+      "timeRequired": "PT21H"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #8E2183;
+            --secondary: #FFD466;
+            --accent: #FFC0CB;
+            --light: #FFFFFF;
+            --dark: #333333;
+            --grey: #F5F5F5;
+            --game-purple: #9c27b0;
+            --game-blue: #2196f3;
+            --game-green: #4caf50;
+            --game-orange: #ff9800;
+            --game-red: #f44336;
+            --game-gold: #ffd700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--game-purple) 100%);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .nav-logo {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-cta {
+            background-color: var(--game-gold);
+            color: var(--dark) !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: var(--light);
+            padding: 100px 0 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '🧭';
+            position: absolute;
+            font-size: 400px;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%);
+            color: var(--dark);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--game-gold);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--game-purple) 100%);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(142, 33, 131, 0.3);
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(142, 33, 131, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--light);
+            color: var(--light);
+        }
+        
+        .btn-outline:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+        
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .info-card {
+            background: var(--light);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        
+        .info-card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Compass Section */
+        .compass-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .compass-card {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .compass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        
+        .compass-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .compass-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compass-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+        
+        .compass-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--game-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Program Section */
+        .program {
+            background: linear-gradient(135deg, var(--grey) 0%, var(--light) 100%);
+        }
+        
+        .program-day {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .program-day h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .program-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .program-module {
+            background: linear-gradient(135deg, var(--grey) 0%, var(--light) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--game-blue);
+        }
+        
+        .program-module h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .program-module ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .program-module li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+        
+        .program-module li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--game-blue);
+            font-weight: bold;
+        }
+        
+        .program-time {
+            display: inline-block;
+            background: var(--game-gold);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--game-purple) 100%);
+            color: var(--light);
+        }
+        
+        .testimonials .section-title {
+            color: var(--light);
+        }
+        
+        .testimonials .section-subtitle {
+            color: var(--game-gold);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--game-gold);
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background: var(--light);
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, var(--grey) 0%, var(--light) 100%);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .price-old {
+            font-size: 2rem;
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 20px;
+        }
+        
+        .price-details {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .price-includes {
+            text-align: left;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid var(--grey);
+        }
+        
+        .price-includes h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .price-includes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .price-includes li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .price-includes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--game-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .promo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--game-red) 0%, var(--game-orange) 100%);
+            color: var(--light);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(244, 67, 54, 0.3);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: var(--light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '🚀';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section .section-title {
+            color: var(--light);
+        }
+        
+        .cta-buttons {
+            margin-top: 40px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--game-gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            color: var(--game-gold);
+            opacity: 1;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .compass-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .price {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <img src="https://www.insuffle-academie.com/img/Logo-Insuffle-Academie.png" alt="Insuffle Académie" class="nav-logo">
+                <ul class="nav-menu">
+                    <li><a href="#boussole">La Boussole 4C</a></li>
+                    <li><a href="#programme">Programme</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                    <li><a href="#tarifs">Tarifs</a></li>
+                    <li><a href="#contact" class="nav-cta">S'inscrire</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🧭 MANAGER BOUSSOLE</div>
+                <h1>Du Leadership Directif<br>à la Facilitation Transformante</h1>
+                <p class="hero-subtitle">Orientez sans imposer. Révélez sans contrôler.</p>
+                
+                <div>
+                    <a href="#contact" class="btn">Rejoindre la Formation</a>
+                    <a href="#programme" class="btn btn-outline">Découvrir le Programme</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">3+1</span>
+                        <span class="stat-label">Jours de transformation</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Outils de facilitation</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">70%</span>
+                        <span class="stat-label">De pratique terrain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifeste -->
+    <section style="background: linear-gradient(135deg, var(--grey) 0%, var(--light) 100%);">
+        <div class="container">
+            <div class="section-subtitle">Le Manifeste</div>
+            <h2 class="section-title">Le Management Traditionnel Montre Ses Limites</h2>
+            
+            <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 60px;">
+                <p style="font-size: 1.3rem; line-height: 1.9; color: #555; font-style: italic;">
+                    "Dans un monde où le management traditionnel montre ses limites, où les équipes aspirent à plus d'autonomie et de sens, une nouvelle race de leaders émerge : les <strong style="color: var(--primary);">Managers Boussoles</strong>. Ni contrôleurs, ni sauveurs, mais des guides qui révèlent les capacités dormantes des équipes. Êtes-vous prêt·e à devenir cette boussole qui oriente sans imposer ?"
+                </p>
+            </div>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">❌</div>
+                    <h3>Le Manager Contrôleur</h3>
+                    <p>Dicte, vérifie, corrige. Crée de la dépendance et bride l'initiative.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">⚠️</div>
+                    <h3>Le Manager Sauveur</h3>
+                    <p>Résout tous les problèmes. Empêche l'équipe de grandir et d'apprendre.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">✨</div>
+                    <h3>Le Manager Boussole</h3>
+                    <p>Guide, facilite, révèle. Libère l'intelligence collective et l'autonomie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Boussole 4C -->
+    <section id="boussole">
+        <div class="container">
+            <div class="section-subtitle">La Méthode</div>
+            <h2 class="section-title">La Boussole 4C : Vos 4 Orientations Managériales</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 60px;">
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">
+                    Comme une boussole indique le Nord sans dicter le chemin, le Manager Boussole maîtrise 4 orientations cardinales pour guider son équipe vers l'autonomie et la performance collective.
+                </p>
+            </div>
+            
+            <div class="compass-grid">
+                <div class="compass-card">
+                    <h3>🧠 CLARTÉ (Nord)</h3>
+                    <p style="margin-bottom: 20px; color: #666; font-weight: 600;">Donner du sens et une direction claire</p>
+                    <ul>
+                        <li>Définir et communiquer une intention claire</li>
+                        <li>Créer un cadre sécurisant qui libère l'autonomie</li>
+                        <li>Formuler des objectifs inspirants</li>
+                        <li>Transformer la vision en futur désiré collectif</li>
+                        <li>Poser des règles du jeu qui responsabilisent</li>
+                    </ul>
+                </div>
+                
+                <div class="compass-card">
+                    <h3>🤝 COLLABORATION (Est)</h3>
+                    <p style="margin-bottom: 20px; color: #666; font-weight: 600;">Faire émerger l'intelligence collective</p>
+                    <ul>
+                        <li>Animer des réunions collaboratives productives</li>
+                        <li>Faciliter la prise de décision collective</li>
+                        <li>Créer les conditions de la co-construction</li>
+                        <li>Gérer les dynamiques de groupe</li>
+                        <li>Développer la sécurité psychologique</li>
+                    </ul>
+                </div>
+                
+                <div class="compass-card">
+                    <h3>💪 CAPACITATION (Sud)</h3>
+                    <p style="margin-bottom: 20px; color: #666; font-weight: 600;">Développer l'autonomie et la confiance</p>
+                    <ul>
+                        <li>Adopter une posture basse qui révèle le potentiel</li>
+                        <li>Pratiquer le questionnement puissant</li>
+                        <li>Déléguer en responsabilisant</li>
+                        <li>Développer la confiance comme socle</li>
+                        <li>Accompagner la montée en compétences</li>
+                    </ul>
+                </div>
+                
+                <div class="compass-card">
+                    <h3>🔄 CO-CRÉATION (Ouest)</h3>
+                    <p style="margin-bottom: 20px; color: #666; font-weight: 600;">Innover et transformer ensemble</p>
+                    <ul>
+                        <li>Concevoir des ateliers d'innovation efficaces</li>
+                        <li>Faciliter la résolution de problèmes complexes</li>
+                        <li>Accompagner le changement par l'intelligence collective</li>
+                        <li>Transformer les tensions en opportunités</li>
+                        <li>Créer une culture d'amélioration continue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Public visé -->
+    <section style="background: linear-gradient(135deg, var(--grey) 0%, var(--light) 100%);">
+        <div class="container">
+            <div class="section-subtitle">Pour qui ?</div>
+            <h2 class="section-title">Qui Peut Devenir Manager Boussole ?</h2>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">👔</div>
+                    <h3>Managers Opérationnels</h3>
+                    <p>Vous sentez les limites du management traditionnel et cherchez une approche plus collaborative</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">📊</div>
+                    <h3>Chefs de Projet</h3>
+                    <p>Vous voulez mobiliser vraiment vos équipes au-delà du simple suivi de tâches</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">⚖️</div>
+                    <h3>Managers Intermédiaires</h3>
+                    <p>Coincés entre le marteau et l'enclume, vous cherchez une posture d'équilibre</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🎯</div>
+                    <h3>Dirigeants</h3>
+                    <p>Vous voulez insuffler une culture collaborative dans votre organisation</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">👥</div>
+                    <h3>RH & Transformation</h3>
+                    <p>Vous accompagnez le changement et souhaitez développer un leadership facilitateur</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🌳</div>
+                    <h3>Managers de Managers</h3>
+                    <p>Vous voulez essaimer de nouvelles pratiques managériales dans vos équipes</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; padding: 40px; background: var(--light); border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.5rem; text-align: center;">✅ Prérequis</h3>
+                <ul style="list-style: none; padding: 0; max-width: 700px; margin: 0 auto;">
+                    <li style="padding: 10px 0; padding-left: 40px; position: relative; color: #555;">
+                        <span style="position: absolute; left: 0; color: var(--game-green); font-weight: bold; font-size: 1.3rem;">✓</span>
+                        Avoir une équipe à manager (ou être sur le point d'en avoir une)
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 40px; position: relative; color: #555;">
+                        <span style="position: absolute; left: 0; color: var(--game-green); font-weight: bold; font-size: 1.3rem;">✓</span>
+                        Être prêt·e à remettre en question ses pratiques actuelles
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 40px; position: relative; color: #555;">
+                        <span style="position: absolute; left: 0; color: var(--game-green); font-weight: bold; font-size: 1.3rem;">✓</span>
+                        Avoir le courage de lâcher le contrôle pour gagner en impact
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 40px; position: relative; color: #555;">
+                        <span style="position: absolute; left: 0; color: var(--game-green); font-weight: bold; font-size: 1.3rem;">✓</span>
+                        Curiosité pour l'humain et les dynamiques collectives
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 40px; position: relative; color: #555; font-weight: 600;">
+                        <span style="position: absolute; left: 0; color: var(--game-green); font-weight: bold; font-size: 1.3rem;">✓</span>
+                        Aucune expérience en facilitation requise (on vous forme !)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--PROGRAMME CONTINUE IN NEXT COMMENT DUE TO LENGTH-->
+
+    <!-- Programme détaillé -->
+    <section class="program" id="programme">
+        <div class="container">
+            <div class="section-subtitle">Le Parcours de Transformation</div>
+            <h2 class="section-title">Programme Détaillé sur 3 Jours + Consolidation</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 60px;">
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">
+                    La formation suit la méthodologie signature d'Insuffle avec ses <strong>4 Phases : Observer, Désirer, Concevoir, Transformer</strong>. Une approche <strong>Tête-Corps-Cœur</strong> avec 70% de pratique et 30% de théorie.
+                </p>
+            </div>
+            
+            <!-- JOUR 1 -->
+            <article class="program-day">
+                <h3>🔴 JOUR 1 : OBSERVER & DÉSIRER</h3>
+                <p class="program-subtitle">"Prendre conscience et rêver autrement" - 9h-18h</p>
+                
+                <div class="program-module">
+                    <span class="program-time">9h00 - 9h45</span>
+                    <h4>🎬 OUVERTURE : Le Réveil du Manager</h4>
+                    <ul>
+                        <li><strong>Activité immersive :</strong> "La Réunion d'Enfer" - Vivez la pire réunion possible</li>
+                        <li>Jeu de rôle immersif (15 min de chaos organisé)</li>
+                        <li>Débriefing : "Combien de ces dysfonctionnements sont présents dans vos réunions ?"</li>
+                        <li>Ice breaker : "Votre pire et votre meilleure expérience de management"</li>
+                        <li>Constitution des triades de co-développement</li>
+                        <li>Présentation de la Boussole 4C et des 4 Phases Insuffle</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">9h45 - 12h30</span>
+                    <h4>🔍 PHASE OBSERVER (2h45)</h4>
+                    <p style="font-weight: 600; color: var(--primary); margin-bottom: 15px;">"Où j'en suis vraiment dans mon management ?"</p>
+                    <ul>
+                        <li><strong>Atelier "Mon Profil de Manager Actuel"</strong> - Auto-évaluation sur les 4 orientations</li>
+                        <li>Cartographie de ses forces et axes de développement</li>
+                        <li>Partage en triade : "Ce que je fais bien / Ce que je veux transformer"</li>
+                        <li><strong>Apport théorique :</strong> L'Évolution du Management (contrôleur → facilitateur)</li>
+                        <li>Les 3 postures managériales (Expert, Animateur, Facilitateur)</li>
+                        <li><strong>Atelier débat :</strong> "Croyances Limitantes vs Croyances Portantes"</li>
+                        <li>Exercice physique symbolique de "lâcher prise"</li>
+                        <li><strong>Atelier "Radiographie de Mon Équipe"</strong> - Mapping détaillé</li>
+                        <li>Identification de cas concrets à travailler durant la formation</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">14h00 - 17h30</span>
+                    <h4>✨ PHASE DÉSIRER (3h30)</h4>
+                    <p style="font-weight: 600; color: var(--primary); margin-bottom: 15px;">"Quel manager je veux devenir ?"</p>
+                    <ul>
+                        <li><strong>Atelier immersif :</strong> "Dans 1 An, Mon Équipe au Top" - Projection guidée</li>
+                        <li>Question puissante : "Si votre équipe était au top dans un an, à quoi les autres pourraient-ils le voir ?"</li>
+                        <li>Écriture créative : "Le Journal de Bord de Mon Équipe Idéale"</li>
+                        <li><strong>Apport :</strong> Le Concept de Futur Désiré (vision vs objectif)</li>
+                        <li><strong>Atelier "La Boussole de Mon Équipe Idéale"</strong> - Vision des 4 orientations</li>
+                        <li><strong>Cas pratique :</strong> Transformation d'un problème managérial actuel</li>
+                        <li>Travail en sous-groupes sur cas réels apportés</li>
+                        <li><strong>Clôture inspirante :</strong> "Ma Promesse à Mon Équipe" - Engagement personnel</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <!-- JOUR 2 -->
+            <article class="program-day">
+                <h3>🟠 JOUR 2 : CONCEVOIR</h3>
+                <p class="program-subtitle">"Construire ma boîte à outils de Manager Boussole" - 9h-18h</p>
+                
+                <div class="program-module">
+                    <span class="program-time">9h00 - 10h30</span>
+                    <h4>🧠 ORIENTATION NORD : CLARTÉ</h4>
+                    <ul>
+                        <li><strong>Apport :</strong> Le Cadre Facilitant (Clarté vs Contrôle)</li>
+                        <li>Neurosciences de la sécurité psychologique (Amy Edmondson)</li>
+                        <li><strong>Atelier pratique :</strong> "Définir l'Intention de Mon Équipe"</li>
+                        <li>Canvas : Vision, Mission, Valeurs applicables au quotidien</li>
+                        <li><strong>Exercice :</strong> Transformer 3 objectifs "SMART" en objectifs inspirants</li>
+                        <li><strong>Mise en situation :</strong> Communiquer une direction claire en 3 minutes</li>
+                        <li>Feedback croisé en triade (appréciatif + axes de progrès)</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">10h45 - 12h30</span>
+                    <h4>🤝 ORIENTATION EST : COLLABORATION</h4>
+                    <ul>
+                        <li><strong>Apport :</strong> Les 3 Modes de Décision Collective (autocratique, consensus, consentement)</li>
+                        <li>Quand utiliser chaque mode ? Exercice de discernement</li>
+                        <li><strong>Démonstration live :</strong> Animation d'un atelier collaboratif en 20 minutes</li>
+                        <li>Décryptage : Posture, techniques, gestion du temps</li>
+                        <li><strong>Pratique intense :</strong> Chaque participant anime 10 min d'atelier</li>
+                        <li>Design d'une séquence collaborative sur un sujet réel</li>
+                        <li>Feedback immédiat du groupe + formateur</li>
+                        <li><strong>Boîte à outils :</strong> 10 formats collaboratifs (World Café, 1-2-4-All, etc.)</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">14h00 - 15h30</span>
+                    <h4>💪 ORIENTATION SUD : CAPACITATION</h4>
+                    <ul>
+                        <li><strong>Apport :</strong> La Posture Basse du Leader (Servant Leadership)</li>
+                        <li>Différence entre délégation de tâches et délégation de pouvoir</li>
+                        <li><strong>Atelier :</strong> "Le Questionnement Puissant"</li>
+                        <li>Les 5 types de questions qui font grandir</li>
+                        <li>Entraînement : transformer 10 conseils en questions puissantes</li>
+                        <li><strong>Jeu de rôle :</strong> Coaching d'un collaborateur en difficulté</li>
+                        <li><strong>Outil :</strong> La Matrice de Délégation Responsabilisante</li>
+                        <li>Application sur 3 missions de votre équipe actuelle</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">15h45 - 17h30</span>
+                    <h4>🔄 ORIENTATION OUEST : CO-CRÉATION</h4>
+                    <ul>
+                        <li><strong>Apport :</strong> Design Thinking appliqué au Management</li>
+                        <li>Faciliter l'innovation et la résolution de problèmes complexes</li>
+                        <li><strong>Atelier immersif :</strong> "Innover en Équipe"</li>
+                        <li>Facilitation d'un mini-sprint créatif sur un défi réel</li>
+                        <li><strong>Techniques avancées :</strong> Gestion des tensions et des conflits</li>
+                        <li>La Communication Non Violente appliquée au management</li>
+                        <li>Transformer une tension en opportunité créative</li>
+                        <li><strong>Synthèse :</strong> Ma Boîte à Outils Manager Boussole complète</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <!-- JOUR 3 -->
+            <article class="program-day">
+                <h3>🟢 JOUR 3 : TRANSFORMER</h3>
+                <p class="program-subtitle">"Passer à l'action et ancrer les nouveaux comportements" - 9h-18h</p>
+                
+                <div class="program-module">
+                    <span class="program-time">9h00 - 10h30</span>
+                    <h4>🎯 Intégration & Plan d'Action</h4>
+                    <ul>
+                        <li><strong>Retour d'expérience :</strong> Partage des prises de conscience des 2 premiers jours</li>
+                        <li>Célébration des apprentissages en grand groupe</li>
+                        <li><strong>Atelier :</strong> "Mon Plan de Transformation 90 Jours"</li>
+                        <li>Définir 3 priorités d'évolution managériale</li>
+                        <li>Identifier les premiers ateliers à animer avec son équipe</li>
+                        <li><strong>Outil :</strong> La Stratégie des Petits Pas</li>
+                        <li>Identifier les alliés et les obstacles potentiels</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">10h45 - 12h30</span>
+                    <h4>🚀 Simulations Intensives</h4>
+                    <ul>
+                        <li><strong>Grand atelier :</strong> Chaque participant facilite une réunion complète (30 min)</li>
+                        <li>Scénarios réalistes basés sur les situations apportées</li>
+                        <li>Le groupe joue le rôle de l'équipe (avec résistances programmées !)</li>
+                        <li>Feedback à 360° : Pairs + Formateur</li>
+                        <li>Vidéo possible pour auto-analyse</li>
+                        <li><strong>Débriefing approfondi :</strong> Ce qui a fonctionné, ce qui est à ajuster</li>
+                        <li>Identification des patterns personnels à transformer</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">14h00 - 15h30</span>
+                    <h4>🛡️ Gérer les Situations Difficiles</h4>
+                    <ul>
+                        <li><strong>Apport :</strong> Les 7 Pièges du Manager Facilitateur</li>
+                        <li>Comment éviter de retomber dans les vieux réflexes</li>
+                        <li><strong>Atelier :</strong> Gestion des Résistances et Objections</li>
+                        <li>Jeux de rôle sur situations critiques (collaborateur agressif, équipe mutique, etc.)</li>
+                        <li>Techniques de régulation des dynamiques de groupe</li>
+                        <li><strong>Cas pratiques :</strong> Résolution de situations réelles apportées</li>
+                        <li>Co-développement en triades sur défis managériaux concrets</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">15h45 - 17h30</span>
+                    <h4>🎓 Clôture & Engagement</h4>
+                    <ul>
+                        <li><strong>Rituel de clôture :</strong> "Ce que j'ai transformé en moi"</li>
+                        <li>Partage en cercle des transformations opérées</li>
+                        <li><strong>Contrat d'Expérimentation :</strong> Mes 3 premiers ateliers à animer</li>
+                        <li>Définition précise de ce qui sera testé dans les 30 jours</li>
+                        <li><strong>Constitution des Triades d'Accountability</strong></li>
+                        <li><strong>Remise du Kit Manager Boussole :</strong> 📔 Carnet + 🧭 30+ cartes + 📜 Certificat</li>
+                        <li>Présentation du J+45 et de la communauté</li>
+                        <li><strong>Célébration finale :</strong> Vous êtes maintenant des Managers Boussoles !</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <!-- JOUR +45 -->
+            <article class="program-day" style="border: 3px solid var(--game-gold);">
+                <h3>🔵 JOUR +45 : CONSOLIDATION & APPROFONDISSEMENT</h3>
+                <p class="program-subtitle">"Ancrer durablement la transformation" - 9h-17h</p>
+                
+                <div class="program-module">
+                    <span class="program-time">9h00 - 12h00</span>
+                    <h4>📊 Retours d'Expérience Terrain</h4>
+                    <ul>
+                        <li><strong>Tour de table enrichi :</strong> "Ce qui a marché, ce qui a coincé"</li>
+                        <li>Partage des expérimentations réalisées depuis 45 jours</li>
+                        <li>Analyse collective des succès et des difficultés</li>
+                        <li><strong>Atelier de Co-développement :</strong> Résolution de cas concrets</li>
+                        <li>3 managers présentent une problématique actuelle</li>
+                        <li>Intelligence collective pour trouver des solutions</li>
+                        <li><strong>Ajustements & Approfondissements :</strong> Modules sur mesure selon besoins</li>
+                    </ul>
+                </div>
+                
+                <div class="program-module">
+                    <span class="program-time">14h00 - 17h00</span>
+                    <h4>🎯 Consolidation & Engagement Long Terme</h4>
+                    <ul>
+                        <li><strong>Masterclass :</strong> Approfondissement d'une orientation au choix</li>
+                        <li>Techniques avancées de facilitation managériale</li>
+                        <li><strong>Plan d'Action 6 Mois :</strong> Vision à moyen terme</li>
+                        <li>Définir sa trajectoire de Manager Boussole</li>
+                        <li>Stratégie pour essaimer les pratiques dans son organisation</li>
+                        <li><strong>Rituel de clôture définitif :</strong> "Ma nouvelle identité managériale"</li>
+                        <li><strong>Lancement de la Communauté des Managers Boussoles</strong></li>
+                        <li>Présentation des ressources (co-dev mensuel, bibliothèque, meetups)</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Pédagogie -->
+    <section style="background: var(--light);">
+        <div class="container">
+            <div class="section-subtitle">Notre Approche</div>
+            <h2 class="section-title">La Pédagogie Insuffle : Tête-Corps-Cœur</h2>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">🧠</div>
+                    <h3>TÊTE - Concepts</h3>
+                    <p style="text-align: left; margin-top: 20px;">
+                        <strong>Ce que vous comprenez intellectuellement :</strong>
+                    </p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 15px;">
+                        <li style="padding: 5px 0;">→ Frameworks théoriques solides</li>
+                        <li style="padding: 5px 0;">→ Grilles de lecture actionnables</li>
+                        <li style="padding: 5px 0;">→ Recherches scientifiques récentes</li>
+                        <li style="padding: 5px 0;">→ Modèles mentaux transformés</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">💪</div>
+                    <h3>CORPS - Action</h3>
+                    <p style="text-align: left; margin-top: 20px;">
+                        <strong>Ce que vous expérimentez physiquement :</strong>
+                    </p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 15px;">
+                        <li style="padding: 5px 0;">→ 70% de pratique terrain</li>
+                        <li style="padding: 5px 0;">→ Mises en situation réelles</li>
+                        <li style="padding: 5px 0;">→ Manipulation d'outils tangibles</li>
+                        <li style="padding: 5px 0;">→ Ancrage corporel des apprentissages</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">❤️</div>
+                    <h3>CŒUR - Émotions</h3>
+                    <p style="text-align: left; margin-top: 20px;">
+                        <strong>Ce que vous ressentez et partagez :</strong>
+                    </p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 15px;">
+                        <li style="padding: 5px 0;">→ Connexions humaines créées</li>
+                        <li style="padding: 5px 0;">→ Vulnérabilité partagée</li>
+                        <li style="padding: 5px 0;">→ Feedback bienveillant et exigeant</li>
+                        <li style="padding: 5px 0;">→ Célébrations collectives</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; padding: 40px; background: linear-gradient(135deg, var(--grey) 0%, var(--light) 100%); border-radius: 20px; text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8rem;">✨ Le Trio Gagnant</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">
+                    Quand on active les 3 dimensions simultanément, l'apprentissage est profond et durable. C'est la signature d'Insuffle Académie.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="testimonials" id="temoignages">
+        <div class="container">
+            <div class="section-subtitle">Ils ont Osé le Changement</div>
+            <h2 class="section-title">Témoignages de Managers Boussoles</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Cette formation a littéralement transformé ma posture managériale. Je suis passé du manager qui a toutes les réponses au manager qui pose les bonnes questions. Mes équipes sont plus autonomes et engagées que jamais."
+                    </div>
+                    <div class="testimonial-author">Thomas L.</div>
+                    <div class="testimonial-role">Directeur Opérations, Tech Company</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "J'ai enfin trouvé une formation qui ne se contente pas de donner des outils, mais qui transforme profondément la façon de penser le management. La Boussole 4C est devenue mon référentiel quotidien."
+                    </div>
+                    <div class="testimonial-author">Sophie M.</div>
+                    <div class="testimonial-role">Manager d'Équipe, Secteur Bancaire</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Le format 3 jours + J+45 fait toute la différence. On ne nous abandonne pas après la formation. Les sessions de co-développement m'ont aidé à surmonter mes premiers obstacles et à vraiment ancrer les pratiques."
+                    </div>
+                    <div class="testimonial-author">Marc D.</div>
+                    <div class="testimonial-role">Chef de Projet Innovation</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Mes réunions d'équipe sont passées de corvées ennuyeuses à moments attendus et productifs. J'ai appris à créer un cadre qui libère l'intelligence collective plutôt que de tout contrôler."
+                    </div>
+                    <div class="testimonial-author">Léa B.</div>
+                    <div class="testimonial-role">Responsable RH</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "La puissance des triades de co-développement ! Avoir deux autres managers avec qui partager mes défis, mes doutes, mes réussites pendant 6 mois m'a permis de vraiment persévérer dans la transformation."
+                    </div>
+                    <div class="testimonial-author">Vincent R.</div>
+                    <div class="testimonial-role">Manager Commercial</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Insuffle Académie m'a donné le courage de lâcher prise sur le contrôle. Résultat : mon équipe prend plus d'initiatives, propose plus d'idées, et je suis beaucoup moins stressé !"
+                    </div>
+                    <div class="testimonial-author">Julie F.</div>
+                    <div class="testimonial-role">Directrice de Département</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formateur -->
+    <section style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="section-subtitle">Votre Accompagnateur</div>
+            <h2 class="section-title">Des Formateurs Praticiens-Facilitateurs</h2>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">💼</div>
+                    <h3>Expérience terrain</h3>
+                    <p>Managers et facilitateurs en activité qui vivent quotidiennement ce qu'ils enseignent</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🎓</div>
+                    <h3>Formation continue</h3>
+                    <p>Experts en intelligence collective, formés aux pédagogies actives et au leadership facilitateur</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🎯</div>
+                    <h3>Méthodologie rigoureuse</h3>
+                    <p>Maîtrise de la Boussole 4C et des 4 Phases Insuffle, avec approche Tête-Corps-Cœur</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">❤️</div>
+                    <h3>Authenticité</h3>
+                    <p>Posture de facilitateur plus que de sachant, partage d'expériences réelles et vulnérabilité assumée</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; font-style: italic; color: #666;">
+                <p>Nos formateurs ont managé des équipes pendant des années avant de devenir facilitateurs. Ils partagent leurs échecs autant que leurs succès, et vous accompagnent avec authenticité dans votre transformation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs & Infos Pratiques -->
+    <section class="pricing" id="tarifs">
+        <div class="container">
+            <div class="section-subtitle">Investissement</div>
+            <h2 class="section-title">Tarifs & Modalités</h2>
+            
+            <div class="pricing-card">
+                <div class="promo-badge">🎁 OFFRE DE LANCEMENT -30%</div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                    <span class="price-old">2 490€</span>
+                    <span class="price">1 743€</span>
+                </div>
+                <p class="price-details">HT / personne (tarif inter-entreprise)<br>Pour les 20 premiers inscrits - Code : <strong>PIONEER2025</strong></p>
+                
+                <div style="margin: 30px 0; padding: 20px; background: rgba(142, 33, 131, 0.1); border-radius: 15px;">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">📅 Format de la Formation</h4>
+                    <p style="color: #555;">
+                        <strong>3 jours consécutifs</strong> (21 heures) + <strong>1 jour de consolidation</strong> à J+45<br>
+                        📍 Deauville, Paris ou sur site client<br>
+                        👥 Groupes de 8 à 14 managers (idéal : 10-12)
+                    </p>
+                </div>
+                
+                <div style="margin: 30px 0; padding: 20px; background: rgba(255, 215, 0, 0.1); border-radius: 15px;">
+                    <h4 style="color: var(--game-orange); margin-bottom: 10px;">💼 Tarif Intra-Entreprise</h4>
+                    <p style="color: #555;">
+                        <strong>Sur devis</strong> (à partir de 8 participants)<br>
+                        Adapté à votre contexte et vos enjeux spécifiques
+                    </p>
+                </div>
+                
+                <div class="price-includes">
+                    <h4>✨ Ce Qui Est Inclus</h4>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                        <div>
+                            <h5 style="color: var(--primary); margin-bottom: 10px;">🎓 La Formation</h5>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 5px 0;">3 jours + J+45 (28h)</li>
+                                <li style="padding: 5px 0;">3 sessions de co-développement</li>
+                                <li style="padding: 5px 0;">Suivi en triades</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 style="color: var(--primary); margin-bottom: 10px;">🧭 Les Outils</h5>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 5px 0;">📔 Carnet Manager Boussole</li>
+                                <li style="padding: 5px 0;">🃏 Kit 30+ cartes facilitation</li>
+                                <li style="padding: 5px 0;">📜 Certificat Manager Facilitateur</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 style="color: var(--primary); margin-bottom: 10px;">🌐 La Communauté</h5>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 5px 0;">👥 Accès communauté (1 an)</li>
+                                <li style="padding: 5px 0;">📚 Bibliothèque ressources</li>
+                                <li style="padding: 5px 0;">🚀 Meetups trimestriels</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 20px; background: rgba(76, 175, 80, 0.1); border-radius: 15px;">
+                    <h4 style="color: var(--game-green); margin-bottom: 10px;">💰 Financement</h4>
+                    <p style="color: #555;">
+                        Formation éligible au <strong>CPF</strong>, <strong>OPCO</strong> et <strong>Plan de développement des compétences</strong>
+                    </p>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <a href="#contact" class="btn" style="font-size: 1.2rem; padding: 18px 50px;">Réserver Ma Place</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <div class="section-subtitle" style="color: var(--game-gold);">L'aventure commence ici</div>
+                <h2 class="section-title">Prêt·e à Devenir Manager Boussole ?</h2>
+                <p style="font-size: 1.2rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                    Rejoignez Manager Boussole et vivez une transformation managériale profonde et durable. Passez du contrôle à la facilitation, de la prescription à l'intelligence collective. Le monde a besoin de Managers Boussoles. Vos équipes méritent un Manager Boussole. Vous méritez de devenir Manager Boussole.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:contact@insuffle-academie.com?subject=Inscription Manager Boussole" class="btn">Rejoindre la Formation</a>
+                    <a href="tel:+33980808962" class="btn btn-outline">☎ 09 80 80 89 62</a>
+                </div>
+                
+                <div style="margin-top: 50px; padding: 40px; background: rgba(255,255,255,0.1); border-radius: 20px; backdrop-filter: blur(10px);">
+                    <h3 style="color: var(--game-gold); margin-bottom: 20px; font-size: 1.8rem;">🎯 En Résumé : Pourquoi Manager Boussole ?</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; text-align: left;">
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 15px;">✅ Transforme Vraiment</h4>
+                            <p style="opacity: 0.9;">Pas juste "forme" : transforme votre identité managériale en profondeur</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 15px;">✅ Rigueur & Pratique</h4>
+                            <p style="opacity: 0.9;">Concepts solides + 70% de pratique terrain = apprentissage durable</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 15px;">✅ Accompagnement Durée</h4>
+                            <p style="opacity: 0.9;">3 jours + J+45 + communauté + co-dev = on ne vous lâche pas !</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 15px;">✅ Méthodologie Éprouvée</h4>
+                            <p style="opacity: 0.9;">Boussole 4C × 4 Phases Insuffle = cadre cohérent et actionnable</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 15px;">✅ Crée du Lien</h4>
+                            <p style="opacity: 0.9;">Triades, communauté active, réseau de Managers Boussoles engagés</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 15px;">✅ Formateurs Authentiques</h4>
+                            <p style="opacity: 0.9;">Des managers-facilitateurs qui vivent ce qu'ils enseignent</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 40px; font-size: 0.95rem; opacity: 0.9;">
+                    Formation accessible aux personnes en situation de handicap.<br>
+                    Contactez-nous en amont pour adapter les modalités à vos besoins spécifiques.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Insuffle Académie</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle-academie.com">Notre approche</a></li>
+                        <li><a href="https://www.insuffle-academie.com#formations">Nos formations</a></li>
+                        <li><a href="https://www.insuffle-academie.com#testimonials">Témoignages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Nos formations</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle.com/formation/facilitation-bootcamp-formation-facilitation/">Facilitation Bootcamp</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-manager-facilitateur/">Manager Facilitateur</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-sketchnote/">Sketchnote</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-facilitation/">Les fondamentaux de la facilitation</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-intelligence-collective-facilitation/">Facilitation et intelligence collective</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Informations légales</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle-academie.com/mentions-legales">Mentions légales</a></li>
+                        <li><a href="https://www.insuffle-academie.com/politique-confidentialite">Politique de confidentialité</a></li>
+                        <li><a href="https://www.insuffle-academie.com/conditions-generales">Conditions générales</a></li>
+                        <li><a href="https://www.insuffle-academie.com/accessibilite">Accessibilité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <div class="footer-contact">
+                        <p><strong>Insuffle Académie</strong></p>
+                        <p>410 RUE DE LA PRINCESSE TROUBETSKOI</p>
+                        <p>14800 Deauville, France</p>
+                        <p>Tél: <a href="tel:+33980808962" style="color: var(--game-gold);">09 80 80 89 62</a></p>
+                        <p>Email: <a href="mailto:contact@insuffle-academie.com" style="color: var(--game-gold);">contact@insuffle-academie.com</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <img src="https://www.insuffle-academie.com/img/Logo-Insuffle-Academie.png" alt="Insuffle Académie" class="footer-logo">
+                <p class="copyright">© 2025 Insuffle Académie - Organisme de formation professionnelle certifié Qualiopi - MANAGER BOUSSOLE est une marque déposée - Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SEO Hidden Keywords -->
+    <div style="display:none;">
+        <p>formation manager facilitateur, manager boussole, leadership collaboratif, management participatif, intelligence collective manager, formation management deauville, boussole 4C, facilitation managériale, manager facilitateur normandie, formation leadership collaboratif, Insuffle Académie management, transformation managériale, posture de manager facilitateur</p>
+    </div>
+</body>
+</html>
