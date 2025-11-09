@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>FACILIT'ACADEMY | Insuffle Académie - Formation Facilitateur Gamifiée</title>
+    <meta name="description" content="FACILIT'ACADEMY par Insuffle Académie : La seule formation facilitateur 100% gamifiée en France. Devenez Facilitateur Légendaire en 2 jours avec badges, XP et quêtes immersives.">
+    <meta name="keywords" content="formation facilitateur, facilitation gamifiée, intelligence collective, FACILIT'ACADEMY, Insuffle Académie, formation facilitation deauville, apprentissage par le jeu, serious game facilitation">
+    <meta name="author" content="Insuffle Académie">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FACILIT'ACADEMY | Formation Facilitateur Gamifiée">
+    <meta property="og:description" content="Devenez Facilitateur Légendaire avec la seule formation 100% gamifiée. Badges, XP, quêtes et boss battles !">
+    <meta property="og:url" content="https://www.insuffle-academie.com/facilit-academy">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.insuffle-academie.com/facilit-academy">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "FACILIT'ACADEMY - Devenir Facilitateur Légendaire",
+      "description": "Formation professionnelle gamifiée pour maîtriser la facilitation et l'intelligence collective",
+      "provider": {
+        "@type": "Organization",
+        "name": "Insuffle Académie",
+        "url": "https://www.insuffle-academie.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "410 RUE DE LA PRINCESSE TROUBETSKOI",
+          "addressLocality": "Deauville",
+          "postalCode": "14800",
+          "addressCountry": "FR"
+        },
+        "telephone": "+33980808962",
+        "email": "contact@insuffle-academie.com"
+      },
+      "courseCode": "FACILIT-ACADEMY-2025",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "duration": "P2D",
+        "inLanguage": "fr"
+      },
+      "teaches": [
+        "Facilitation",
+        "Intelligence collective",
+        "Animation d'ateliers",
+        "Posture de facilitateur",
+        "Design de processus collaboratifs"
+      ],
+      "educationalLevel": "Débutant à Intermédiaire",
+      "timeRequired": "PT14H"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #8E2183;
+            --secondary: #FFD466;
+            --accent: #FFC0CB;
+            --light: #FFFFFF;
+            --dark: #333333;
+            --grey: #F5F5F5;
+            --game-purple: #9c27b0;
+            --game-blue: #2196f3;
+            --game-green: #4caf50;
+            --game-orange: #ff9800;
+            --game-red: #f44336;
+            --game-gold: #ffd700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--game-purple) 100%);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .nav-logo {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-cta {
+            background-color: var(--game-gold);
+            color: var(--dark) !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section - Gaming Style */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: var(--light);
+            padding: 100px 0 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '🎮';
+            position: absolute;
+            font-size: 400px;
+            opacity: 0.05;
+            top: -50px;
+            right: -100px;
+            z-index: 1;
+        }
+        
+        .hero::after {
+            content: '⚡';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.05;
+            bottom: -50px;
+            left: -80px;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--game-gold);
+            font-weight: 600;
+        }
+        
+        .hero-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,215,0,0.3);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--game-gold);
+            display: block;
+            text-shadow: 0 0 20px rgba(255,215,0,0.5);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        
+        /* Gaming Elements */
+        .game-container {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--light);
+            padding: 60px;
+            border-radius: 20px;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .game-container h3 {
+            position: relative;
+            z-index: 2;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--game-gold);
+        }
+        
+        .game-container p {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Badges Grid */
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .badge-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .badge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+        
+        .badge-card.badge-1::before { background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); }
+        .badge-card.badge-2::before { background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); }
+        .badge-card.badge-3::before { background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%); }
+        .badge-card.badge-4::before { background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%); }
+        .badge-card.badge-5::before { background: linear-gradient(90deg, #fa709a 0%, #fee140 100%); }
+        .badge-card.badge-6::before { background: linear-gradient(90deg, #30cfd0 0%, #330867 100%); }
+        
+        .badge-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: var(--game-gold);
+        }
+        
+        .badge-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .badge-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .badge-card ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .badge-card ul li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+        }
+        
+        .badge-card ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: var(--game-gold);
+        }
+        
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .info-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border-color: var(--game-gold);
+        }
+        
+        .info-card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .info-card p, .info-card ul {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-card ul li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .info-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--game-green);
+            font-weight: bold;
+        }
+        
+        /* Level System */
+        .levels-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .level-card {
+            background: linear-gradient(135deg, var(--game-purple) 0%, var(--game-blue) 100%);
+            color: var(--light);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .level-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        .level-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--game-gold);
+            text-shadow: 0 0 20px rgba(255,215,0,0.5);
+        }
+        
+        .level-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        /* Program Modules */
+        .modules-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .day-separator {
+            background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%);
+            color: var(--dark);
+            padding: 25px 40px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 60px 0 40px;
+            box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .day-separator::before {
+            content: '⚡';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .day-separator::after {
+            content: '🎮';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .module {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--game-gold);
+        }
+        
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--grey);
+        }
+        
+        .module-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+        
+        .module-title h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .module-duration {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .module-content h4 {
+            color: var(--game-purple);
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        
+        .module-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .module-content ul li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .module-content ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: var(--game-gold);
+        }
+        
+        .quest-box {
+            background: linear-gradient(135deg, var(--game-blue) 0%, var(--game-purple) 100%);
+            color: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 10px 25px rgba(33,150,243,0.3);
+        }
+        
+        .quest-box h4 {
+            color: var(--game-gold);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .quest-box p, .quest-box ul li {
+            color: var(--light);
+            opacity: 0.95;
+        }
+        
+        .boss-box {
+            background: linear-gradient(135deg, var(--game-red) 0%, var(--game-orange) 100%);
+            color: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 10px 25px rgba(244,67,54,0.3);
+            border: 3px solid var(--game-gold);
+        }
+        
+        .boss-box h4 {
+            color: var(--game-gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: var(--light);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '🏆';
+            position: absolute;
+            font-size: 500px;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--game-gold);
+            box-shadow: 0 5px 20px rgba(255,215,0,0.3);
+        }
+        
+        .btn:hover {
+            background: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.5);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid var(--light);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--game-gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--game-gold);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .module-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .game-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="https://www.insuffle-academie.com">
+                    <img src="https://www.insuffle-academie.com/img/Logo-Insuffle-Academie.png" alt="Insuffle Académie Logo" class="nav-logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#informations">La Quête</a></li>
+                    <li><a href="#badges">Les 6 Badges</a></li>
+                    <li><a href="#systeme">Système de Jeu</a></li>
+                    <li><a href="#programme">Programme</a></li>
+                    <li><a href="#contact" class="nav-cta">Rejoindre l'Académie</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🏆 LA SEULE FORMATION 100% GAMIFIÉE EN FRANCE 🏆</div>
+                <div class="hero-emoji">🎮</div>
+                <h1>FACILIT'ACADEMY</h1>
+                <p class="hero-subtitle">La Quête du Facilitateur Légendaire</p>
+                <p class="hero-description">
+                    Pendant 2 jours, vous n'êtes plus un simple participant. Vous devenez un <strong>Apprenti Facilitateur</strong> en quête des 6 badges légendaires qui vous permettront d'atteindre le rang ultime de <strong>Facilitateur Légendaire</strong> 🏆
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Jours d'aventure</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Badges à débloquer</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Niveaux à franchir</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Power-Ups</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Narrative -->
+    <section style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="game-container">
+                <h3>Bienvenue à la FACILIT'ACADEMY</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;">
+                    L'académie secrète qui forme les facilitateurs les plus puissants du monde. Votre mission, si vous l'acceptez : <strong>maîtriser l'art ancestral de la facilitation et libérer l'intelligence collective dormante dans les groupes.</strong>
+                </p>
+                <p style="font-size: 1.3rem; font-weight: 600; color: var(--game-gold);">
+                    Êtes-vous prêt·e à devenir un Facilitateur Légendaire ? ⚡
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informations Générales -->
+    <section id="informations">
+        <div class="container">
+            <div class="section-subtitle">Qui peut rejoindre l'Académie ?</div>
+            <h2 class="section-title">Informations Générales</h2>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">👥</div>
+                    <h3>Public visé</h3>
+                    <ul>
+                        <li>Managers et leaders d'équipe</li>
+                        <li>Coachs agiles et Scrum Masters</li>
+                        <li>Chefs de projet</li>
+                        <li>RH et formateurs</li>
+                        <li>Consultants</li>
+                        <li>Toute personne passionnée par l'humain et les dynamiques de groupe</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">✅</div>
+                    <h3>Prérequis pour l'Académie</h3>
+                    <ul>
+                        <li>Curiosité insatiable pour l'intelligence humaine</li>
+                        <li>Envie d'expérimenter et de jouer</li>
+                        <li>Ouverture d'esprit et bienveillance</li>
+                        <li>Aucune expérience en facilitation requise !</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Effectif de la Guilde</h3>
+                    <ul>
+                        <li>Minimum : 8 apprentis facilitateurs</li>
+                        <li>Maximum : 16 apprentis</li>
+                        <li>Idéal : 12 participants</li>
+                        <li>Organisation en équipes de 3-4 pour les quêtes</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">⏱️</div>
+                    <h3>Durée de la Quête</h3>
+                    <ul>
+                        <li>2 jours intenses (14 heures d'aventure)</li>
+                        <li>Présentiel à Deauville ou sur site</li>
+                        <li>Horaires : 9h00-12h30 / 14h00-17h30</li>
+                        <li>Format : 100% immersif et gamifié</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">♿</div>
+                    <h3>Accessibilité</h3>
+                    <p>Formation accessible à tous les héros, y compris les personnes en situation de handicap. Contactez notre Maître de Guilde en amont pour adapter les quêtes à vos besoins.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">💰</div>
+                    <h3>Trésor requis</h3>
+                    <ul>
+                        <li>Tarif sur devis</li>
+                        <li>Éligible CPF et OPCO</li>
+                        <li>Plan de développement des compétences</li>
+                        <li>Carnet de l'Apprenti inclus</li>
+                        <li>Kit du Facilitateur offert</li>
+                        <li>Accès à la Guilde post-formation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Les 6 Badges Légendaires -->
+    <section id="badges" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="section-subtitle">Objectifs pédagogiques</div>
+            <h2 class="section-title">Les 6 Badges Légendaires à Débloquer</h2>
+            <p class="section-description">Chaque badge représente une compétence clé du facilitateur. Collectionnez-les tous pour devenir un Facilitateur Légendaire !</p>
+            
+            <div class="badges-grid">
+                <div class="badge-card badge-1">
+                    <div class="badge-icon">🎯</div>
+                    <h3>Badge 1 : Maître du Cadre</h3>
+                    <ul>
+                        <li>Définir une intention claire et puissante pour un atelier</li>
+                        <li>Poser un cadre sécurisant pour l'intelligence collective</li>
+                        <li>Créer un contrat d'apprentissage avec le groupe</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card badge-2">
+                    <div class="badge-icon">👂</div>
+                    <h3>Badge 2 : Grand Écouteur</h3>
+                    <ul>
+                        <li>Pratiquer l'écoute active et générative</li>
+                        <li>Poser des questions puissantes qui ouvrent le champ des possibles</li>
+                        <li>Reformuler et synthétiser avec justesse</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card badge-3">
+                    <div class="badge-icon">🎨</div>
+                    <h3>Badge 3 : Architecte de Processus</h3>
+                    <ul>
+                        <li>Designer un processus collaboratif adapté à un objectif</li>
+                        <li>Séquencer les étapes d'un atelier avec fluidité</li>
+                        <li>Choisir les outils et méthodes pertinents</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card badge-4">
+                    <div class="badge-icon">🛡️</div>
+                    <h3>Badge 4 : Gardien de l'Énergie</h3>
+                    <ul>
+                        <li>Lire et réguler l'énergie du groupe</li>
+                        <li>Gérer les dynamiques complexes (tensions, résistances, silence)</li>
+                        <li>Créer un espace de sécurité psychologique</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card badge-5">
+                    <div class="badge-icon">🗺️</div>
+                    <h3>Badge 5 : Guide du Collectif</h3>
+                    <ul>
+                        <li>Faciliter l'émergence de l'intelligence collective</li>
+                        <li>Accompagner la prise de décision en groupe</li>
+                        <li>Faire émerger des solutions créatives</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card badge-6">
+                    <div class="badge-icon">🌊</div>
+                    <h3>Badge 6 : Maître du Flow</h3>
+                    <ul>
+                        <li>Animer avec aisance et présence</li>
+                        <li>S'adapter à l'inattendu avec agilité</li>
+                        <li>Incarner la posture du facilitateur</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <div style="background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%); display: inline-block; padding: 30px 60px; border-radius: 20px; box-shadow: 0 10px 30px rgba(255,215,0,0.3);">
+                    <div style="font-size: 4rem; margin-bottom: 10px;">🏆</div>
+                    <h3 style="font-size: 2rem; color: var(--dark); margin-bottom: 10px;">Niveau Final Débloqué</h3>
+                    <p style="font-size: 1.5rem; font-weight: 800; color: var(--dark);">FACILITATEUR LÉGENDAIRE</p>
+                    <p style="color: var(--dark); margin-top: 15px;">Capable de concevoir et animer des ateliers collaboratifs transformants qui révèlent le potentiel des collectifs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Système de Gamification -->
+    <section id="systeme">
+        <div class="container">
+            <div class="section-subtitle">Ce qui rend cette formation unique</div>
+            <h2 class="section-title">Le Système de Jeu Complet</h2>
+            <p class="section-description">Une mécanique de gamification complète qui rend l'apprentissage immersif, mémorable et ultra-engageant !</p>
+            
+            <div class="game-container">
+                <h3>🎮 Mécanique de Gamification Complète</h3>
+                
+                <div style="margin-top: 30px;">
+                    <h4 style="color: var(--game-gold); font-size: 1.5rem; margin-bottom: 20px;">Progression par Niveaux</h4>
+                    <div class="levels-container">
+                        <div class="level-card">
+                            <div class="level-number">1</div>
+                            <div class="level-name">Apprenti Facilitateur</div>
+                            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">Découverte</p>
+                        </div>
+                        <div class="level-card">
+                            <div class="level-number">2</div>
+                            <div class="level-name">Facilitateur Initié</div>
+                            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">Expérimentation</p>
+                        </div>
+                        <div class="level-card">
+                            <div class="level-number">3</div>
+                            <div class="level-name">Facilitateur Confirmé</div>
+                            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">Pratique guidée</p>
+                        </div>
+                        <div class="level-card">
+                            <div class="level-number">4</div>
+                            <div class="level-name">Maître Facilitateur</div>
+                            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">Autonomie</p>
+                        </div>
+                        <div class="level-card">
+                            <div class="level-number">5</div>
+                            <div class="level-name">Facilitateur Légendaire</div>
+                            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">Mastery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-cards" style="margin-top: 50px;">
+                <div class="info-card">
+                    <div class="info-card-icon">⭐</div>
+                    <h3>Système de XP</h3>
+                    <ul>
+                        <li>Gagner des XP en participant activement</li>
+                        <li>XP bonus pour l'entraide et la créativité</li>
+                        <li>XP team pour les victoires collectives</li>
+                        <li>Objectif : 1000 XP pour devenir Légendaire</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🎯</div>
+                    <h3>Quêtes & Défis</h3>
+                    <ul>
+                        <li>Quêtes principales structurantes</li>
+                        <li>Quêtes secondaires bonus optionnelles</li>
+                        <li>Boss Battles : situations complexes</li>
+                        <li>Quêtes éclair chronométrées</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">⚡</div>
+                    <h3>Power-Ups</h3>
+                    <ul>
+                        <li>20+ outils de facilitation à débloquer</li>
+                        <li>Chaque outil = une carte à collectionner</li>
+                        <li>Constitution de votre "deck de facilitation"</li>
+                        <li>Utilisables immédiatement en contexte pro</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🤝</div>
+                    <h3>Mode Coopératif</h3>
+                    <ul>
+                        <li>Équipes de 3-4 (votre "Guilde")</li>
+                        <li>Challenges inter-guildes bienveillants</li>
+                        <li>Entraide récompensée</li>
+                        <li>"Tous ensemble ou pas du tout"</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">📖</div>
+                    <h3>Scénarisation Narrative</h3>
+                    <ul>
+                        <li>Fil rouge narratif immersif sur 2 jours</li>
+                        <li>Personnages guides (Le Maître, Le Sage...)</li>
+                        <li>Événements surprises</li>
+                        <li>Révélations progressives</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🎁</div>
+                    <h3>Easter Eggs & Surprises</h3>
+                    <ul>
+                        <li>Secrets cachés dans la formation</li>
+                        <li>Récompenses surprises pour les curieux</li>
+                        <li>Défis bonus débloqués par découverte</li>
+                        <li>L'inattendu fait partie du jeu !</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approche Pédagogique -->
+    <section style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="section-subtitle">Notre philosophie</div>
+            <h2 class="section-title">L'Approche Insuffle dans le Game Design</h2>
+            
+            <div class="info-cards">
+                <div class="info-card" style="border-top: 5px solid var(--game-purple);">
+                    <div class="info-card-icon">🧠</div>
+                    <h3>TÊTE - Mécanique de Jeu Intelligente</h3>
+                    <ul>
+                        <li>Concepts théoriques intégrés aux quêtes</li>
+                        <li>Apprentissage par la résolution de problèmes</li>
+                        <li>Débriefings structurés après chaque niveau</li>
+                        <li>Cadre méthodologique solide</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card" style="border-top: 5px solid var(--game-orange);">
+                    <div class="info-card-icon">💪</div>
+                    <h3>CORPS - Gameplay Actif</h3>
+                    <ul>
+                        <li>Bouger, manipuler, créer physiquement</li>
+                        <li>Jeux de rôles et simulations immersives</li>
+                        <li>Énergie et mouvement constants</li>
+                        <li>Learning by doing jusqu'au bout</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card" style="border-top: 5px solid var(--game-red);">
+                    <div class="info-card-icon">❤️</div>
+                    <h3>CŒUR - Émotions & Engagement</h3>
+                    <ul>
+                        <li>Plaisir et fun garantis</li>
+                        <li>Tensions et victoires partagées</li>
+                        <li>Célébrations collectives</li>
+                        <li>Connexions humaines profondes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Détaillé -->
+    <section id="programme">
+        <div class="container">
+            <div class="section-subtitle">La Quête complète</div>
+            <h2 class="section-title">Programme Jour par Jour</h2>
+            
+            <div class="game-container">
+                <h3>⚔️ Votre Aventure sur 2 Jours</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    À travers des quêtes immersives, des boss battles épiques et des défis collaboratifs, vous allez développer les super-pouvoirs de la facilitation. Chaque activité est conçue comme une quête de jeu vidéo : objectif clair, défis progressifs, récompenses et débriefings stratégiques.
+                </p>
+            </div>
+            
+            <div class="modules-container">
+                <!-- JOUR 1 -->
+                <div class="day-separator">
+                    ⚡ JOUR 1 : L'ÉVEIL DU FACILITATEUR ⚡
+                </div>
+                
+                <!-- Module 1 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">🎬</div>
+                        <div class="module-title">
+                            <h3>Cinématique d'Ouverture : Bienvenue à l'Académie</h3>
+                            <div class="module-duration">9h00 - 9h45 | 45 minutes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <div class="quest-box">
+                            <h4>🎮 Mise en scène immersive</h4>
+                            <p>L'entrée se fait dans une salle transformée en "salle des anciennes reliques" avec musique épique, décoration immersive et le formateur en costume de "Maître de l'Académie"</p>
+                        </div>
+                        
+                        <h4>📖 Déroulé :</h4>
+                        <ul>
+                            <li><strong>L'Appel de l'Aventure :</strong> Vidéo teaser et mythe fondateur de la FACILIT'ACADEMY</li>
+                            <li><strong>Création de votre Héros :</strong> Ice breaker gamifié "Ton Avatar de Facilitateur"</li>
+                            <li><strong>Constitution des Guildes :</strong> Formation des équipes avec nom épique et cri de guerre</li>
+                            <li><strong>Présentation des Règles du Jeu :</strong> Les 5 niveaux, 6 badges, système de XP</li>
+                            <li><strong>Remise du Carnet de l'Apprenti :</strong> Votre grimoire personnel</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <!-- Module 2 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">⚡</div>
+                        <div class="module-title">
+                            <h3>NIVEAU 1 : Apprenti Facilitateur</h3>
+                            <div class="module-duration">9h45 - 11h00 | 1h15</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <p style="font-weight: 600; color: var(--game-purple); margin-bottom: 20px;">🎯 Objectif du niveau : Comprendre ce qu'est la facilitation et l'intelligence collective</p>
+                        
+                        <div class="quest-box">
+                            <h4>🎮 QUÊTE PRINCIPALE 1.1 : "Le Mystère de l'Intelligence Collective"</h4>
+                            <p><strong>Format :</strong> Jeu de découverte immersif "L'Île aux Trésors"</p>
+                            <p style="margin-top: 15px;"><em>"Votre guilde fait naufrage sur une île mystérieuse. Pour survivre et construire un radeau, vous devez coopérer. Mais attention, chacun possède des informations secrètes essentielles..."</em></p>
+                        </div>
+                        
+                        <h4>🎯 Compétences développées :</h4>
+                        <ul>
+                            <li>Expérimenter l'intelligence collective émergente</li>
+                            <li>Identifier les conditions de la coopération</li>
+                            <li>Comprendre le rôle du facilitateur</li>
+                            <li>Débriefing structuré et partage d'expérience</li>
+                        </ul>
+                        
+                        <p style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 10px; font-style: italic;">
+                            <strong>XP gagnés :</strong> 100 XP + bonus équipe
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Module 3 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">🎯</div>
+                        <div class="module-title">
+                            <h3>NIVEAU 2 : Facilitateur Initié - Maître du Cadre</h3>
+                            <div class="module-duration">11h15 - 12h30 | 1h15</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <p style="font-weight: 600; color: var(--game-purple); margin-bottom: 20px;">🏆 Badge à débloquer : Maître du Cadre</p>
+                        
+                        <div class="quest-box">
+                            <h4>🎮 QUÊTE PRINCIPALE 2.1 : "Les 3 Piliers du Temple"</h4>
+                            <p>Découverte des 3 piliers d'un atelier réussi : Intention, Cadre, Contrat</p>
+                        </div>
+                        
+                        <h4>📖 Contenu :</h4>
+                        <ul>
+                            <li>Définir une intention claire et puissante</li>
+                            <li>Poser un cadre sécurisant</li>
+                            <li>Co-créer un contrat d'apprentissage</li>
+                            <li>Jeu de rôle : "L'atelier catastrophe"</li>
+                            <li>Mini-pratique guidée</li>
+                        </ul>
+                        
+                        <p style="margin-top: 20px; padding: 15px; background: var(--game-gold); color: var(--dark); border-radius: 10px; font-weight: 600; text-align: center;">
+                            🏆 Badge 1 débloqué : MAÎTRE DU CADRE
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Module 4 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">👂</div>
+                        <div class="module-title">
+                            <h3>NIVEAU 2 : Grand Écouteur</h3>
+                            <div class="module-duration">14h00 - 15h30 | 1h30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <p style="font-weight: 600; color: var(--game-purple); margin-bottom: 20px;">🏆 Badge à débloquer : Grand Écouteur</p>
+                        
+                        <div class="quest-box">
+                            <h4>🎮 QUÊTE PRINCIPALE 2.2 : "L'Oracle et les Questions Puissantes"</h4>
+                            <p>Maîtriser l'art de l'écoute active et des questions qui ouvrent</p>
+                        </div>
+                        
+                        <h4>📖 Power-Ups débloqués :</h4>
+                        <ul>
+                            <li>L'écoute active : technique du miroir</li>
+                            <li>Les questions ouvertes vs fermées</li>
+                            <li>La reformulation magique</li>
+                            <li>Le silence fertile</li>
+                            <li>Les 5 niveaux d'écoute</li>
+                        </ul>
+                        
+                        <h4>🎯 Pratique :</h4>
+                        <p>Exercices en binôme et trio avec feedback immédiat</p>
+                        
+                        <p style="margin-top: 20px; padding: 15px; background: var(--game-gold); color: var(--dark); border-radius: 10px; font-weight: 600; text-align: center;">
+                            🏆 Badge 2 débloqué : GRAND ÉCOUTEUR
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Module 5 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">🎨</div>
+                        <div class="module-title">
+                            <h3>NIVEAU 3 : Facilitateur Confirmé - Architecte de Processus</h3>
+                            <div class="module-duration">15h45 - 17h30 | 1h45</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <p style="font-weight: 600; color: var(--game-purple); margin-bottom: 20px;">🏆 Badge à débloquer : Architecte de Processus</p>
+                        
+                        <div class="quest-box">
+                            <h4>🎮 QUÊTE PRINCIPALE 3.1 : "Construire la Cathédrale"</h4>
+                            <p>Designer un processus collaboratif de A à Z</p>
+                        </div>
+                        
+                        <h4>📖 Contenu :</h4>
+                        <ul>
+                            <li>Les 4 temps d'un atelier (Diverger, Émerger, Converger, Clore)</li>
+                            <li>Séquencer les étapes avec fluidité</li>
+                            <li>Choisir les bons outils selon l'objectif</li>
+                            <li>Le timing : l'ami et l'ennemi du facilitateur</li>
+                            <li>Présentation de 10 Power-Ups essentiels</li>
+                        </ul>
+                        
+                        <h4>🎯 Boss Battle 1 : "Design Ton Atelier"</h4>
+                        <div class="boss-box">
+                            <h4>⚔️ BOSS BATTLE : Designer un atelier collaboratif</h4>
+                            <p>En équipe, concevoir un atelier de 2h sur un sujet imposé. Présentation et feedback des autres guildes.</p>
+                        </div>
+                        
+                        <p style="margin-top: 20px; padding: 15px; background: var(--game-gold); color: var(--dark); border-radius: 10px; font-weight: 600; text-align: center;">
+                            🏆 Badge 3 débloqué : ARCHITECTE DE PROCESSUS
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- JOUR 2 -->
+                <div class="day-separator">
+                    ⚡ JOUR 2 : MAÎTRISE ET BOSS FINAL ⚡
+                </div>
+                
+                <!-- Module 6 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">🌅</div>
+                        <div class="module-title">
+                            <h3>Réveil Énergique & Rétrospective</h3>
+                            <div class="module-duration">9h00 - 9h30 | 30 minutes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <ul>
+                            <li>Energizer matinal épique</li>
+                            <li>Rétrospective Jour 1 en mode speedboat</li>
+                            <li>Questions émergentes</li>
+                            <li>Check du niveau XP de chaque guilde</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <!-- Module 7 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">🛡️</div>
+                        <div class="module-title">
+                            <h3>NIVEAU 4 : Maître Facilitateur - Gardien de l'Énergie</h3>
+                            <div class="module-duration">9h30 - 11h00 | 1h30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <p style="font-weight: 600; color: var(--game-purple); margin-bottom: 20px;">🏆 Badge à débloquer : Gardien de l'Énergie</p>
+                        
+                        <div class="quest-box">
+                            <h4>🎮 QUÊTE PRINCIPALE 4.1 : "Les 5 Dragons"</h4>
+                            <p>Affronter les 5 dragons qui peuvent détruire un atelier (et comment les dompter)</p>
+                        </div>
+                        
+                        <h4>🐉 Les 5 Dragons :</h4>
+                        <ul>
+                            <li><strong>Dragon 1 :</strong> Le Bavard (monopolisation de la parole)</li>
+                            <li><strong>Dragon 2 :</strong> Le Silencieux (non-participation)</li>
+                            <li><strong>Dragon 3 :</strong> Le Résistant (blocage actif)</li>
+                            <li><strong>Dragon 4 :</strong> L'Énergie Basse (groupe fatigué/démotivé)</li>
+                            <li><strong>Dragon 5 :</strong> Le Conflit (tensions interpersonnelles)</li>
+                        </ul>
+                        
+                        <h4>🎯 Pratique :</h4>
+                        <p>Jeux de rôle : chaque guilde affronte un dragon et partage ses stratégies</p>
+                        
+                        <p style="margin-top: 20px; padding: 15px; background: var(--game-gold); color: var(--dark); border-radius: 10px; font-weight: 600; text-align: center;">
+                            🏆 Badge 4 débloqué : GARDIEN DE L'ÉNERGIE
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Module 8 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">🗺️</div>
+                        <div class="module-title">
+                            <h3>NIVEAU 4 : Guide du Collectif</h3>
+                            <div class="module-duration">11h15 - 12h30 | 1h15</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <p style="font-weight: 600; color: var(--game-purple); margin-bottom: 20px;">🏆 Badge à débloquer : Guide du Collectif</p>
+                        
+                        <div class="quest-box">
+                            <h4>🎮 QUÊTE PRINCIPALE 4.2 : "Le Trésor Collectif"</h4>
+                            <p>Faciliter une prise de décision collective sur un cas complexe</p>
+                        </div>
+                        
+                        <h4>📖 Power-Ups débloqués :</h4>
+                        <ul>
+                            <li>La prise de décision par consentement</li>
+                            <li>Le vote pondéré</li>
+                            <li>La matrice d'impact/effort</li>
+                            <li>Le World Café</li>
+                            <li>La méthode des 6 chapeaux</li>
+                        </ul>
+                        
+                        <p style="margin-top: 20px; padding: 15px; background: var(--game-gold); color: var(--dark); border-radius: 10px; font-weight: 600; text-align: center;">
+                            🏆 Badge 5 débloqué : GUIDE DU COLLECTIF
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Module 9 -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">🌊</div>
+                        <div class="module-title">
+                            <h3>NIVEAU 5 : Maître du Flow - Posture du Facilitateur</h3>
+                            <div class="module-duration">14h00 - 15h00 | 1 heure</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <p style="font-weight: 600; color: var(--game-purple); margin-bottom: 20px;">🏆 Badge final à débloquer : Maître du Flow</p>
+                        
+                        <div class="quest-box">
+                            <h4>🎮 QUÊTE FINALE : "L'Art de la Présence"</h4>
+                            <p>Incarner la posture du facilitateur : neutralité, présence, agilité</p>
+                        </div>
+                        
+                        <h4>📖 Contenu :</h4>
+                        <ul>
+                            <li>La présence facilitante</li>
+                            <li>La neutralité bienveillante</li>
+                            <li>L'adaptation à l'inattendu</li>
+                            <li>Gérer ses émotions en animation</li>
+                            <li>Le lâcher-prise créatif</li>
+                        </ul>
+                        
+                        <p style="margin-top: 20px; padding: 15px; background: var(--game-gold); color: var(--dark); border-radius: 10px; font-weight: 600; text-align: center;">
+                            🏆 Badge 6 débloqué : MAÎTRE DU FLOW
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Module 10 - Boss Final -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">⚔️</div>
+                        <div class="module-title">
+                            <h3>🔥 BOSS FINAL : "L'Atelier des Légendes"</h3>
+                            <div class="module-duration">15h15 - 17h00 | 1h45</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <div class="boss-box">
+                            <h4>⚔️ LE BOSS FINAL ULTIME</h4>
+                            <p style="font-size: 1.2rem; margin: 20px 0;">Chaque guilde conçoit et anime un mini-atelier de 20 minutes devant le groupe complet. Mise en situation réelle avec feedback bienveillant et constructif.</p>
+                            
+                            <h4 style="color: var(--light); margin-top: 20px;">🎯 Critères d'évaluation :</h4>
+                            <ul>
+                                <li>Clarté de l'intention et du cadre</li>
+                                <li>Qualité d'écoute et de présence</li>
+                                <li>Pertinence du processus designé</li>
+                                <li>Gestion de l'énergie du groupe</li>
+                                <li>Capacité à faciliter l'émergence collective</li>
+                                <li>Adaptation et fluidité</li>
+                            </ul>
+                        </div>
+                        
+                        <p style="margin-top: 30px; text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--game-purple);">
+                            C'est le moment où vous devenez VRAIMENT facilitateur ! 🔥
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Module 11 - Clôture -->
+                <article class="module">
+                    <div class="module-header">
+                        <div class="module-icon">🏆</div>
+                        <div class="module-title">
+                            <h3>Cérémonie de Clôture & Remise des Badges</h3>
+                            <div class="module-duration">17h00 - 17h30 | 30 minutes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <h4>🎊 La Grande Célébration :</h4>
+                        <ul>
+                            <li>Comptage final des XP</li>
+                            <li>Remise officielle des 6 badges physiques</li>
+                            <li>Certificat "Facilitateur Légendaire"</li>
+                            <li>Tour de table des apprentissages</li>
+                            <li>Engagement d'action individuel</li>
+                            <li>Constitution des Learning Buddies</li>
+                            <li>Photo de groupe épique !</li>
+                        </ul>
+                        
+                        <h4>📦 Ce que vous repartez avec :</h4>
+                        <ul>
+                            <li>Carnet d'apprentissage complété</li>
+                            <li>Deck de 20 cartes Power-Ups</li>
+                            <li>6 badges de compétences</li>
+                            <li>Certificat Facilitateur Légendaire</li>
+                            <li>Accès à la communauté Insuffle</li>
+                            <li>3 mois de Facilitation Clinic offerts</li>
+                        </ul>
+                        
+                        <div style="background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%); padding: 30px; border-radius: 15px; margin-top: 30px; text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 10px;">🏆</div>
+                            <h4 style="font-size: 1.8rem; color: var(--dark); margin-bottom: 10px;">FÉLICITATIONS !</h4>
+                            <p style="font-size: 1.2rem; color: var(--dark); font-weight: 600;">Vous êtes maintenant un FACILITATEUR LÉGENDAIRE !</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formateur -->
+    <section style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="section-subtitle">Votre Maître de Guilde</div>
+            <h2 class="section-title">Un Formateur Praticien-Facilitateur</h2>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">💼</div>
+                    <h3>Expérience terrain</h3>
+                    <p>Plus de 5 ans de pratique en facilitation d'ateliers collaboratifs dans des contextes variés</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🎓</div>
+                    <h3>Formation continue</h3>
+                    <p>Certifié en intelligence collective et formé aux pédagogies actives (Training from the Back of the Room)</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">🎮</div>
+                    <h3>Passion gamification</h3>
+                    <p>Expert en game design pédagogique et serious games pour l'apprentissage transformationnel</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-icon">❤️</div>
+                    <h3>Authenticité</h3>
+                    <p>Posture de facilitateur plus que de sachant, partage d'expériences réelles et vulnérabilité assumée</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; font-style: italic; color: #666;">
+                <p>Nos formateurs sont des facilitateurs en activité qui animent quotidiennement des ateliers collaboratifs en entreprise et accompagnent des transformations organisationnelles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <div class="section-subtitle" style="color: var(--game-gold);">L'aventure commence ici</div>
+                <h2 class="section-title">Prêt·e à Devenir Facilitateur Légendaire ?</h2>
+                <p>Rejoignez la FACILIT'ACADEMY et vivez une expérience de formation unique, immersive et transformante. Le monde a besoin de facilitateurs capables de révéler l'intelligence collective des groupes.</p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:contact@insuffle-academie.com?subject=Inscription FACILIT'ACADEMY" class="btn">Rejoindre l'Académie</a>
+                    <a href="tel:+33980808962" class="btn btn-outline">☎ 09 80 80 89 62</a>
+                </div>
+                
+                <div style="margin-top: 50px; padding: 40px; background: rgba(255,255,255,0.1); border-radius: 20px; backdrop-filter: blur(10px);">
+                    <h3 style="color: var(--game-gold); margin-bottom: 20px; font-size: 1.8rem;">🎮 Ce Que Vous Repartez Vraiment Avec</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; text-align: left;">
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 10px;">Compétences</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>✅ 6 badges de compétences</li>
+                                <li>✅ 20+ outils applicables</li>
+                                <li>✅ Confiance pour animer</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 10px;">Outils Physiques</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>📕 Carnet d'apprentissage</li>
+                                <li>🃏 Deck de 20 cartes</li>
+                                <li>🏅 6 badges physiques</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--game-gold); margin-bottom: 10px;">Communauté</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>👥 Réseau de facilitateurs</li>
+                                <li>🎓 Facilitation Clinic</li>
+                                <li>🤝 Learning Buddy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 40px; font-size: 0.95rem; opacity: 0.9;">
+                    Formation accessible aux personnes en situation de handicap.<br>
+                    Contactez notre Maître de Guilde pour adapter les quêtes à vos besoins.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Insuffle Académie</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle-academie.com">Notre approche</a></li>
+                        <li><a href="https://www.insuffle-academie.com#formations">Nos formations</a></li>
+                        <li><a href="https://www.insuffle-academie.com#testimonials">Témoignages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Nos formations</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle.com/formation/facilitation-bootcamp-formation-facilitation/">Facilitation Bootcamp</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-manager-facilitateur/">Manager Facilitateur</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-sketchnote/">Sketchnote</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-facilitation/">Les fondamentaux de la facilitation</a></li>
+                        <li><a href="https://www.insuffle.com/formation/formation-intelligence-collective-facilitation/">Facilitation et intelligence collective</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Informations légales</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.insuffle-academie.com/mentions-legales">Mentions légales</a></li>
+                        <li><a href="https://www.insuffle-academie.com/politique-confidentialite">Politique de confidentialité</a></li>
+                        <li><a href="https://www.insuffle-academie.com/conditions-generales">Conditions générales</a></li>
+                        <li><a href="https://www.insuffle-academie.com/accessibilite">Accessibilité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <div class="footer-contact">
+                        <p><strong>Insuffle Académie</strong></p>
+                        <p>410 RUE DE LA PRINCESSE TROUBETSKOI</p>
+                        <p>14800 Deauville, France</p>
+                        <p>Tél: <a href="tel:+33980808962" style="color: var(--game-gold);">09 80 80 89 62</a></p>
+                        <p>Email: <a href="mailto:contact@insuffle-academie.com" style="color: var(--game-gold);">contact@insuffle-academie.com</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <img src="https://www.insuffle-academie.com/img/Logo-Insuffle-Academie.png" alt="Insuffle Académie" class="footer-logo">
+                <p class="copyright">© 2025 Insuffle Académie - Organisme de formation professionnelle certifié Qualiopi - FACILIT'ACADEMY est une marque déposée - Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SEO Hidden Keywords -->
+    <div style="display:none;">
+        <p>formation facilitateur deauville, formation facilitation gamifiée, FACILIT'ACADEMY, intelligence collective, formation facilitateur normandie, apprentissage par le jeu, serious game facilitation, formation animation atelier, facilitateur légendaire, gamification formation, Insuffle Académie facilitation, formation collaborative, design thinking formation</p>
+    </div>
+</body>
+</html>

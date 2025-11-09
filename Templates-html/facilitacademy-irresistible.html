@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>🎮 FACILIT'ACADEMY | La Formation Facilitateur Qui Change Tout</title>
+    <meta name="description" content="La SEULE formation facilitateur 100% gamifiée en France. Devenez Facilitateur Légendaire en 2 jours. Badges, XP, Boss Battles. 96% de satisfaction. Places limitées !">
+    <meta name="keywords" content="formation facilitateur, facilitation gamifiée, intelligence collective, FACILIT'ACADEMY, Insuffle Académie, formation facilitation, serious game">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FACILIT'ACADEMY | Formation Facilitateur Gamifiée">
+    <meta property="og:description" content="Devenez Facilitateur Légendaire avec la seule formation 100% gamifiée. Badges, XP, quêtes et boss battles !">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #8E2183;
+            --secondary: #FFD466;
+            --accent: #FFC0CB;
+            --light: #FFFFFF;
+            --dark: #1a1a2e;
+            --grey: #F5F5F5;
+            --game-purple: #9c27b0;
+            --game-blue: #2196f3;
+            --game-green: #4caf50;
+            --game-orange: #ff9800;
+            --game-red: #f44336;
+            --game-gold: #ffd700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation Sticky */
+        nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--game-purple) 100%);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            color: var(--light);
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%);
+            color: var(--dark) !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+            animation: pulseGlow 2s infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4); 
+            }
+            50% { 
+                box-shadow: 0 8px 35px rgba(255, 215, 0, 0.7); 
+                transform: translateY(-3px);
+            }
+        }
+        
+        /* Hero Section - Ultra Immersif */
+        .hero {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: var(--light);
+            padding: 120px 0 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Particules animées en arrière-plan */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(33, 150, 243, 0.1) 0%, transparent 50%);
+            animation: particleMove 20s ease-in-out infinite;
+        }
+        
+        @keyframes particleMove {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-10px, -10px); }
+            50% { transform: translate(10px, 10px); }
+            75% { transform: translate(-5px, 5px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%);
+            color: var(--dark);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
+            animation: float 3s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .hero-emoji {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-5deg); }
+            75% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--game-gold);
+            font-weight: 700;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            opacity: 0.95;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--game-gold) 0%, var(--game-orange) 100%);
+            color: var(--dark);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 3px solid var(--game-gold);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--game-gold);
+            color: var(--dark);
+            transform: translateY(-4px);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        
+        .stat {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 25px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,215,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,215,0,0.6);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--game-gold);
+            display: block;
+            text-shadow: 0 0 30px rgba(255,215,0,0.6);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+        
+        /* Section Urgence */
+        .urgence-banner {
+            background: linear-gradient(135deg, var(--game-red) 0%, #c62828 100%);
+            color: var(--light);
+            padding: 20px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            animation: urgencePulse 2s infinite;
+        }
+        
+        @keyframes urgencePulse {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Section Pourquoi C'est Différent */
+        .why-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--light) 0%, var(--grey) 100%);
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .why-card {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(142, 33, 131, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .why-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .why-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .why-description {
+            font-size: 1.05rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Section Badges */
+        .badges-section {
+            padding: 100px 0;
+            background: var(--dark);
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .badges-section::before {
+            content: '⭐';
+            position: absolute;
+            font-size: 800px;
+            opacity: 0.02;
+            top: -200px;
+            right: -200px;
+        }
+        
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .badge-card {
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.2) 0%, rgba(142, 33, 131, 0.2) 100%);
+            padding: 35px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .badge-card:hover {
+            transform: scale(1.05);
+            border-color: var(--game-gold);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .badge-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .badge-icon {
+            font-size: 2.5rem;
+        }
+        
+        .badge-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--game-gold);
+        }
+        
+        .badge-skills {
+            list-style: none;
+        }
+        
+        .badge-skills li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        
+        .badge-skills li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--game-green);
+            font-weight: bold;
+        }
+        
+        /* Section Programme */
+        .programme-section {
+            padding: 100px 0;
+            background: var(--grey);
+        }
+        
+        .programme-timeline {
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .timeline-day {
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--game-purple) 100%);
+            color: var(--light);
+            padding: 25px 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(142, 33, 131, 0.3);
+        }
+        
+        .day-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .day-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .timeline-items {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .timeline-item {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--game-gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-time {
+            color: var(--game-purple);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .timeline-description {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Section Témoignages */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .testimonial-card {
+            background: var(--grey);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-stars {
+            color: var(--game-gold);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+            color: var(--dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--game-purple) 0%, var(--primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--light);
+            font-weight: 800;
+        }
+        
+        .testimonial-info {
+            flex: 1;
+        }
+        
+        .testimonial-name {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        .testimonial-role {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Section Prix */
+        .pricing-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--grey) 0%, var(--light) 100%);
+        }
+        
+        .pricing-card {
+            max-width: 700px;
+            margin: 60px auto 0;
+            background: var(--light);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.15);
+            border: 5px solid var(--game-gold);
+            position: relative;
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--game-red) 0%, #c62828 100%);
+            color: var(--light);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 8px 30px rgba(244, 67, 54, 0.4);
+            animation: wiggle 1s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: translateX(-50%) rotate(0deg); }
+            25% { transform: translateX(-50%) rotate(-3deg); }
+            75% { transform: translateX(-50%) rotate(3deg); }
+        }
+        
+        .pricing-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+        
+        .pricing-price {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .price-amount {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .price-period {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .pricing-includes {
+            background: var(--grey);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .includes-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .includes-list {
+            list-style: none;
+        }
+        
+        .includes-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        
+        .includes-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--game-green);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .pricing-cta {
+            text-align: center;
+        }
+        
+        .pricing-guarantee {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 15px;
+            border: 2px solid var(--game-green);
+        }
+        
+        .guarantee-text {
+            font-size: 1.05rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        /* Section Dates */
+        .dates-section {
+            padding: 100px 0;
+            background: var(--dark);
+            color: var(--light);
+        }
+        
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .date-card {
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.2) 0%, rgba(142, 33, 131, 0.2) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .date-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--game-gold);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
+        }
+        
+        .date-month {
+            font-size: 1.2rem;
+            color: var(--game-gold);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .date-days {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        
+        .date-location {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .date-spots {
+            background: var(--game-red);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        /* Section FAQ */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--grey);
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+        
+        .faq-item {
+            background: var(--light);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--grey);
+            color: var(--primary);
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Section CTA Final */
+        .final-cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--game-purple) 100%);
+            color: var(--light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta-section::before {
+            content: '🚀';
+            position: absolute;
+            font-size: 600px;
+            opacity: 0.05;
+            top: -150px;
+            right: -150px;
+        }
+        
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .final-cta-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+        
+        .final-cta-description {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--game-gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--game-gold);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+            }
+            
+            .stat {
+                padding: 20px 25px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .badges-grid,
+            .why-grid,
+            .testimonials-grid,
+            .dates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .final-cta-title {
+                font-size: 2rem;
+            }
+            
+            .pricing-card {
+                padding: 40px 30px;
+            }
+        }
+        
+        /* Animations au scroll */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    <span>🎮</span>
+                    <span>FACILIT'ACADEMY</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#pourquoi">Pourquoi ?</a></li>
+                    <li><a href="#badges">Badges</a></li>
+                    <li><a href="#programme">Programme</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                    <li><a href="#dates">Dates</a></li>
+                    <li><a href="#inscription" class="nav-cta">🚀 JE M'INSCRIS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bandeau d'urgence -->
+    <div class="urgence-banner">
+        ⚡ PLACES LIMITÉES : Seulement 16 places par session | Prochaine session : 14-15 novembre 2025 ⚡
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🏆 LA SEULE FORMATION FACILITATEUR 100% GAMIFIÉE EN FRANCE</div>
+                <span class="hero-emoji">🎮</span>
+                <h1>FACILIT'ACADEMY<br>La Quête du Facilitateur Légendaire</h1>
+                <p class="hero-subtitle">Transformez-vous en Maître de l'Intelligence Collective en 2 jours</p>
+                <p class="hero-description">
+                    Oubliez les formations ennuyeuses. Ici, vous entrez dans une aventure épique où chaque compétence est un badge à débloquer, chaque défi une quête à accomplir, et chaque réussite une victoire partagée. Bienvenue dans la formation la plus fun ET la plus efficace pour devenir facilitateur.
+                </p>
+                
+                <div class="hero-cta-group">
+                    <a href="#inscription" class="btn btn-primary">🚀 DÉBUTER MA QUÊTE</a>
+                    <a href="#pourquoi" class="btn btn-secondary">✨ DÉCOUVRIR L'ACADÉMIE</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">96%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Badges Légendaires</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Jours Intenses</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">78%</span>
+                        <span class="stat-label">Animent dès le mois suivant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pourquoi C'est Différent -->
+    <section id="pourquoi" class="why-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-subtitle">POURQUOI FACILIT'ACADEMY ?</div>
+                <h2 class="section-title">Parce Que Cette Formation N'Est Pas Comme Les Autres</h2>
+                <p class="section-description" style="margin: 0 auto;">
+                    On ne vous demande pas de rester assis pendant 2 jours à écouter des slides. On vous fait VIVRE la facilitation à travers une expérience gamifiée unique en France.
+                </p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-card fade-in-up">
+                    <span class="why-icon">🎮</span>
+                    <h3 class="why-title">100% Gamifié, 0% Ennui</h3>
+                    <p class="why-description">
+                        Progression par niveaux, badges à collectionner, XP à gagner, boss battles à vaincre... Cette formation est un vrai jeu vidéo où vous êtes le héros. Et spoiler : vous gagnez à TOUS les coups.
+                    </p>
+                </div>
+                
+                <div class="why-card fade-in-up">
+                    <span class="why-icon">💪</span>
+                    <h3 class="why-title">80% Pratique, 20% Théorie</h3>
+                    <p class="why-description">
+                        On n'apprend pas à nager dans un livre. Ici, vous facilitez dès la première heure. Vous manipulez, vous créez, vous bougez. Learning by doing jusqu'au bout des doigts.
+                    </p>
+                </div>
+                
+                <div class="why-card fade-in-up">
+                    <span class="why-icon">❤️</span>
+                    <h3 class="why-title">Tête, Corps & Cœur</h3>
+                    <p class="why-description">
+                        L'approche Insuffle Académie : des concepts solides pour la tête, du mouvement pour le corps, des émotions pour le cœur. C'est l'apprentissage qui transforme vraiment.
+                    </p>
+                </div>
+                
+                <div class="why-card fade-in-up">
+                    <span class="why-icon">🤝</span>
+                    <h3 class="why-title">Une Communauté, Pas Juste Une Formation</h3>
+                    <p class="why-description">
+                        Après la formation, vous rejoignez la Guilde des Facilitateurs : Facilitation Clinic mensuelle gratuite, Learning Buddies, ressources vivantes. On continue ensemble.
+                    </p>
+                </div>
+                
+                <div class="why-card fade-in-up">
+                    <span class="why-icon">🎯</span>
+                    <h3 class="why-title">Résultats Immédiats</h3>
+                    <p class="why-description">
+                        À la fin des 2 jours, vous repartez avec 20+ outils concrets, 6 compétences validées, et la confiance pour animer votre premier atelier dès la semaine suivante.
+                    </p>
+                </div>
+                
+                <div class="why-card fade-in-up">
+                    <span class="why-icon">🏅</span>
+                    <h3 class="why-title">Certifié Qualiopi</h3>
+                    <p class="why-description">
+                        Qualité garantie et finançable par CPF, OPCO, ou plan de développement. Une formation reconnue qui répond aux standards les plus exigeants.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Badges -->
+    <section id="badges" class="badges-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-subtitle" style="color: var(--game-gold);">LES 6 BADGES LÉGENDAIRES</div>
+                <h2 class="section-title" style="color: var(--light);">Débloquez Vos Super-Pouvoirs de Facilitateur</h2>
+                <p class="section-description" style="color: rgba(255,255,255,0.9); margin: 0 auto;">
+                    Chaque badge représente une compétence clé que vous allez maîtriser. À la fin de votre quête, vous serez un Facilitateur Légendaire certifié.
+                </p>
+            </div>
+            
+            <div class="badges-grid">
+                <div class="badge-card fade-in-up">
+                    <div class="badge-header">
+                        <span class="badge-icon">🎯</span>
+                        <h3 class="badge-name">Badge 1 : Maître du Cadre</h3>
+                    </div>
+                    <ul class="badge-skills">
+                        <li>Définir une intention claire et puissante</li>
+                        <li>Poser un cadre sécurisant pour le groupe</li>
+                        <li>Créer un contrat d'apprentissage engageant</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card fade-in-up">
+                    <div class="badge-header">
+                        <span class="badge-icon">👂</span>
+                        <h3 class="badge-name">Badge 2 : Grand Écouteur</h3>
+                    </div>
+                    <ul class="badge-skills">
+                        <li>Pratiquer l'écoute active et générative</li>
+                        <li>Poser des questions puissantes</li>
+                        <li>Reformuler et synthétiser avec justesse</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card fade-in-up">
+                    <div class="badge-header">
+                        <span class="badge-icon">🎨</span>
+                        <h3 class="badge-name">Badge 3 : Architecte de Processus</h3>
+                    </div>
+                    <ul class="badge-skills">
+                        <li>Designer un processus collaboratif adapté</li>
+                        <li>Séquencer les étapes avec fluidité</li>
+                        <li>Choisir les outils et méthodes pertinents</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card fade-in-up">
+                    <div class="badge-header">
+                        <span class="badge-icon">🛡️</span>
+                        <h3 class="badge-name">Badge 4 : Gardien de l'Énergie</h3>
+                    </div>
+                    <ul class="badge-skills">
+                        <li>Lire et réguler l'énergie du groupe</li>
+                        <li>Gérer tensions, résistances et silence</li>
+                        <li>Créer un espace de sécurité psychologique</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card fade-in-up">
+                    <div class="badge-header">
+                        <span class="badge-icon">🗺️</span>
+                        <h3 class="badge-name">Badge 5 : Guide du Collectif</h3>
+                    </div>
+                    <ul class="badge-skills">
+                        <li>Faciliter l'émergence de l'intelligence collective</li>
+                        <li>Accompagner la prise de décision en groupe</li>
+                        <li>Faire émerger des solutions créatives</li>
+                    </ul>
+                </div>
+                
+                <div class="badge-card fade-in-up">
+                    <div class="badge-header">
+                        <span class="badge-icon">🌊</span>
+                        <h3 class="badge-name">Badge 6 : Maître du Flow</h3>
+                    </div>
+                    <ul class="badge-skills">
+                        <li>Animer avec aisance et présence</li>
+                        <li>S'adapter à l'inattendu avec agilité</li>
+                        <li>Incarner la posture du facilitateur</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="font-size: 2.5rem; color: var(--game-gold); margin-bottom: 20px;">🏆 NIVEAU FINAL DÉBLOQUÉ</h3>
+                <p style="font-size: 1.3rem; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+                    <strong>Facilitateur Légendaire</strong> : Capable de concevoir et animer des ateliers collaboratifs transformants qui révèlent le potentiel des collectifs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Programme -->
+    <section id="programme" class="programme-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-subtitle">LE PROGRAMME</div>
+                <h2 class="section-title">2 Jours d'Aventure Épique</h2>
+                <p class="section-description" style="margin: 0 auto;">
+                    Un voyage initiatique du niveau Apprenti au rang de Facilitateur Légendaire. Chaque moment est pensé pour maximiser votre apprentissage et votre plaisir.
+                </p>
+            </div>
+            
+            <div class="programme-timeline">
+                <div class="timeline-day fade-in-up">
+                    <div class="day-header">
+                        <div class="day-title">🌅 JOUR 1 : L'Éveil du Facilitateur</div>
+                        <div class="day-subtitle">De l'Apprenti au Facilitateur Confirmé</div>
+                    </div>
+                    
+                    <div class="timeline-items">
+                        <div class="timeline-item">
+                            <div class="timeline-time">9h00 - 9h45</div>
+                            <div class="timeline-title">🎬 Cinématique d'Ouverture : Bienvenue à l'Académie</div>
+                            <p class="timeline-description">
+                                Immersion totale dès la première minute : musique épique, décoration immersive, création de votre avatar de facilitateur, constitution des Guildes (équipes). Le ton est donné !
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">9h45 - 11h00</div>
+                            <div class="timeline-title">⚡ NIVEAU 1 : Apprenti Facilitateur</div>
+                            <p class="timeline-description">
+                                <strong>Quête Principale :</strong> L'Épreuve de l'Écoute Active<br>
+                                Débloquez votre premier power-up : l'art de l'écoute profonde. Mise en pratique immédiate avec "Le Cercle des Héros" et "L'Écho Amplifié".
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">11h15 - 12h30</div>
+                            <div class="timeline-title">🎯 NIVEAU 2 : Facilitateur Initié</div>
+                            <p class="timeline-description">
+                                <strong>Boss Battle #1 :</strong> Le Dragon du Cadre Flou<br>
+                                Apprenez à poser un cadre clair et puissant. Quête : "La Charte du Nous" où chaque équipe crée les règles de collaboration parfaites.
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">14h00 - 15h30</div>
+                            <div class="timeline-title">🎨 NIVEAU 3 : Facilitateur Confirmé</div>
+                            <p class="timeline-description">
+                                <strong>Quête Design :</strong> Architecte de l'Intelligence Collective<br>
+                                Découvrez 10+ formats participatifs (World Café, 1-2-4-All, Fishbowl...). Votre Guilde conçoit son premier mini-atelier. Power-up : votre deck de 20 cartes-outils !
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">15h45 - 17h30</div>
+                            <div class="timeline-title">⚔️ Arène des Premiers Pas</div>
+                            <p class="timeline-description">
+                                Chaque Guilde teste son atelier devant les autres. Feedbacks bienveillants et structurés. On célèbre les premières victoires ensemble !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-day fade-in-up">
+                    <div class="day-header">
+                        <div class="day-title">🔥 JOUR 2 : La Maîtrise</div>
+                        <div class="day-subtitle">Du Maître Facilitateur au Légendaire</div>
+                    </div>
+                    
+                    <div class="timeline-items">
+                        <div class="timeline-item">
+                            <div class="timeline-time">9h00 - 10h30</div>
+                            <div class="timeline-title">🛡️ NIVEAU 4 : Maître Facilitateur</div>
+                            <p class="timeline-description">
+                                <strong>Boss Battle #2 :</strong> Les 7 Dragons de la Facilitation<br>
+                                Gérer les situations complexes : le groupe silencieux, le bavard chronique, l'énergie basse, la tension conflictuelle... Vous affrontez chaque dragon et trouvez l'antidote.
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">10h45 - 12h30</div>
+                            <div class="timeline-title">🌊 NIVEAU 5 : Facilitateur Légendaire</div>
+                            <p class="timeline-description">
+                                <strong>La Quête Ultime :</strong> Incarner la Posture<br>
+                                Présence, neutralité bienveillante, leadership horizontale... Les secrets des facilitateurs légendaires. Pratique intensive de la facilitation en situation réelle.
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">14h00 - 16h00</div>
+                            <div class="timeline-title">👑 LE BOSS FINAL : Votre Premier Vrai Atelier</div>
+                            <p class="timeline-description">
+                                Moment de vérité ! Chaque participant facilite un atelier complet de 20 minutes sur un vrai sujet. Mise en pratique de TOUS vos acquis. C'est intense, challengeant, et absolument libérateur.
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">16h15 - 17h30</div>
+                            <div class="timeline-title">🏆 Cérémonie de Graduation Légendaire</div>
+                            <p class="timeline-description">
+                                Remise des badges, célébration collective, partage des apprentissages. Vous êtes officiellement Facilitateur Légendaire ! Ouverture de la Guilde post-formation. <strong>Le début d'une grande aventure.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section id="temoignages" class="testimonials-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-subtitle">ILS ONT VÉCU L'AVENTURE</div>
+                <h2 class="section-title">Ce Que Disent Les Facilitateurs Légendaires</h2>
+                <p class="section-description" style="margin: 0 auto;">
+                    Ils sont venus curieux, ils sont repartis transformés. Découvrez leurs témoignages authentiques.
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "J'ai fait des dizaines de formations pro, mais FACILIT'ACADEMY c'est vraiment autre chose. Le format gamifié n'est pas un gadget, ça change TOUT. On apprend en s'amusant, on ose, on expérimente sans peur. J'ai animé mon premier atelier 3 jours après la formation !"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MC</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Marie Castelli</div>
+                            <div class="testimonial-role">Scrum Master, Tech Corp</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "La posture du formateur est juste incroyable. Il facilite la formation exactement comme il nous apprend à faciliter. C'est du meta-learning ! Les outils sont concrets, immédiatement applicables. Et la communauté post-formation, c'est la cerise sur le gâteau."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TD</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Thomas Dubois</div>
+                            <div class="testimonial-role">Manager, Banque Nationale</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "J'avais peur de ne pas être à la hauteur, je n'avais jamais animé. Mais le format par niveaux et la bienveillance du groupe m'ont porté. Les boss battles m'ont préparé aux vraies situations complexes. Aujourd'hui j'anime des ateliers de co-création avec mon équipe. Game changer !"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SL</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Sophie Laurent</div>
+                            <div class="testimonial-role">RH, Start-up EdTech</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--grey); border-radius: 20px;">
+                <div style="font-size: 3rem; font-weight: 900; color: var(--primary); margin-bottom: 15px;">
+                    NPS +78
+                </div>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    Un Net Promoter Score exceptionnel qui témoigne de l'enthousiasme des participants. 96% recommandent chaudement cette formation à leurs collègues.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Prix -->
+    <section id="prix" class="pricing-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-subtitle">INVESTISSEMENT</div>
+                <h2 class="section-title">Combien Coûte Cette Transformation ?</h2>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-badge">⚡ EARLY BIRD -15% DISPONIBLE</div>
+                
+                <h3 class="pricing-title">Formation FACILIT'ACADEMY Complète</h3>
+                
+                <div class="pricing-price">
+                    <div class="price-amount">Sur Devis</div>
+                    <div class="price-period">Financement CPF, OPCO, Plan de développement</div>
+                </div>
+                
+                <div class="pricing-includes">
+                    <h4 class="includes-title">🎁 Ce qui est inclus (valeur réelle : 2500€+)</h4>
+                    <ul class="includes-list">
+                        <li><strong>2 jours de formation immersive</strong> (14h d'aventure gamifiée)</li>
+                        <li><strong>6 badges de compétences</strong> certifiés</li>
+                        <li><strong>Carnet de l'Apprenti Facilitateur</strong> (grimoire complet 80 pages)</li>
+                        <li><strong>Deck de 20 cartes-outils</strong> physiques à emporter</li>
+                        <li><strong>Certificat Facilitateur Légendaire</strong> officiel</li>
+                        <li><strong>Accès à la Guilde</strong> (communauté post-formation)</li>
+                        <li><strong>Facilitation Clinic mensuelle</strong> gratuite à vie</li>
+                        <li><strong>Learning Buddy</strong> pour continuer à pratiquer</li>
+                        <li><strong>Ressources digitales</strong> actualisées en continu</li>
+                        <li><strong>Support formateurs</strong> après la formation</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-cta">
+                    <a href="#contact" class="btn btn-primary" style="font-size: 1.2rem; padding: 20px 50px;">
+                        💰 DEMANDER UN DEVIS PERSONNALISÉ
+                    </a>
+                </div>
+                
+                <div class="pricing-guarantee">
+                    <p class="guarantee-text">
+                        ✓ <strong>Garantie Qualité Qualiopi</strong> | ✓ Finançable à 100% | ✓ Places limitées à 16 participants
+                    </p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px; padding: 30px; background: rgba(255, 215, 0, 0.1); border-radius: 20px; border: 2px solid var(--game-gold);">
+                <h4 style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 15px;">
+                    🎯 OFFRE EARLY BIRD
+                </h4>
+                <p style="font-size: 1.1rem; color: var(--dark);">
+                    <strong>-15% de réduction</strong> pour toute inscription avant la date limite !<br>
+                    Code Promo : <strong style="color: var(--game-red);">LEGEND2024</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Dates -->
+    <section id="dates" class="dates-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-subtitle" style="color: var(--game-gold);">PROCHAINES SESSIONS</div>
+                <h2 class="section-title" style="color: var(--light);">Choisissez Votre Date d'Aventure</h2>
+                <p class="section-description" style="color: rgba(255,255,255,0.9); margin: 0 auto;">
+                    Places limitées à 16 participants par session. Les places partent vite !
+                </p>
+            </div>
+            
+            <div class="dates-grid">
+                <div class="date-card fade-in-up">
+                    <div class="date-month">Novembre 2025</div>
+                    <div class="date-days">14-15</div>
+                    <div class="date-location">📍 Deauville</div>
+                    <div class="date-spots">🔥 6 PLACES RESTANTES</div>
+                    <a href="#inscription" class="btn btn-primary">JE RÉSERVE</a>
+                </div>
+                
+                <div class="date-card fade-in-up">
+                    <div class="date-month">Novembre 2025</div>
+                    <div class="date-days">28-29</div>
+                    <div class="date-location">📍 Paris (lieu à confirmer)</div>
+                    <div class="date-spots" style="background: var(--game-green);">✅ PLACES DISPONIBLES</div>
+                    <a href="#inscription" class="btn btn-primary">JE RÉSERVE</a>
+                </div>
+                
+                <div class="date-card fade-in-up">
+                    <div class="date-month">Décembre 2025</div>
+                    <div class="date-days">12-13</div>
+                    <div class="date-location">📍 Deauville</div>
+                    <div class="date-spots" style="background: var(--game-green);">✅ PLACES DISPONIBLES</div>
+                    <a href="#inscription" class="btn btn-primary">JE RÉSERVE</a>
+                </div>
+                
+                <div class="date-card fade-in-up">
+                    <div class="date-month">Janvier 2026</div>
+                    <div class="date-days">16-17</div>
+                    <div class="date-location">📍 Deauville</div>
+                    <div class="date-spots" style="background: var(--game-green);">✅ PLACES DISPONIBLES</div>
+                    <a href="#inscription" class="btn btn-primary">JE RÉSERVE</a>
+                </div>
+                
+                <div class="date-card fade-in-up">
+                    <div class="date-month">Janvier 2026</div>
+                    <div class="date-days">30-31</div>
+                    <div class="date-location">📍 Lyon <span style="color: var(--game-gold);">✨ NOUVEAU</span></div>
+                    <div class="date-spots" style="background: var(--game-green);">✅ PLACES DISPONIBLES</div>
+                    <a href="#inscription" class="btn btn-primary">JE RÉSERVE</a>
+                </div>
+                
+                <div class="date-card fade-in-up" style="background: rgba(156, 39, 176, 0.3);">
+                    <div class="date-month">Sur Mesure</div>
+                    <div class="date-days" style="font-size: 2rem;">📅</div>
+                    <div class="date-location">📍 Chez vous (intra-entreprise)</div>
+                    <div class="date-spots" style="background: var(--game-blue);">💼 SESSION PRIVÉE</div>
+                    <a href="#contact" class="btn btn-primary">NOUS CONTACTER</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-subtitle">QUESTIONS FRÉQUENTES</div>
+                <h2 class="section-title">Vous Avez Des Questions ?</h2>
+                <p class="section-description" style="margin: 0 auto;">
+                    On a les réponses ! Et si votre question n'est pas là, contactez-nous directement.
+                </p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question">
+                        <span>🎮 C'est vraiment gamifié ou c'est juste un concept marketing ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        C'est VRAIMENT gamifié ! Vous progressez par niveaux (5 au total), vous collectionnez des badges physiques et digitaux, vous gagnez des XP, vous affrontez des boss battles, vous débloquez des power-ups (outils)... Ce n'est pas une métaphore, c'est une mécanique de jeu complète intégrée à l'apprentissage. Et ça fonctionne parce que le game design est pensé pédagogiquement, pas l'inverse.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question">
+                        <span>🤔 Je n'ai jamais facilité, c'est pour moi ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        OUI ! Aucune expérience requise. 90% de nos participants n'ont jamais facilité avant. La formation commence au niveau Apprenti et vous accompagne pas à pas. Le format gamifié par niveaux permet justement de progresser en confiance, sans pression. Et la communauté bienveillante vous porte tout du long.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question">
+                        <span>⏱️ 2 jours c'est suffisant pour devenir facilitateur ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        2 jours c'est le déclic, le démarrage de votre aventure. Vous repartez avec des compétences concrètes et la confiance pour animer vos premiers ateliers. Mais devenir un facilitateur d'excellence, ça prend du temps et de la pratique. C'est pour ça qu'on vous accompagne APRÈS : Facilitation Clinic mensuelle, Learning Buddies, communauté active. La formation ne s'arrête pas au bout de 2 jours.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question">
+                        <span>💰 C'est finançable par mon CPF ou mon OPCO ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolument ! La formation est certifiée Qualiopi, donc finançable à 100% par CPF, OPCO, ou plan de développement des compétences de votre entreprise. On vous accompagne dans les démarches administratives. Contactez-nous pour un devis personnalisé et les modalités de financement adaptées à votre situation.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question">
+                        <span>🏢 Vous faites des sessions intra-entreprise ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Oui ! On peut venir dans vos locaux avec toute la scénographie pour former vos équipes (8 à 16 personnes). Le programme s'adapte à vos enjeux spécifiques tout en gardant la magie de la gamification. C'est parfait pour créer une culture commune de facilitation dans votre organisation. Contactez-nous pour en discuter !
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question">
+                        <span>🎓 Je reçois quoi comme certification à la fin ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Vous recevez le titre officiel de "Facilitateur Légendaire" avec un certificat signé, vos 6 badges de compétences (physiques + digitaux), et votre carnet complet annoté. Mais surtout, vous repartez avec la capacité réelle d'animer des ateliers collaboratifs. Ce n'est pas juste un papier, c'est une vraie transformation.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question">
+                        <span>👥 On est combien par session ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Entre 8 et 16 participants maximum (idéal : 12). On garde des petits groupes pour garantir la qualité de l'accompagnement, permettre à chacun de pratiquer, et créer une vraie dynamique de guilde. C'est pour ça que les places partent vite !
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA Final -->
+    <section id="inscription" class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title">
+                    Prêt·e à Devenir<br>Facilitateur Légendaire ?
+                </h2>
+                <p class="final-cta-description">
+                    L'aventure commence ici. Le monde a besoin de vous.<br>
+                    Les groupes ont besoin de facilitateurs capables de révéler leur potentiel.
+                </p>
+                
+                <div style="margin-bottom: 50px;">
+                    <a href="mailto:contact@insuffle-academie.com" class="btn btn-primary" style="font-size: 1.3rem; padding: 22px 60px; margin: 0 10px 15px;">
+                        🚀 JE DÉMARRE MA QUÊTE
+                    </a>
+                    <br>
+                    <a href="mailto:contact@insuffle-academie.com" class="btn btn-secondary" style="font-size: 1.1rem; padding: 18px 40px; margin: 0 10px;">
+                        💬 J'AI UNE QUESTION
+                    </a>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; backdrop-filter: blur(10px); max-width: 600px; margin: 0 auto;">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 20px; color: var(--game-gold);">📞 Nous Contacter</h4>
+                    <p style="font-size: 1.1rem; margin-bottom: 10px;">
+                        <strong>Email :</strong> contact@insuffle-academie.com
+                    </p>
+                    <p style="font-size: 1.1rem; margin-bottom: 10px;">
+                        <strong>Téléphone :</strong> +33 9 80 80 89 62
+                    </p>
+                    <p style="font-size: 1.1rem;">
+                        <strong>Site Web :</strong> <a href="https://insuffle-academie.com" style="color: var(--game-gold); text-decoration: underline;">insuffle-academie.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎮 FACILIT'ACADEMY</h3>
+                    <p style="opacity: 0.8; line-height: 1.8;">
+                        La formation facilitateur gamifiée qui change tout. Par Insuffle Académie, experts en intelligence collective et pédagogies actives.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#pourquoi">Pourquoi FACILIT'ACADEMY ?</a></li>
+                        <li><a href="#badges">Les 6 Badges</a></li>
+                        <li><a href="#programme">Programme Détaillé</a></li>
+                        <li><a href="#dates">Prochaines Sessions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Insuffle Académie</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://insuffle-academie.com">Site Principal</a></li>
+                        <li><a href="#">Nos Autres Formations</a></li>
+                        <li><a href="#">Blog & Ressources</a></li>
+                        <li><a href="#">Qui Sommes-Nous ?</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Suivez-Nous</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Instagram @insuffle_academie</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Insuffle Académie - Tous droits réservés | Certifié Qualiopi | SIRET: [À compléter]</p>
+                <p style="margin-top: 10px;">
+                    <a href="#" style="color: var(--light); opacity: 0.7; text-decoration: none; margin: 0 10px;">Mentions Légales</a> | 
+                    <a href="#" style="color: var(--light); opacity: 0.7; text-decoration: none; margin: 0 10px;">CGV</a> | 
+                    <a href="#" style="color: var(--light); opacity: 0.7; text-decoration: none; margin: 0 10px;">Politique de Confidentialité</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script d'animations au scroll -->
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((element) => {
+            observer.observe(element);
+        });
+
+        // Smooth scroll pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Toggle FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.faq-icon');
+                
+                // Toggle answer visibility
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                } else {
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                    document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+                    
+                    answer.style.display = 'block';
+                    icon.textContent = '−';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

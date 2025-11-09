@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>⚡ ÉLECTROCHOC | Réanimation Stratégique en 48h - Insuffle</title>
+    <meta name="description" content="La formation CHOC qui réveille les organisations. 2 jours ultra-intensifs pour remettre de l'ÉNERGIE là où tout s'est éteint. Résultats immédiats garantis.">
+    <meta name="keywords" content="réanimation organisationnelle, électrochoc stratégique, énergie entreprise, transformation rapide, Insuffle">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ÉLECTROCHOC | 48h pour Réanimer Votre Organisation">
+    <meta property="og:description" content="Votre entreprise fonctionne mais ne respire plus ? 2 jours pour lui redonner le souffle.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --electric: #00FFD1;
+            --danger: #FF0055;
+            --warning: #FFD700;
+            --emergency: #FF3366;
+            --vital: #00FF88;
+            --dark: #0D0D0D;
+            --deep-black: #000000;
+            --light: #FFFFFF;
+            --grey: #1A1A1A;
+            --neon-blue: #00D4FF;
+            --neon-pink: #FF0080;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--deep-black);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .tech-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation Urgence */
+        nav {
+            background: rgba(13, 13, 13, 0.98);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+            border-bottom: 2px solid var(--electric);
+            box-shadow: 0 0 30px rgba(0, 255, 209, 0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            color: var(--light);
+            font-weight: 900;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .nav-logo span {
+            color: var(--electric);
+            animation: electricPulse 2s infinite;
+        }
+        
+        @keyframes electricPulse {
+            0%, 100% { opacity: 1; text-shadow: 0 0 10px var(--electric); }
+            50% { opacity: 0.7; text-shadow: 0 0 20px var(--electric), 0 0 30px var(--electric); }
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--electric);
+            text-shadow: 0 0 10px var(--electric);
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--electric) 0%, var(--vital) 100%);
+            color: var(--dark) !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 900;
+            box-shadow: 0 0 40px rgba(0, 255, 209, 0.6);
+            animation: urgencyPulse 1.5s infinite;
+        }
+        
+        @keyframes urgencyPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 40px rgba(0, 255, 209, 0.6); 
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 60px rgba(0, 255, 209, 0.9), 0 0 80px rgba(255, 0, 85, 0.5); 
+            }
+        }
+        
+        /* Hero CHOC */
+        .hero {
+            background: var(--deep-black);
+            padding: 180px 0 150px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 209, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 85, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 60%);
+            animation: vitalMove 8s ease-in-out infinite;
+        }
+        
+        @keyframes vitalMove {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -20px) scale(1.1); }
+        }
+        
+        /* ECG Background */
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            top: 50%;
+            left: 0;
+            background: 
+                linear-gradient(90deg, transparent 0%, var(--electric) 2%, transparent 4%),
+                linear-gradient(90deg, transparent 0%, transparent 48%, var(--electric) 50%, transparent 52%, transparent 100%);
+            background-size: 100px 2px, 100% 2px;
+            background-position: 0 0, 0 0;
+            opacity: 0.1;
+            animation: ecgScroll 2s linear infinite;
+        }
+        
+        @keyframes ecgScroll {
+            from { background-position: 0 0, 0 0; }
+            to { background-position: 100px 0, 0 0; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-urgence {
+            display: inline-block;
+            background: var(--danger);
+            color: var(--light);
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            box-shadow: 0 0 50px rgba(255, 0, 85, 0.7);
+            animation: urgencyBlink 1s infinite;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        @keyframes urgencyBlink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.7; }
+        }
+        
+        .hero-emoji {
+            font-size: 10rem;
+            margin-bottom: 30px;
+            display: block;
+            animation: shockAnimation 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px var(--electric));
+        }
+        
+        @keyframes shockAnimation {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            10% { transform: scale(1.2) rotate(-5deg); }
+            20% { transform: scale(0.9) rotate(5deg); }
+            30% { transform: scale(1.1) rotate(-3deg); }
+            40% { transform: scale(1) rotate(0deg); }
+        }
+        
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(135deg, var(--light) 0%, var(--electric) 50%, var(--danger) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 100px rgba(0, 255, 209, 0.5);
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: var(--electric);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .hero-tagline {
+            font-size: 1.6rem;
+            margin-bottom: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            position: relative;
+        }
+        
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, transparent, var(--electric));
+            animation: vitalPulse 1s infinite;
+        }
+        
+        @keyframes vitalPulse {
+            0%, 100% { height: 20px; opacity: 1; }
+            50% { height: 30px; opacity: 0.5; }
+        }
+        
+        .stat-number {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--electric), var(--vital));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 30px var(--electric);
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 20px 55px;
+            background: linear-gradient(135deg, var(--electric) 0%, var(--vital) 100%);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 50px rgba(0, 255, 209, 0.5);
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 80px rgba(0, 255, 209, 0.8), 0 0 50px rgba(255, 0, 85, 0.5);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, var(--danger) 0%, var(--emergency) 100%);
+            color: var(--light);
+            box-shadow: 0 10px 50px rgba(255, 0, 85, 0.5);
+        }
+        
+        .btn-danger:hover {
+            box-shadow: 0 20px 80px rgba(255, 0, 85, 0.8), 0 0 50px var(--electric);
+        }
+        
+        /* Sections */
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .section-dark {
+            background: var(--grey);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--electric);
+            font-weight: 900;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, var(--light), var(--electric));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            font-size: 1.4rem;
+            line-height: 2;
+            opacity: 0.95;
+        }
+        
+        /* Diagnostic Section */
+        .diagnostic {
+            background: var(--deep-black);
+        }
+        
+        .diagnostic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .symptome-card {
+            background: linear-gradient(135deg, rgba(255, 0, 85, 0.1), rgba(255, 51, 102, 0.05));
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid var(--danger);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .symptome-card::before {
+            content: '⚠️';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+        
+        .symptome-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric);
+            box-shadow: 0 20px 60px rgba(255, 0, 85, 0.4);
+        }
+        
+        .symptome-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .symptome-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--danger);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .symptome-card p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        /* Le Protocole */
+        .protocole {
+            background: var(--grey);
+        }
+        
+        .protocole-timeline {
+            max-width: 1000px;
+            margin: 80px auto 0;
+            position: relative;
+        }
+        
+        .protocole-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--electric), var(--vital));
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px var(--electric);
+        }
+        
+        .etape {
+            display: flex;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .etape:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .etape-content {
+            width: 45%;
+            background: linear-gradient(135deg, rgba(0, 255, 209, 0.08), rgba(0, 255, 136, 0.08));
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid var(--electric);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .etape-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0, 255, 209, 0.4);
+        }
+        
+        .etape-number {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--electric), var(--vital));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--dark);
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 0 40px rgba(0, 255, 209, 0.8);
+            z-index: 10;
+        }
+        
+        .etape-title {
+            font-size: 1.8rem;
+            color: var(--electric);
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .etape-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        
+        /* Jour par Jour */
+        .programme {
+            background: var(--deep-black);
+        }
+        
+        .jour-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-top: 80px;
+        }
+        
+        .jour-card {
+            background: linear-gradient(135deg, rgba(0, 255, 209, 0.05), rgba(255, 0, 85, 0.05));
+            border-radius: 30px;
+            overflow: hidden;
+            border: 3px solid var(--electric);
+            transition: all 0.4s ease;
+        }
+        
+        .jour-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 30px 80px rgba(0, 255, 209, 0.4);
+        }
+        
+        .jour-header {
+            background: linear-gradient(135deg, var(--electric) 0%, var(--vital) 100%);
+            color: var(--dark);
+            padding: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .jour-header::before {
+            content: '⚡';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .jour-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .jour-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .jour-subtitle {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .jour-content {
+            padding: 50px;
+        }
+        
+        .jour-objectif {
+            background: rgba(0, 255, 209, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            border-left: 5px solid var(--electric);
+        }
+        
+        .jour-objectif strong {
+            color: var(--electric);
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .jour-objectif p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+        }
+        
+        .jour-modules {
+            list-style: none;
+        }
+        
+        .jour-modules li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 255, 209, 0.2);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .jour-modules li:last-child {
+            border-bottom: none;
+        }
+        
+        .jour-modules li::before {
+            content: '⚡';
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        /* Résultats Garantis */
+        .resultats {
+            background: linear-gradient(135deg, var(--danger) 0%, var(--emergency) 100%);
+            padding: 120px 0;
+        }
+        
+        .resultats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .resultat-card {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .resultat-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--light);
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.2);
+        }
+        
+        .resultat-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .resultat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .resultat-card p {
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        
+        /* Modalités */
+        .modalites {
+            background: var(--grey);
+        }
+        
+        .modalites-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-top: 80px;
+        }
+        
+        .modalite-card {
+            background: linear-gradient(135deg, rgba(0, 255, 209, 0.08), rgba(0, 255, 136, 0.08));
+            padding: 50px;
+            border-radius: 25px;
+            border: 2px solid var(--electric);
+        }
+        
+        .modalite-card h3 {
+            color: var(--electric);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        .modalite-card ul {
+            list-style: none;
+        }
+        
+        .modalite-card li {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(0, 255, 209, 0.2);
+            font-size: 1.15rem;
+        }
+        
+        .modalite-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .modalite-card strong {
+            color: var(--electric);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        /* CTA Urgence */
+        .cta-urgence {
+            background: var(--deep-black);
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-urgence::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(255, 0, 85, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(0, 255, 209, 0.3) 0%, transparent 50%);
+            animation: emergencyPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes emergencyPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-badge {
+            display: inline-block;
+            background: var(--danger);
+            color: var(--light);
+            padding: 15px 45px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            box-shadow: 0 0 60px rgba(255, 0, 85, 0.8);
+            animation: urgencyBlink 1s infinite;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .cta-urgence h2 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 40px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--light), var(--electric), var(--danger));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-urgence p {
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--deep-black);
+            color: var(--light);
+            padding: 80px 0 40px;
+            border-top: 2px solid var(--electric);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section h3 {
+            color: var(--electric);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--electric);
+            padding-left: 10px;
+            text-shadow: 0 0 10px var(--electric);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(0, 255, 209, 0.2);
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-emoji {
+                font-size: 6rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .diagnostic-grid,
+            .jour-grid,
+            .resultats-grid,
+            .modalites-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .protocole-timeline::before {
+                left: 0;
+            }
+            
+            .etape {
+                flex-direction: column !important;
+            }
+            
+            .etape-content {
+                width: 100%;
+            }
+            
+            .etape-number {
+                left: 40px;
+            }
+            
+            .cta-urgence h2 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">⚡ <span>ÉLECTROCHOC</span></a>
+                <ul class="nav-menu">
+                    <li><a href="#diagnostic">Diagnostic</a></li>
+                    <li><a href="#protocole">Protocole</a></li>
+                    <li><a href="#programme">48h</a></li>
+                    <li><a href="#resultats">Résultats</a></li>
+                    <li><a href="#contact" class="nav-cta">Urgence</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-urgence">🚨 État d'Urgence Organisationnelle</div>
+                <span class="hero-emoji">⚡</span>
+                <h1>ÉLECTROCHOC</h1>
+                <p class="hero-subtitle">Réanimation Stratégique en 48h</p>
+                <p class="hero-tagline">Votre entreprise fonctionne mais ne respire plus ?<br>2 jours ultra-intensifs pour lui redonner le SOUFFLE.</p>
+                
+                <div>
+                    <a href="#programme" class="btn">Le Protocole</a>
+                    <a href="#contact" class="btn btn-danger">Appel d'Urgence</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">48h</span>
+                        <span class="stat-label">Ultra-Intensif</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Étapes de Choc</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Réanimés</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnostic -->
+    <section id="diagnostic" class="diagnostic">
+        <div class="container">
+            <div class="section-subtitle">⚠️ État Critique</div>
+            <h2 class="section-title">Les 6 Symptômes de l'Organisation Éteinte</h2>
+            <p class="section-intro">Votre entreprise est peut-être en train de mourir... et vous ne le voyez pas. Reconnaissez-vous ces signaux vitaux défaillants ?</p>
+            
+            <div class="diagnostic-grid">
+                <div class="symptome-card">
+                    <span class="symptome-icon">💤</span>
+                    <h3>Léthargie Collective</h3>
+                    <p>Les équipes sont là physiquement, mais absentes mentalement. Plus personne ne s'enthousiasme. L'énergie est au point mort.</p>
+                </div>
+                
+                <div class="symptome-card">
+                    <span class="symptome-icon">🔇</span>
+                    <h3>Silence Radio</h3>
+                    <p>Les réunions sont plates. Plus personne ne prend de risque. Les idées nouvelles sont mortes avant même d'être exprimées.</p>
+                </div>
+                
+                <div class="symptome-card">
+                    <span class="symptome-icon">🔄</span>
+                    <h3>Répétition Morbide</h3>
+                    <p>Vous refaites les mêmes choses encore et encore. Aucune innovation. Aucune audace. Juste la survie.</p>
+                </div>
+                
+                <div class="symptome-card">
+                    <span class="symptome-icon">🏃‍♂️</span>
+                    <h3>Fuite des Talents</h3>
+                    <p>Vos meilleurs partent. Ils ne trouvent plus de sens. Ils s'étouffent. Et vous ne comprenez pas pourquoi.</p>
+                </div>
+                
+                <div class="symptome-card">
+                    <span class="symptome-icon">🤖</span>
+                    <h3>Mode Automatique</h3>
+                    <p>Tout le monde exécute sans réfléchir. Comme des robots. L'intelligence collective est en coma.</p>
+                </div>
+                
+                <div class="symptome-card">
+                    <span class="symptome-icon">⏱️</span>
+                    <h3>Urgence Permanente</h3>
+                    <p>Vous courez sans cesse, mais vers quoi ? L'urgence a tué l'essentiel. Vous gérez le présent, vous n'inventez plus le futur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Le Protocole -->
+    <section id="protocole" class="protocole">
+        <div class="container">
+            <div class="section-subtitle">💉 Intervention</div>
+            <h2 class="section-title">Le Protocole de Réanimation en 7 Étapes</h2>
+            <p class="section-intro">Une méthode révolutionnaire jamais vue ailleurs. Un choc thérapeutique contrôlé qui réveille les organisations mortes-vivantes.</p>
+            
+            <div class="protocole-timeline">
+                <div class="etape">
+                    <div class="etape-content">
+                        <h3 class="etape-title">ARRÊT CARDIAQUE</h3>
+                        <p class="etape-desc">On pose le diagnostic brutal : votre organisation est cliniquement morte. On identifie précisément où l'énergie s'est arrêtée.</p>
+                    </div>
+                    <div class="etape-number">1</div>
+                </div>
+                
+                <div class="etape">
+                    <div class="etape-content">
+                        <h3 class="etape-title">PREMIER CHOC</h3>
+                        <p class="etape-desc">On administre le premier électrochoc : confronter la réalité sans fard. Voir ce qui ne fonctionne plus. Nommer ce qui est mort.</p>
+                    </div>
+                    <div class="etape-number">2</div>
+                </div>
+                
+                <div class="etape">
+                    <div class="etape-content">
+                        <h3 class="etape-title">RÉANIMATION INITIALE</h3>
+                        <p class="etape-desc">On rallume les premiers signaux vitaux : retrouver le désir profond, l'étincelle originelle. Qu'est-ce qui vous faisait vibrer au début ?</p>
+                    </div>
+                    <div class="etape-number">3</div>
+                </div>
+                
+                <div class="etape">
+                    <div class="etape-content">
+                        <h3 class="etape-title">INJECTION D'ÉNERGIE</h3>
+                        <p class="etape-desc">On injecte une dose massive de clarté, de sens et de direction. L'énergie commence à circuler à nouveau dans les veines de l'organisation.</p>
+                    </div>
+                    <div class="etape-number">4</div>
+                </div>
+                
+                <div class="etape">
+                    <div class="etape-content">
+                        <h3 class="etape-title">RÉTABLISSEMENT DU RYTHME</h3>
+                        <p class="etape-desc">On installe un nouveau battement : la cadence juste qui permet de respirer. Fini l'urgence. Place au rythme vivant.</p>
+                    </div>
+                    <div class="etape-number">5</div>
+                </div>
+                
+                <div class="etape">
+                    <div class="etape-content">
+                        <h3 class="etape-title">STABILISATION</h3>
+                        <p class="etape-desc">On sécurise les premiers signes de vie. On crée les conditions pour que l'énergie ne retombe pas. Les premiers rituels vitaux.</p>
+                    </div>
+                    <div class="etape-number">6</div>
+                </div>
+                
+                <div class="etape">
+                    <div class="etape-content">
+                        <h3 class="etape-title">RENAISSANCE</h3>
+                        <p class="etape-desc">L'organisation respire à nouveau. Elle vibre. Elle s'emballe. L'énergie circule. Le collectif est réanimé.</p>
+                    </div>
+                    <div class="etape-number">7</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme 48h -->
+    <section id="programme" class="programme">
+        <div class="container">
+            <div class="section-subtitle">⚡ Les 48 Heures</div>
+            <h2 class="section-title">2 Jours qui Changent Tout</h2>
+            <p class="section-intro">Un format ultra-intensif. Pas de temps mort. Chaque minute compte. C'est une course contre la montre pour sauver votre organisation.</p>
+            
+            <div class="jour-grid">
+                <!-- Jour 1 -->
+                <div class="jour-card">
+                    <div class="jour-header">
+                        <div class="jour-number">Jour 1</div>
+                        <h3 class="jour-title">LE CHOC</h3>
+                        <p class="jour-subtitle">Diagnostic & Premier Électrochoc</p>
+                    </div>
+                    <div class="jour-content">
+                        <div class="jour-objectif">
+                            <strong>Objectif</strong>
+                            <p>Poser le diagnostic brutal. Identifier où l'énergie est morte. Administrer le premier choc pour réveiller les consciences.</p>
+                        </div>
+                        <ul class="jour-modules">
+                            <li>État des lieux : les 6 signaux vitaux défaillants</li>
+                            <li>La cartographie énergétique de votre organisation</li>
+                            <li>Confrontation au réel : ce qui est mort, ce qui peut renaître</li>
+                            <li>Premier électrochoc : l'exercice de la vérité brutale</li>
+                            <li>Rallumer le désir profond : pourquoi vous faites ça ?</li>
+                            <li>Identifier les 3 zones d'injection d'énergie</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Jour 2 -->
+                <div class="jour-card">
+                    <div class="jour-header">
+                        <div class="jour-number">Jour 2</div>
+                        <h3 class="jour-title">LA RENAISSANCE</h3>
+                        <p class="jour-subtitle">Réanimation & Stabilisation</p>
+                    </div>
+                    <div class="jour-content">
+                        <div class="jour-objectif">
+                            <strong>Objectif</strong>
+                            <p>Injecter l'énergie vitale. Installer le nouveau rythme. Stabiliser la renaissance. Repartir avec un souffle nouveau.</p>
+                        </div>
+                        <ul class="jour-modules">
+                            <li>Injection d'énergie : les 3 décisions qui rallument tout</li>
+                            <li>Installation du nouveau rythme : la cadence vitale</li>
+                            <li>Les rituels de maintien énergétique</li>
+                            <li>Création du Plan de Réanimation à 30 jours</li>
+                            <li>Les garde-fous : comment éviter la rechute</li>
+                            <li>Engagement collectif : le serment du souffle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Résultats Garantis -->
+    <section id="resultats" class="resultats">
+        <div class="container">
+            <div class="section-subtitle" style="color: var(--light);">✨ Impact Immédiat</div>
+            <h2 class="section-title" style="color: var(--light);">Résultats Visibles en 48h</h2>
+            <p class="section-intro" style="color: var(--light);">Ce ne sont pas des promesses. Ce sont des résultats mesurables dès la fin de la formation.</p>
+            
+            <div class="resultats-grid">
+                <div class="resultat-card">
+                    <span class="resultat-icon">🔥</span>
+                    <h3>Énergie Rallumée</h3>
+                    <p>Le feu est de retour dans les yeux. L'enthousiasme renaît. Les équipes vibrent à nouveau.</p>
+                </div>
+                
+                <div class="resultat-card">
+                    <span class="resultat-icon">💡</span>
+                    <h3>Clarté Retrouvée</h3>
+                    <p>Le brouillard se dissipe. Tout le monde sait pourquoi on se lève le matin.</p>
+                </div>
+                
+                <div class="resultat-card">
+                    <span class="resultat-icon">🚀</span>
+                    <h3>Mouvement Lancé</h3>
+                    <p>Les initiatives repartent. Les projets décollent. L'innovation revient.</p>
+                </div>
+                
+                <div class="resultat-card">
+                    <span class="resultat-icon">🎯</span>
+                    <h3>Direction Claire</h3>
+                    <p>Un cap précis. Des décisions alignées. Une cohérence retrouvée.</p>
+                </div>
+                
+                <div class="resultat-card">
+                    <span class="resultat-icon">💪</span>
+                    <h3>Engagement Renouvelé</h3>
+                    <p>Les talents restent. Ils recommencent à croire. Ils se réinvestissent.</p>
+                </div>
+                
+                <div class="resultat-card">
+                    <span class="resultat-icon">⚡</span>
+                    <h3>Rythme Vivant</h3>
+                    <p>Fini l'urgence toxique. Place à une cadence qui nourrit au lieu d'épuiser.</p>
+                </div>
+                
+                <div class="resultat-card">
+                    <span class="resultat-icon">🎨</span>
+                    <h3>Créativité Libérée</h3>
+                    <p>Les idées fusent à nouveau. L'audace revient. L'innovation reprend.</p>
+                </div>
+                
+                <div class="resultat-card">
+                    <span class="resultat-icon">🌟</span>
+                    <h3>Souffle Retrouvé</h3>
+                    <p>L'organisation respire. Elle vibre. Elle est vivante à nouveau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalités -->
+    <section class="modalites">
+        <div class="container">
+            <div class="section-subtitle">📋 Intervention</div>
+            <h2 class="section-title">Comment Ça Marche</h2>
+            
+            <div class="modalites-grid">
+                <div class="modalite-card">
+                    <h3>⚡ Format</h3>
+                    <ul>
+                        <li><strong>Durée :</strong> 2 jours ultra-intensifs (16h)</li>
+                        <li><strong>Groupe :</strong> CODIR complet (8 à 15 participants)</li>
+                        <li><strong>Mode :</strong> Présentiel exclusif</li>
+                        <li><strong>Lieu :</strong> Hors les murs (immersion totale)</li>
+                        <li><strong>Intensité :</strong> Maximum. Pas de pause confort.</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>💰 Investissement</h3>
+                    <ul>
+                        <li><strong>Forfait CODIR :</strong> 15 000€ HT</li>
+                        <li><strong>Inclus :</strong> 2 facilitateurs experts</li>
+                        <li><strong>Inclus :</strong> Tous supports + outils</li>
+                        <li><strong>Inclus :</strong> Suivi 30 jours post-choc</li>
+                        <li><strong>Garantie :</strong> Résultats visibles ou remboursé</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>🎁 Livrables</h3>
+                    <ul>
+                        <li>Diagnostic énergétique complet</li>
+                        <li>Plan de Réanimation à 30 jours</li>
+                        <li>Kit de Maintien Vital (rituels)</li>
+                        <li>Cartographie des zones d'énergie</li>
+                        <li>Accès plateforme de suivi</li>
+                        <li>3 sessions de stabilisation (à distance)</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>✅ Conditions</h3>
+                    <ul>
+                        <li>CODIR au complet (obligatoire)</li>
+                        <li>Engagement total sur 48h</li>
+                        <li>Volonté de confronter la vérité</li>
+                        <li>Autorisation de prendre des décisions</li>
+                        <li>Pas de téléphone, pas d'interruption</li>
+                        <li><strong>Entretien de qualification obligatoire</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi Maintenant -->
+    <section class="diagnostic" style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-subtitle">⏰ Urgence</div>
+            <h2 class="section-title">Pourquoi Agir MAINTENANT</h2>
+            
+            <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <div style="background: linear-gradient(135deg, rgba(255, 0, 85, 0.1), rgba(255, 51, 102, 0.05)); padding: 40px; border-radius: 20px; margin-bottom: 30px; border: 2px solid var(--danger);">
+                    <h3 style="color: var(--danger); margin-bottom: 20px; font-size: 1.8rem; font-family: 'Orbitron', sans-serif;">⚠️ Chaque jour d'attente aggrave la situation</h3>
+                    <p style="font-size: 1.2rem; line-height: 1.9;">Plus vous attendez, plus l'énergie s'échappe. Plus les talents partent. Plus l'inertie s'installe. Une organisation qui perd de l'énergie ne se réveille pas toute seule.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(255, 0, 85, 0.1), rgba(255, 51, 102, 0.05)); padding: 40px; border-radius: 20px; margin-bottom: 30px; border: 2px solid var(--danger);">
+                    <h3 style="color: var(--danger); margin-bottom: 20px; font-size: 1.8rem; font-family: 'Orbitron', sans-serif;">💀 Le coût de l'inaction est colossal</h3>
+                    <p style="font-size: 1.2rem; line-height: 1.9;">Calculez : combien vous coûte cette léthargie collective ? En perte de performance, en départs de talents, en opportunités manquées ? Des centaines de milliers d'euros qui s'évaporent.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(255, 0, 85, 0.1), rgba(255, 51, 102, 0.05)); padding: 40px; border-radius: 20px; border: 2px solid var(--danger);">
+                    <h3 style="color: var(--danger); margin-bottom: 20px; font-size: 1.8rem; font-family: 'Orbitron', sans-serif;">🔥 La fenêtre d'action se ferme</h3>
+                    <p style="font-size: 1.2rem; line-height: 1.9;">Il existe un point de non-retour. Passé ce seuil, même un électrochoc ne suffit plus. Vous êtes encore dans la zone de réanimation possible. Mais elle se ferme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contact" class="cta-urgence">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-badge">🚨 INTERVENTION D'URGENCE</div>
+                <h2>48H Pour Sauver<br>Votre Organisation</h2>
+                <p>Ne laissez pas votre entreprise mourir à petit feu.<br>Un électrochoc maintenant peut tout changer.</p>
+                <p style="margin-top: 30px; font-size: 1.3rem; opacity: 0.9;"><strong>Prochaines sessions : Calendrier communiqué après entretien de qualification</strong></p>
+                <a href="mailto:contact@insuffle.fr?subject=Demande ÉLECTROCHOC - Réanimation Urgente" class="btn">Demander une Intervention</a>
+                <a href="tel:+33980808962" class="btn btn-danger">☎️ Appel d'Urgence : 09 80 80 89 62</a>
+                <p style="margin-top: 50px; font-size: 1.1rem; opacity: 0.85;">Chaque demande fait l'objet d'un entretien de qualification de 30 minutes.<br>Nous n'intervenons que sur les cas où nous savons pouvoir faire la différence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>⚡ ÉLECTROCHOC</h3>
+                    <p style="opacity: 0.8; line-height: 1.8; margin-top: 15px;">Par Insuffle<br>Réanimation stratégique.<br>48h pour tout changer.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nos Interventions</h3>
+                    <ul>
+                        <li><a href="#">ÉLECTROCHOC (2j)</a></li>
+                        <li><a href="#">Architecte du Futur Désiré (5j)</a></li>
+                        <li><a href="#">Manager-Facilitateur (3j)</a></li>
+                        <li><a href="#">Transformation stratégique</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="#">Diagnostic énergétique (gratuit)</a></li>
+                        <li><a href="#">Cas de réanimation</a></li>
+                        <li><a href="#">Le Protocole en détail</a></li>
+                        <li><a href="#">Blog : Signes vitaux</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Urgence</h3>
+                    <ul>
+                        <li>📧 urgence@insuffle.fr</li>
+                        <li>📞 09 80 80 89 62</li>
+                        <li>📍 Interventions partout en France</li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Insuffle - ÉLECTROCHOC | Réanimation Stratégique | Tous droits réservés</p>
+                <p style="margin-top: 15px; font-size: 0.9rem;">"Votre organisation ne meurt pas. Elle s'éteint. Rallumez-la."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Heartbeat effect on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+            
+            lastScroll = scrolled;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>🏗️ ARCHITECTE DU FUTUR DÉSIRÉ | La Formation qui Réinvente la Stratégie</title>
+    <meta name="description" content="La SEULE formation qui transforme les dirigeants en Architectes du Futur. 5 jours pour concevoir, bâtir et incarner le futur que vous désirez vraiment. Révolutionnaire.">
+    <meta name="keywords" content="formation stratégie, vision d'entreprise, transformation organisationnelle, Insuffle, futur désiré, architecture stratégique">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Architecte du Futur Désiré | Formation Révolutionnaire">
+    <meta property="og:description" content="Ne planifiez plus. Architecturez. La formation qui transforme votre rapport au futur.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #8E2183;
+            --secondary: #FFD466;
+            --accent: #00D9FF;
+            --light: #FFFFFF;
+            --dark: #0A0A0F;
+            --grey: #F5F5F5;
+            --gold: #FFD700;
+            --electric-blue: #00F0FF;
+            --deep-purple: #6B0F9C;
+            --neon-pink: #FF006E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .space-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation Ultra-moderne */
+        nav {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            color: var(--light);
+            font-weight: 900;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .nav-logo span {
+            background: linear-gradient(135deg, var(--electric-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--neon-pink));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--electric-blue) 0%, var(--neon-pink) 100%);
+            color: var(--dark) !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+            animation: pulseNeon 2s infinite;
+        }
+        
+        @keyframes pulseNeon {
+            0%, 100% { 
+                box-shadow: 0 0 30px rgba(0, 240, 255, 0.5); 
+            }
+            50% { 
+                box-shadow: 0 0 50px rgba(255, 0, 110, 0.8), 0 0 70px rgba(0, 240, 255, 0.5); 
+            }
+        }
+        
+        /* Hero Épique */
+        .hero {
+            background: linear-gradient(135deg, #0A0A0F 0%, #1a0530 50%, #0A0A0F 100%);
+            padding: 180px 0 200px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 240, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, rgba(255, 0, 110, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(107, 15, 156, 0.2) 0%, transparent 50%);
+            animation: cosmicMove 15s ease-in-out infinite;
+        }
+        
+        @keyframes cosmicMove {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-20px, -20px) scale(1.05); }
+            66% { transform: translate(20px, 20px) scale(0.95); }
+        }
+        
+        .hero::after {
+            content: '🏗️';
+            position: absolute;
+            font-size: 600px;
+            opacity: 0.03;
+            top: -100px;
+            right: -100px;
+            animation: rotate 60s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--electric-blue), var(--neon-pink));
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.6);
+            animation: floatBadge 4s ease-in-out infinite;
+        }
+        
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+        
+        .hero-emoji {
+            font-size: 8rem;
+            margin-bottom: 30px;
+            display: block;
+            animation: buildAnimation 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.5));
+        }
+        
+        @keyframes buildAnimation {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(-3deg); }
+            75% { transform: translateY(-15px) rotate(3deg); }
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, var(--light), var(--electric-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 80px rgba(0, 240, 255, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            font-weight: 400;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+        
+        .hero-tagline {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--electric-blue);
+            margin-bottom: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            position: relative;
+        }
+        
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--electric-blue) 0%, var(--neon-pink) 100%);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.4);
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 60px rgba(255, 0, 110, 0.6);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--electric-blue);
+            color: var(--electric-blue);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+        
+        .btn-outline:hover {
+            background: var(--electric-blue);
+            color: var(--dark);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-dark {
+            background: var(--dark);
+        }
+        
+        .section-gradient {
+            background: linear-gradient(135deg, #0A0A0F 0%, #1a0530 50%, #0A0A0F 100%);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--electric-blue);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, var(--light), var(--electric-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 80px;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            opacity: 0.9;
+        }
+        
+        /* Révolution Section */
+        .revolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .revolution-card {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(255, 0, 110, 0.05));
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .revolution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .revolution-card:hover::before {
+            left: 100%;
+        }
+        
+        .revolution-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 60px rgba(0, 240, 255, 0.3);
+        }
+        
+        .revolution-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.5));
+        }
+        
+        .revolution-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--electric-blue);
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .revolution-card p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        /* Unique Section - Pourquoi c'est révolutionnaire */
+        .unique {
+            background: linear-gradient(135deg, var(--deep-purple) 0%, #1a0530 100%);
+            padding: 120px 0;
+        }
+        
+        .unique-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
+        
+        .unique-item {
+            background: rgba(0, 240, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid var(--electric-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .unique-item:hover {
+            background: rgba(0, 240, 255, 0.1);
+            transform: translateX(20px);
+            border-left-width: 10px;
+        }
+        
+        .unique-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--electric-blue);
+            margin-bottom: 15px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .unique-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--light);
+            font-weight: 800;
+        }
+        
+        .unique-item p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* Programme Epic */
+        .programme {
+            background: var(--dark);
+        }
+        
+        .phase-container {
+            margin-top: 80px;
+        }
+        
+        .phase-card {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(255, 0, 110, 0.08));
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            border: 2px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .phase-card:hover {
+            transform: scale(1.02);
+            border-color: var(--electric-blue);
+            box-shadow: 0 30px 80px rgba(0, 240, 255, 0.3);
+        }
+        
+        .phase-header {
+            background: linear-gradient(135deg, var(--electric-blue) 0%, var(--neon-pink) 100%);
+            color: var(--dark);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phase-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+        
+        .phase-number {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            opacity: 0.8;
+        }
+        
+        .phase-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .phase-duration {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        
+        .phase-content {
+            padding: 50px;
+        }
+        
+        .phase-objectif {
+            background: rgba(0, 240, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            border-left: 5px solid var(--electric-blue);
+        }
+        
+        .phase-objectif strong {
+            color: var(--electric-blue);
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .phase-objectif p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .phase-modules {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .phase-module {
+            background: rgba(0, 240, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .phase-module:hover {
+            background: rgba(0, 240, 255, 0.1);
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+        }
+        
+        .phase-module::before {
+            content: '⚡';
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        /* Les 7 Fondations */
+        .fondations {
+            background: linear-gradient(135deg, #1a0530 0%, #0A0A0F 100%);
+            padding: 120px 0;
+        }
+        
+        .fondations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .fondation-card {
+            background: rgba(0, 240, 255, 0.05);
+            padding: 35px;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 240, 255, 0.2);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fondation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 110, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .fondation-card:hover::before {
+            opacity: 1;
+        }
+        
+        .fondation-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            border-color: var(--electric-blue);
+            box-shadow: 0 25px 70px rgba(0, 240, 255, 0.4);
+        }
+        
+        .fondation-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.6));
+        }
+        
+        .fondation-card h3 {
+            font-size: 1.5rem;
+            color: var(--electric-blue);
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .fondation-card p {
+            opacity: 0.9;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Transformation Promise */
+        .transformation {
+            background: linear-gradient(135deg, var(--neon-pink) 0%, var(--deep-purple) 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .transformation-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .transformation-box h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .transformation-box p {
+            font-size: 1.5rem;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+        
+        .transformation-highlight {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-top: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Modalités */
+        .modalites {
+            background: var(--dark);
+        }
+        
+        .modalites-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .modalite-card {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(255, 0, 110, 0.05));
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .modalite-card h3 {
+            color: var(--electric-blue);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .modalite-card ul {
+            list-style: none;
+        }
+        
+        .modalite-card li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+            font-size: 1.1rem;
+        }
+        
+        .modalite-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .modalite-card strong {
+            color: var(--electric-blue);
+        }
+        
+        /* CTA Final Épique */
+        .cta-final {
+            background: linear-gradient(135deg, #0A0A0F 0%, #1a0530 50%, #0A0A0F 100%);
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(0, 240, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 0, 110, 0.2) 0%, transparent 50%);
+            animation: pulse 5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        .cta-final-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-final h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, var(--light), var(--electric-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-final p {
+            font-size: 1.6rem;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-urgence {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--secondary) 100%);
+            color: var(--dark);
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+            animation: urgencePulse 2s infinite;
+        }
+        
+        @keyframes urgencePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); box-shadow: 0 0 70px rgba(255, 215, 0, 0.9); }
+        }
+        
+        /* Footer */
+        footer {
+            background: #000000;
+            color: var(--light);
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section h3 {
+            color: var(--electric-blue);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--electric-blue);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .unique-grid,
+            .phase-modules,
+            .modalites-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .phase-title {
+                font-size: 2rem;
+            }
+            
+            .cta-final h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">🏗️ INSUFFLE <span>ARCHITECTE</span></a>
+                <ul class="nav-menu">
+                    <li><a href="#revolution">La Révolution</a></li>
+                    <li><a href="#programme">Programme</a></li>
+                    <li><a href="#fondations">7 Fondations</a></li>
+                    <li><a href="#modalites">Modalités</a></li>
+                    <li><a href="#contact" class="nav-cta">Rejoindre</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Épique -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🔥 Formation Révolutionnaire • Édition Limitée 2025</div>
+                <span class="hero-emoji">🏗️</span>
+                <h1>ARCHITECTE DU<br>FUTUR DÉSIRÉ</h1>
+                <p class="hero-tagline">Ne Planifiez Plus. Architecturez.</p>
+                <p class="hero-subtitle">La seule formation au monde qui transforme les dirigeants en véritables Architectes du Futur.<br>5 jours immersifs pour concevoir, bâtir et incarner le futur que vous désirez vraiment.</p>
+                
+                <div>
+                    <a href="#programme" class="btn">Découvrir le Programme</a>
+                    <a href="#contact" class="btn btn-outline">Candidater</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Jours Immersifs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Fondations</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Transformé</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Révolution -->
+    <section id="revolution" class="section-dark reveal">
+        <div class="container">
+            <div class="section-subtitle">⚡ Le Problème</div>
+            <h2 class="section-title">Pourquoi les Visions Échouent ?</h2>
+            <p class="section-intro">Les dirigeants ne manquent pas de vision. Ils manquent d'architecture. Ils rêvent de futurs désirables mais ne savent pas les CONSTRUIRE. Ils planifient au lieu d'architecturer. Ils projettent au lieu de bâtir.</p>
+            
+            <div class="revolution-grid">
+                <div class="revolution-card">
+                    <span class="revolution-icon">📋</span>
+                    <h3>Le Piège de la Planification</h3>
+                    <p>Les plans stratégiques sont des documents morts. Ils décrivent un futur possible mais ne créent pas les fondations pour le bâtir. Résultat : 92% des stratégies ne se réalisent jamais.</p>
+                </div>
+                
+                <div class="revolution-card">
+                    <span class="revolution-icon">🎯</span>
+                    <h3>L'Illusion de la Vision</h3>
+                    <p>Avoir une vision ne suffit pas. Il faut savoir l'architecturer : concevoir les structures, les étapes, les espaces qui permettront au futur désiré de prendre forme dans le réel.</p>
+                </div>
+                
+                <div class="revolution-card">
+                    <span class="revolution-icon">⏰</span>
+                    <h3>Le Présent qui Dévore le Futur</h3>
+                    <p>Les équipes sont tellement absorbées par le présent qu'elles ne construisent jamais le futur. Elles gèrent l'urgence au lieu de bâtir l'essentiel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ce qui rend cette formation UNIQUE -->
+    <section class="unique reveal">
+        <div class="container">
+            <div class="section-subtitle">💎 Révolutionnaire</div>
+            <h2 class="section-title">Ce Qui Rend Cette Formation Unique au Monde</h2>
+            <p class="section-intro">Aucune autre formation ne fait ça. Nulle part. Jamais.</p>
+            
+            <div class="unique-grid">
+                <div class="unique-item">
+                    <div class="unique-number">01</div>
+                    <h3>Vous N'Apprenez Pas à Planifier, Vous Apprenez à Architecturer</h3>
+                    <p>Différence fondamentale : un planificateur organise le temps. Un architecte conçoit les STRUCTURES qui permettent au futur de se manifester. Vous repartez avec les plans d'architecture de votre futur.</p>
+                </div>
+                
+                <div class="unique-item">
+                    <div class="unique-number">02</div>
+                    <h3>Le Futur Comme Matériau Vivant</h3>
+                    <p>On ne travaille pas sur des projections théoriques. On PROTOTYPE le futur en temps réel. Vous construisez des "maquettes vivantes" de votre futur désiré pendant la formation.</p>
+                </div>
+                
+                <div class="unique-item">
+                    <div class="unique-number">03</div>
+                    <h3>Les 7 Fondations de l'Architecte</h3>
+                    <p>Une méthodologie unique au monde, issue de 15 ans de transformation d'organisations. 7 fondations sur lesquelles tout futur solide doit reposer. Jamais enseignées ailleurs.</p>
+                </div>
+                
+                <div class="unique-item">
+                    <div class="unique-number">04</div>
+                    <h3>Du Désir Profond à la Réalité Tangible</h3>
+                    <p>La plupart des formations partent de l'analyse. Nous partons du DÉSIR. Qu'est-ce que vous voulez vraiment ? Pas ce que vous devriez vouloir. Ce que vous désirez viscéralement. De là, on bâtit.</p>
+                </div>
+                
+                <div class="unique-item">
+                    <div class="unique-number">05</div>
+                    <h3>Les Plans Vivants™</h3>
+                    <p>Vous ne repartez pas avec un PowerPoint. Vous repartez avec des PLANS VIVANTS : des documents évolutifs, collaboratifs, qui respirent et se transforment avec votre organisation.</p>
+                </div>
+                
+                <div class="unique-item">
+                    <div class="unique-number">06</div>
+                    <h3>La Cadence d'Architecture</h3>
+                    <p>On installe un nouveau rapport au temps : ni la lenteur du long terme, ni la frénésie du court terme. La "cadence d'architecture" : le rythme juste pour bâtir sans s'épuiser.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme -->
+    <section id="programme" class="programme reveal">
+        <div class="container">
+            <div class="section-subtitle">🚀 Le Parcours</div>
+            <h2 class="section-title">5 Jours pour Devenir Architecte du Futur</h2>
+            <p class="section-intro">Un voyage transformateur structuré en 5 phases progressives. Chaque phase bâtit sur la précédente pour créer une architecture complète de votre futur désiré.</p>
+            
+            <div class="phase-container">
+                <!-- Phase 1 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">Phase 1 • Jour 1</div>
+                        <h3 class="phase-title">DÉSIR</h3>
+                        <p class="phase-duration">Identifier le futur que vous désirez vraiment</p>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-objectif">
+                            <strong>Objectif</strong>
+                            <p>Creuser jusqu'au désir profond. Pas les objectifs de surface. Le futur que vous voulez viscéralement bâtir.</p>
+                        </div>
+                        <div class="phase-modules">
+                            <div class="phase-module">Au-delà de la vision : le désir profond</div>
+                            <div class="phase-module">Cartographie du futur désiré</div>
+                            <div class="phase-module">Les 3 questions ultimes de l'architecte</div>
+                            <div class="phase-module">Atelier : Votre manifeste du futur</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">Phase 2 • Jour 2</div>
+                        <h3 class="phase-title">ARCHITECTURE</h3>
+                        <p class="phase-duration">Concevoir les structures du futur</p>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-objectif">
+                            <strong>Objectif</strong>
+                            <p>Apprendre à penser en architecte : concevoir les fondations, les piliers, les espaces qui permettront au futur de tenir debout.</p>
+                        </div>
+                        <div class="phase-modules">
+                            <div class="phase-module">Les 7 Fondations de l'Architecte</div>
+                            <div class="phase-module">De la vision à la structure</div>
+                            <div class="phase-module">Dessiner les plans du futur</div>
+                            <div class="phase-module">Atelier : Vos premiers plans vivants</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">Phase 3 • Jour 3</div>
+                        <h3 class="phase-title">PROTOTYPAGE</h3>
+                        <p class="phase-duration">Construire les maquettes vivantes</p>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-objectif">
+                            <strong>Objectif</strong>
+                            <p>Ne plus théoriser. Créer des prototypes concrets du futur. Des expérimentations qui testent la solidité de votre architecture.</p>
+                        </div>
+                        <div class="phase-modules">
+                            <div class="phase-module">La méthode du prototype vivant</div>
+                            <div class="phase-module">Construire avant de planifier</div>
+                            <div class="phase-module">Vos 3 premiers prototypes du futur</div>
+                            <div class="phase-module">Tester et ajuster en temps réel</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 4 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">Phase 4 • Jour 4</div>
+                        <h3 class="phase-title">INCARNATION</h3>
+                        <p class="phase-duration">Donner corps au futur dans le présent</p>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-objectif">
+                            <strong>Objectif</strong>
+                            <p>Apprendre à faire exister le futur MAINTENANT. Pas demain. Maintenant. Les rituels, espaces et pratiques qui incarnent déjà votre futur.</p>
+                        </div>
+                        <div class="phase-modules">
+                            <div class="phase-module">Le futur commence aujourd'hui</div>
+                            <div class="phase-module">Créer des espaces du futur</div>
+                            <div class="phase-module">Les rituels d'architecture</div>
+                            <div class="phase-module">Votre première semaine d'architecte</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 5 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">Phase 5 • Jour 5</div>
+                        <h3 class="phase-title">CADENCE</h3>
+                        <p class="phase-duration">Installer le rythme de construction</p>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-objectif">
+                            <strong>Objectif</strong>
+                            <p>Maîtriser la cadence d'architecture : le rythme juste qui permet de bâtir le futur sans épuiser le présent. Votre plan d'architecture vivant à 6 mois.</p>
+                        </div>
+                        <div class="phase-modules">
+                            <div class="phase-module">La cadence d'architecture</div>
+                            <div class="phase-module">Bâtir sans s'épuiser</div>
+                            <div class="phase-module">Votre plan d'architecture à 6 mois</div>
+                            <div class="phase-module">Passage de grade : Architecte Certifié</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Les 7 Fondations -->
+    <section id="fondations" class="fondations reveal">
+        <div class="container">
+            <div class="section-subtitle">💎 Méthodologie Unique</div>
+            <h2 class="section-title">Les 7 Fondations de l'Architecte du Futur</h2>
+            <p class="section-intro">La méthodologie exclusive d'Insuffle. 7 fondations sur lesquelles repose tout futur solide. Jamais enseignées ailleurs.</p>
+            
+            <div class="fondations-grid">
+                <div class="fondation-card">
+                    <span class="fondation-icon">🎯</span>
+                    <h3>1. DÉSIR PROFOND</h3>
+                    <p>Le futur commence dans le désir, pas dans l'analyse. Identifier ce que vous voulez vraiment.</p>
+                </div>
+                
+                <div class="fondation-card">
+                    <span class="fondation-icon">🏗️</span>
+                    <h3>2. STRUCTURE VIVANTE</h3>
+                    <p>Concevoir des architectures qui évoluent. Pas des plans figés mais des structures organiques.</p>
+                </div>
+                
+                <div class="fondation-card">
+                    <span class="fondation-icon">🔬</span>
+                    <h3>3. PROTOTYPAGE RÉEL</h3>
+                    <p>Tester le futur en le construisant. Des maquettes vivantes avant les grands chantiers.</p>
+                </div>
+                
+                <div class="fondation-card">
+                    <span class="fondation-icon">⚡</span>
+                    <h3>4. INCARNATION IMMÉDIATE</h3>
+                    <p>Faire exister le futur maintenant. Des rituels qui matérialisent déjà votre vision.</p>
+                </div>
+                
+                <div class="fondation-card">
+                    <span class="fondation-icon">🌊</span>
+                    <h3>5. CADENCE JUSTE</h3>
+                    <p>Le rythme qui permet de bâtir sans épuiser. Ni précipitation ni lenteur.</p>
+                </div>
+                
+                <div class="fondation-card">
+                    <span class="fondation-icon">🎨</span>
+                    <h3>6. ESTHÉTIQUE DU FUTUR</h3>
+                    <p>Le futur doit être beau. L'esthétique n'est pas un luxe, c'est une fondation.</p>
+                </div>
+                
+                <div class="fondation-card">
+                    <span class="fondation-icon">🌱</span>
+                    <h3>7. RÉSILIENCE ÉVOLUTIVE</h3>
+                    <p>Bâtir pour durer en sachant que tout change. L'architecture qui s'adapte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Promise -->
+    <section class="transformation reveal">
+        <div class="container">
+            <div class="transformation-box">
+                <h2>La Transformation</h2>
+                <p>Vous entrez en planificateur frustré.</p>
+                <p>Vous sortez en Architecte du Futur.</p>
+                <p>Vous ne gérez plus le présent en rêvant du futur.</p>
+                <p>Vous BÂTISSEZ le futur depuis le présent.</p>
+                <div class="transformation-highlight">C'est une métamorphose.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalités -->
+    <section id="modalites" class="modalites reveal">
+        <div class="container">
+            <div class="section-subtitle">📋 Informations</div>
+            <h2 class="section-title">Modalités de Formation</h2>
+            
+            <div class="modalites-grid">
+                <div class="modalite-card">
+                    <h3>🎯 Format</h3>
+                    <ul>
+                        <li><strong>Durée :</strong> 5 jours immersifs (35h)</li>
+                        <li><strong>Groupe :</strong> Maximum 12 participants (sélectionnés)</li>
+                        <li><strong>Mode :</strong> Présentiel intensif</li>
+                        <li><strong>Lieu :</strong> Lieux d'exception (annoncés par session)</li>
+                        <li><strong>Pédagogie :</strong> 30% théorie / 70% construction</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>💎 Investissement</h3>
+                    <ul>
+                        <li><strong>Tarif individuel :</strong> 8 900€ HT</li>
+                        <li><strong>Tarif entreprise :</strong> Sur devis</li>
+                        <li><strong>Inclus :</strong> Hébergement 5 étoiles + repas</li>
+                        <li><strong>Inclus :</strong> Kit complet de l'Architecte</li>
+                        <li><strong>Inclus :</strong> 6 mois d'accompagnement post-formation</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>🎁 Livrables Exclusifs</h3>
+                    <ul>
+                        <li>Les 7 Fondations (manuel complet)</li>
+                        <li>Vos Plans Vivants™ personnalisés</li>
+                        <li>Kit d'Architecture du Futur (outils)</li>
+                        <li>Certification Architecte du Futur</li>
+                        <li>Accès Communauté VIP Architectes</li>
+                        <li>6 sessions de suivi collectif</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>✅ Profil Recherché</h3>
+                    <ul>
+                        <li>Dirigeants, CEO, CODIR</li>
+                        <li>Entrepreneurs visionnaires</li>
+                        <li>Leaders de transformation</li>
+                        <li>Stratèges frustrés par la planification</li>
+                        <li>Minimum 5 ans d'expérience leadership</li>
+                        <li><strong>Processus de sélection obligatoire</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pour Qui -->
+    <section class="section-gradient reveal">
+        <div class="container">
+            <div class="section-subtitle">👥 Public</div>
+            <h2 class="section-title">Cette Formation Est Pour Vous Si...</h2>
+            
+            <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <div style="background: rgba(0, 240, 255, 0.05); padding: 30px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--electric-blue);">
+                    <h3 style="color: var(--electric-blue); margin-bottom: 15px; font-size: 1.5rem;">✓ Vous en avez marre de planifier</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Vous avez fait assez de plans stratégiques pour savoir qu'ils ne fonctionnent pas. Vous voulez passer à autre chose.</p>
+                </div>
+                
+                <div style="background: rgba(0, 240, 255, 0.05); padding: 30px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--electric-blue);">
+                    <h3 style="color: var(--electric-blue); margin-bottom: 15px; font-size: 1.5rem;">✓ Vous avez une vision mais ne savez pas comment la bâtir</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Vous voyez clairement le futur désiré. Mais vous ne savez pas comment le construire concrètement.</p>
+                </div>
+                
+                <div style="background: rgba(0, 240, 255, 0.05); padding: 30px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--electric-blue);">
+                    <h3 style="color: var(--electric-blue); margin-bottom: 15px; font-size: 1.5rem;">✓ Vous voulez devenir un bâtisseur, pas juste un gestionnaire</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Vous ne voulez pas gérer l'existant. Vous voulez CRÉER ce qui n'existe pas encore.</p>
+                </div>
+                
+                <div style="background: rgba(0, 240, 255, 0.05); padding: 30px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--electric-blue);">
+                    <h3 style="color: var(--electric-blue); margin-bottom: 15px; font-size: 1.5rem;">✓ Vous êtes prêt à transformer radicalement votre approche</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Cette formation ne vous apprendra pas à mieux faire ce que vous faites déjà. Elle vous transformera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contact" class="cta-final">
+        <div class="container">
+            <div class="cta-final-content">
+                <div class="cta-urgence">⚡ Places Limitées : 12 Architectes par Session</div>
+                <h2>Prêt à Devenir Architecte<br>du Futur Désiré ?</h2>
+                <p>Cette formation change des vies. Elle change des organisations.<br>Elle change des futurs.</p>
+                <p><strong>Prochaine session : Dates annoncées en exclusivité aux candidats sélectionnés</strong></p>
+                <a href="mailto:contact@insuffle.fr?subject=Candidature Architecte du Futur Désiré" class="btn">Candidater Maintenant</a>
+                <a href="tel:+33980808962" class="btn btn-outline">☎️ 09 80 80 89 62</a>
+                <p style="margin-top: 40px; font-size: 1.1rem; opacity: 0.8;">Le processus de sélection inclut un entretien exploratoire de 45 minutes.<br>Nous ne formons que les dirigeants prêts à la métamorphose.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>🏗️ INSUFFLE ARCHITECTE</h3>
+                    <p style="opacity: 0.8; line-height: 1.8; margin-top: 15px;">La révolution de la stratégie.<br>De la planification à l'architecture.<br>Du futur théorique au futur bâti.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nos Formations</h3>
+                    <ul>
+                        <li><a href="#">Architecte du Futur Désiré (5j)</a></li>
+                        <li><a href="#">Manager-Facilitateur (3j)</a></li>
+                        <li><a href="#">Vision mobilisatrice (1j)</a></li>
+                        <li><a href="#">Facilitation stratégique (2j)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Accompagnements</h3>
+                    <ul>
+                        <li><a href="#">Transformation stratégique</a></li>
+                        <li><a href="#">Architecture organisationnelle</a></li>
+                        <li><a href="#">Séminaires de transformation</a></li>
+                        <li><a href="#">Coaching de dirigeants</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 contact@insuffle.fr</li>
+                        <li>📞 09 80 80 89 62</li>
+                        <li>📍 Deauville, France</li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Insuffle - Architecte du Futur Désiré | Tous droits réservés</p>
+                <p style="margin-top: 15px; font-size: 0.9rem;">"Ne planifiez plus. Architecturez."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        reveals.forEach(reveal => {
+            revealObserver.observe(reveal);
+        });
+
+        // Parallax effect on hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

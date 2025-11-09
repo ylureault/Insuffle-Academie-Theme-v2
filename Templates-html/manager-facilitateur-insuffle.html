@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Manager-Facilitateur | Insuffle - Formation Leadership & Clarté</title>
+    <meta name="description" content="Formation Manager-Facilitateur par Insuffle : 3 jours pour devenir le manager-clarificateur qui relie, éclaire et aligne. Transformez votre posture managériale avec la Boussole 4C.">
+    <meta name="keywords" content="formation manager facilitateur, leadership, clarté organisationnelle, management, boussole 4C, Insuffle, transformation managériale">
+    <meta name="author" content="Insuffle">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Manager-Facilitateur | Formation Leadership & Clarté">
+    <meta property="og:description" content="3 jours pour devenir le manager qui transforme la confusion en clarté collective.">
+    <meta property="og:url" content="https://www.insuffle.fr/manager-facilitateur">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.insuffle.fr/manager-facilitateur">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Manager-Facilitateur : Relie, Éclaire, Aligne",
+      "description": "Formation professionnelle pour développer une posture de manager-clarificateur avec la méthode Boussole 4C",
+      "provider": {
+        "@type": "Organization",
+        "name": "Insuffle",
+        "url": "https://www.insuffle.fr"
+      },
+      "courseCode": "MANAGER-FACILITATEUR-2025",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "duration": "P3D",
+        "inLanguage": "fr"
+      },
+      "teaches": [
+        "Leadership lucide",
+        "Facilitation managériale",
+        "Boussole 4C",
+        "Clarté collective",
+        "Transformation managériale"
+      ],
+      "educationalLevel": "Managers et Leaders d'équipe",
+      "timeRequired": "PT21H"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #8E2183;
+            --secondary: #FFD466;
+            --accent: #FFC0CB;
+            --light: #FFFFFF;
+            --dark: #1a1a2e;
+            --grey: #F5F5F5;
+            --soft-purple: #9c27b0;
+            --soft-blue: #2196f3;
+            --soft-green: #4caf50;
+            --soft-orange: #ff9800;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--soft-purple) 100%);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            color: var(--light);
+            font-weight: 800;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .nav-cta {
+            background-color: var(--secondary);
+            color: var(--dark) !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 212, 102, 0.3);
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--light);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: var(--light);
+            padding: 100px 0 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '🧭';
+            position: absolute;
+            font-size: 400px;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--soft-purple) 100%);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(142, 33, 131, 0.3);
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(142, 33, 131, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--light);
+            color: var(--light);
+        }
+        
+        .btn-outline:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* Constat Section */
+        .constat {
+            background: var(--grey);
+        }
+        
+        .constat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .constat-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .constat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .constat-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .constat-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .constat-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Promise Section */
+        .promise {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--soft-purple) 100%);
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .promise-box {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .promise-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+        
+        .promise-box p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        
+        /* Programme Section */
+        .programme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .jour-card {
+            background: var(--light);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .jour-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .jour-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--soft-purple) 100%);
+            color: var(--light);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .jour-number {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .jour-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .jour-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .jour-content {
+            padding: 30px;
+        }
+        
+        .jour-objectif {
+            background: var(--grey);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .jour-objectif strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .jour-modules {
+            list-style: none;
+        }
+        
+        .jour-modules li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--grey);
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+        
+        .jour-modules li:last-child {
+            border-bottom: none;
+        }
+        
+        .jour-modules li::before {
+            content: '→';
+            color: var(--primary);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        
+        /* Boussole 4C Section */
+        .boussole {
+            background: var(--grey);
+        }
+        
+        .boussole-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .boussole-card {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .boussole-card:hover {
+            transform: translateX(10px);
+        }
+        
+        .boussole-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .boussole-card .question {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .boussole-card .objectif {
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        /* Impact Section */
+        .impact {
+            background: var(--light);
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .impact-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--grey);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .impact-card:hover {
+            background: var(--primary);
+            color: var(--light);
+            transform: translateY(-10px);
+        }
+        
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .impact-card:hover .impact-number {
+            color: var(--secondary);
+        }
+        
+        .impact-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        /* Public Section */
+        .public {
+            background: var(--grey);
+        }
+        
+        .public-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .public-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .public-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .public-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        /* Modalités Section */
+        .modalites {
+            background: var(--light);
+        }
+        
+        .modalites-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .modalite-card {
+            background: var(--grey);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .modalite-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .modalite-card ul {
+            list-style: none;
+        }
+        
+        .modalite-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .modalite-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .modalite-card strong {
+            color: var(--primary);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #0f3460 100%);
+            color: var(--light);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .programme-grid,
+            .boussole-grid,
+            .impact-grid,
+            .modalites-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">🧭 INSUFFLE</a>
+                <ul class="nav-menu">
+                    <li><a href="#programme">Programme</a></li>
+                    <li><a href="#boussole">Boussole 4C</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#modalites">Modalités</a></li>
+                    <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Formation Manager-Facilitateur</div>
+                <h1>Le Manager qui Relie,<br>Éclaire et Aligne</h1>
+                <p class="hero-subtitle">3 jours pour ancrer la posture du manager-clarificateur.<br>Celui qui transforme la confusion en clarté collective.</p>
+                
+                <div>
+                    <a href="#programme" class="btn">Découvrir le programme</a>
+                    <a href="#contact" class="btn btn-outline">Demander un devis</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">jours immersifs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">21h</span>
+                        <span class="stat-label">de transformation</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4C</span>
+                        <span class="stat-label">la Boussole</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Constat Section -->
+    <section class="constat">
+        <div class="container">
+            <div class="section-subtitle">Le constat</div>
+            <h2 class="section-title">Le manager d'aujourd'hui ne manque pas d'énergie.<br>Il manque de cap.</h2>
+            <p class="section-intro">Les organisations n'étouffent pas par manque de performance. Elles s'épuisent dans le brouillard : trop de réunions, trop d'indicateurs, trop d'injonctions contradictoires. Le manager se retrouve coincé entre des équipes qui tournent à vide et une direction qui attend des résultats.</p>
+            
+            <div class="constat-grid">
+                <div class="constat-card">
+                    <span class="constat-icon">😵‍💫</span>
+                    <h3>La confusion organisée</h3>
+                    <p>Les équipes exécutent sans comprendre pourquoi. Le manager multiplie les réunions sans retrouver de clarté. Tout fonctionne, mais plus rien ne respire.</p>
+                </div>
+                
+                <div class="constat-card">
+                    <span class="constat-icon">🌫️</span>
+                    <h3>Le brouillard stratégique</h3>
+                    <p>Les plans se succèdent, les initiatives se multiplient. Mais personne ne sait vraiment où on va. Le réel continue de tourner sans direction claire.</p>
+                </div>
+                
+                <div class="constat-card">
+                    <span class="constat-icon">😮‍💨</span>
+                    <h3>La fatigue du présent</h3>
+                    <p>Ce n'est pas le futur qui fait peur. C'est le présent qui épuise. Cette surchauffe organisationnelle est devenue le signal vital : il faut transformer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promise Section -->
+    <section class="promise">
+        <div class="container">
+            <div class="promise-box">
+                <h2>Notre promesse</h2>
+                <p>Transformer votre posture managériale pour devenir le manager-clarificateur : celui qui relie les personnes au sens, qui éclaire les zones d'ombre, et qui aligne les actions avec le cap collectif.</p>
+                <br>
+                <p><strong>Pas avec des process. Pas avec des discours inspirants.<br>Mais avec une expérience de transformation lucide et collective.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section id="programme" class="programme">
+        <div class="container">
+            <div class="section-subtitle">Le parcours</div>
+            <h2 class="section-title">3 jours pour transformer votre management</h2>
+            <p class="section-intro">Une progression structurée autour de la démarche Insuffle : Voir, Désirer, Construire, Transformer. Chaque jour ancre une posture nouvelle.</p>
+            
+            <div class="programme-grid">
+                <!-- Jour 1 -->
+                <div class="jour-card">
+                    <div class="jour-header">
+                        <div class="jour-number">Jour 1</div>
+                        <h3 class="jour-title">VOIR</h3>
+                        <p class="jour-subtitle">Observer le réel sans filtre</p>
+                    </div>
+                    <div class="jour-content">
+                        <div class="jour-objectif">
+                            <strong>Objectif</strong>
+                            Développer une lucidité radicale sur ce qui se joue dans votre équipe et votre organisation.
+                        </div>
+                        <ul class="jour-modules">
+                            <li>Le brouillard managérial : diagnostic lucide</li>
+                            <li>Les 3 zones d'ombre du manager</li>
+                            <li>Photo du réel : apprendre à nommer ce qui existe</li>
+                            <li>Atelier : cartographie de votre équipe</li>
+                            <li>Introduction à la Boussole 4C</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Jour 2 -->
+                <div class="jour-card">
+                    <div class="jour-header">
+                        <div class="jour-number">Jour 2</div>
+                        <h3 class="jour-title">DÉSIRER & CONSTRUIRE</h3>
+                        <p class="jour-subtitle">Formuler le cap et l'incarner</p>
+                    </div>
+                    <div class="jour-content">
+                        <div class="jour-objectif">
+                            <strong>Objectif</strong>
+                            Créer une phrase-boussole claire et traduire cette intention en actions tangibles.
+                        </div>
+                        <ul class="jour-modules">
+                            <li>La phrase-boussole : formuler le cap collectif</li>
+                            <li>Maîtriser la Boussole 4C en situation</li>
+                            <li>Facilitation stratégique : mener une réunion lucide</li>
+                            <li>Atelier : construire votre plan d'expérimentation</li>
+                            <li>Les 5 postures du manager-clarificateur</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Jour 3 -->
+                <div class="jour-card">
+                    <div class="jour-header">
+                        <div class="jour-number">Jour 3</div>
+                        <h3 class="jour-title">TRANSFORMER</h3>
+                        <p class="jour-subtitle">Installer la cadence vivante</p>
+                    </div>
+                    <div class="jour-content">
+                        <div class="jour-objectif">
+                            <strong>Objectif</strong>
+                            Ancrer les réflexes du management lucide et créer votre feuille de route post-formation.
+                        </div>
+                        <ul class="jour-modules">
+                            <li>La cadence juste : transformer sans épuiser</li>
+                            <li>Gérer les résistances avec lucidité</li>
+                            <li>Mise en situation : cas réels des participants</li>
+                            <li>Votre plan d'action 72h</li>
+                            <li>Rituels de clarté : les installer dans votre équipe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boussole 4C Section -->
+    <section id="boussole" class="boussole">
+        <div class="container">
+            <div class="section-subtitle">L'outil structurant</div>
+            <h2 class="section-title">La Boussole 4C</h2>
+            <p class="section-intro">Le cadre de clarté qui structure chaque décision managériale. La Boussole 4C maintient l'équilibre entre vision, réalisme et mouvement.</p>
+            
+            <div class="boussole-grid">
+                <div class="boussole-card">
+                    <h3>🧭 Cap</h3>
+                    <p class="question">Quelle direction sert encore le collectif ?</p>
+                    <p class="objectif">Donner la boussole commune</p>
+                </div>
+                
+                <div class="boussole-card">
+                    <h3>🚫 Contraintes</h3>
+                    <p class="question">Qu'est-ce qu'on refuse de franchir ?</p>
+                    <p class="objectif">Définir les lignes rouges</p>
+                </div>
+                
+                <div class="boussole-card">
+                    <h3>⚡ Capacités</h3>
+                    <p class="question">De quoi disposons-nous vraiment ?</p>
+                    <p class="objectif">Identifier les leviers concrets</p>
+                </div>
+                
+                <div class="boussole-card">
+                    <h3>⏱️ Cadence</h3>
+                    <p class="question">À quel rythme décidons-nous ?</p>
+                    <p class="objectif">Installer la respiration juste</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact">
+        <div class="container">
+            <div class="section-subtitle">Les résultats</div>
+            <h2 class="section-title">L'impact mesuré</h2>
+            <p class="section-intro">Ces chiffres proviennent de nos accompagnements de transformation stratégique incluant la formation Manager-Facilitateur.</p>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <span class="impact-number">+67%</span>
+                    <p class="impact-label">d'engagement collectif</p>
+                </div>
+                
+                <div class="impact-card">
+                    <span class="impact-number">-30%</span>
+                    <p class="impact-label">de temps perdu</p>
+                </div>
+                
+                <div class="impact-card">
+                    <span class="impact-number">+40%</span>
+                    <p class="impact-label">d'initiatives alignées</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Public Section -->
+    <section class="public">
+        <div class="container">
+            <div class="section-subtitle">Pour qui ?</div>
+            <h2 class="section-title">Public concerné</h2>
+            
+            <div class="public-grid">
+                <div class="public-card">
+                    <span class="public-icon">👔</span>
+                    <h3>Managers opérationnels</h3>
+                    <p>Vous managez une équipe et cherchez à clarifier votre posture</p>
+                </div>
+                
+                <div class="public-card">
+                    <span class="public-icon">🎯</span>
+                    <h3>Managers de proximité</h3>
+                    <p>Vous êtes au contact direct du terrain et des équipes</p>
+                </div>
+                
+                <div class="public-card">
+                    <span class="public-icon">🚀</span>
+                    <h3>Managers de transformation</h3>
+                    <p>Vous pilotez des projets de changement</p>
+                </div>
+                
+                <div class="public-card">
+                    <span class="public-icon">💼</span>
+                    <h3>Membres de CODIR</h3>
+                    <p>Vous cherchez à aligner votre équipe de direction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalités Section -->
+    <section id="modalites" class="modalites">
+        <div class="container">
+            <div class="section-subtitle">Informations pratiques</div>
+            <h2 class="section-title">Modalités de formation</h2>
+            
+            <div class="modalites-grid">
+                <div class="modalite-card">
+                    <h3>📋 Format</h3>
+                    <ul>
+                        <li><strong>Durée :</strong> 3 jours (21h)</li>
+                        <li><strong>Groupe :</strong> 8 à 12 participants maximum</li>
+                        <li><strong>Mode :</strong> Présentiel (intra ou inter-entreprises)</li>
+                        <li><strong>Pédagogie :</strong> 40% théorie / 60% pratique</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>💰 Tarifs</h3>
+                    <ul>
+                        <li><strong>Intra-entreprise :</strong> À partir de 2 500€/jour</li>
+                        <li><strong>Inter-entreprises :</strong> 1 800€ HT/participant</li>
+                        <li><strong>Forfait CODIR :</strong> Sur devis</li>
+                        <li><strong>Cursus sur mesure :</strong> Nous consulter</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>🎓 Livrables</h3>
+                    <ul>
+                        <li>Book de formation personnel</li>
+                        <li>Kit Boussole 4C</li>
+                        <li>Guide des rituels de clarté</li>
+                        <li>Plan d'action post-formation</li>
+                        <li>Accès à la communauté Insuffle</li>
+                    </ul>
+                </div>
+                
+                <div class="modalite-card">
+                    <h3>✅ Prérequis</h3>
+                    <ul>
+                        <li>Manager une équipe (ou être en passe de le faire)</li>
+                        <li>Volonté de questionner sa posture</li>
+                        <li>Ouverture à la transformation lucide</li>
+                        <li>Aucun prérequis technique</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principes Section -->
+    <section class="promise" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-subtitle" style="color: var(--secondary);">Notre approche</div>
+            <h2 class="section-title" style="color: var(--light);">Les 5 principes de transformation</h2>
+            
+            <div style="max-width: 900px; margin: 40px auto; text-align: left;">
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: var(--secondary); margin-bottom: 10px;">1. Lucidité radicale</h3>
+                    <p style="opacity: 0.9;">Regarder la vérité sans fard.</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: var(--secondary); margin-bottom: 10px;">2. Simplicité exigeante</h3>
+                    <p style="opacity: 0.9;">Épurer jusqu'à l'essentiel.</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: var(--secondary); margin-bottom: 10px;">3. Collectif réel</h3>
+                    <p style="opacity: 0.9;">Travailler avec ceux qui vivent la complexité.</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: var(--secondary); margin-bottom: 10px;">4. Cadence juste</h3>
+                    <p style="opacity: 0.9;">Transformer au rythme du vivant, pas du reporting.</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
+                    <h3 style="color: var(--secondary); margin-bottom: 10px;">5. Apprentissage permanent</h3>
+                    <p style="opacity: 0.9;">Chaque démarche laisse une empreinte durable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Prêt à transformer votre posture ?</h2>
+            <p>Échangeons sur vos enjeux managériaux et construisons ensemble<br>le parcours qui correspond à vos besoins.</p>
+            <a href="mailto:contact@insuffle.fr" class="btn" style="background: var(--secondary); color: var(--dark);">Nous contacter</a>
+            <a href="tel:+33980808962" class="btn btn-outline">☎️ 09 80 80 89 62</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>🧭 INSUFFLE</h3>
+                    <p style="opacity: 0.8; line-height: 1.8;">La clarté vivante des organisations.<br>Nous transformons la confusion du présent en clarté collective.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nos formations</h3>
+                    <ul>
+                        <li><a href="#">Manager-Facilitateur (3j)</a></li>
+                        <li><a href="#">Vision mobilisatrice (1j)</a></li>
+                        <li><a href="#">Facilitation stratégique (2j)</a></li>
+                        <li><a href="#">Cursus sur mesure</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nos accompagnements</h3>
+                    <ul>
+                        <li><a href="#">Transformation stratégique</a></li>
+                        <li><a href="#">Séminaires de transformation</a></li>
+                        <li><a href="#">Coaching de dirigeants</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 contact@insuffle.fr</li>
+                        <li>📞 09 80 80 89 62</li>
+                        <li>📍 Deauville, France</li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Insuffle - La clarté vivante des organisations | Tous droits réservés</p>
+                <p style="margin-top: 10px; font-size: 0.85rem;">#SortirDuBrouillard #ClartéVivante #TransformerLePrésent</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.constat-card, .jour-card, .boussole-card, .impact-card, .public-card, .modalite-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
