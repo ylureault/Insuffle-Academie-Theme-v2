@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Programme Formation
  * Plugin URI: https://github.com/ylureault/Programme-Formation-Plugin
- * Description: Gestionnaire de programme de formation avec système de modules dynamiques. Interface complète pour créer, éditer et afficher les modules de vos formations.
- * Version: 1.0.0
+ * Description: Gestionnaire de programme de formation avec backoffice dédié. Scanne les pages enfants de "Formations" et permet de gérer les modules dans une interface admin complète.
+ * Version: 2.0.0
  * Author: Yoan Lureault
  * Author URI: https://github.com/ylureault
  * License: GPL v2 or later
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Constantes du plugin
-define('PFM_VERSION', '1.0.0');
+define('PFM_VERSION', '2.0.0');
 define('PFM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('PFM_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('PFM_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -54,9 +54,11 @@ class Programme_Formation {
      * Charge les fichiers nécessaires
      */
     private function load_dependencies() {
+        // Classes principales
+        require_once PFM_PLUGIN_DIR . 'includes/class-formations-scanner.php';
         require_once PFM_PLUGIN_DIR . 'includes/class-modules-manager.php';
+        require_once PFM_PLUGIN_DIR . 'includes/class-programme-admin.php';
         require_once PFM_PLUGIN_DIR . 'includes/class-shortcode.php';
-        require_once PFM_PLUGIN_DIR . 'includes/class-admin-interface.php';
     }
 
     /**
@@ -68,7 +70,6 @@ class Programme_Formation {
 
         // Scripts et styles
         add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend_assets'));
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_assets'));
     }
 
     /**
@@ -79,9 +80,8 @@ class Programme_Formation {
         load_plugin_textdomain('programme-formation', false, dirname(PFM_PLUGIN_BASENAME) . '/languages');
 
         // Initialiser les composants
-        PFM_Modules_Manager::get_instance();
+        PFM_Programme_Admin::get_instance();
         PFM_Shortcode::get_instance();
-        PFM_Admin_Interface::get_instance();
     }
 
     /**
@@ -104,40 +104,6 @@ class Programme_Formation {
             PFM_VERSION,
             true
         );
-    }
-
-    /**
-     * Enregistre les assets admin
-     */
-    public function enqueue_admin_assets($hook) {
-        // Charger uniquement sur les pages de posts/pages
-        global $post_type;
-        if (!in_array($hook, array('post.php', 'post-new.php'))) {
-            return;
-        }
-
-        // Styles admin
-        wp_enqueue_style(
-            'pfm-admin',
-            PFM_PLUGIN_URL . 'assets/css/admin.css',
-            array(),
-            PFM_VERSION
-        );
-
-        // Scripts admin
-        wp_enqueue_script(
-            'pfm-admin',
-            PFM_PLUGIN_URL . 'assets/js/admin.js',
-            array('jquery', 'jquery-ui-sortable'),
-            PFM_VERSION,
-            true
-        );
-
-        // Localisation
-        wp_localize_script('pfm-admin', 'pfmAdmin', array(
-            'confirmDelete' => __('Êtes-vous sûr de vouloir supprimer ce module ?', 'programme-formation'),
-            'addModule' => __('Ajouter un module', 'programme-formation'),
-        ));
     }
 }
 
