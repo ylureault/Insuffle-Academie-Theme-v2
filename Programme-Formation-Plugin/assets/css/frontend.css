@@ -188,12 +188,16 @@
     line-height: 1.7;
     background: rgba(255, 212, 102, 0.2);
     border-left: 4px solid var(--pfm-secondary);
-    color: rgba(255, 255, 255, 0.95);
+    color: white !important;
 }
 
 .pfm-objectif-box p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.95);
+    color: white !important;
+}
+
+.pfm-objectif-box * {
+    color: white !important;
 }
 
 .pfm-objectif-label {
@@ -205,7 +209,11 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--pfm-secondary);
+    color: var(--pfm-secondary) !important;
+}
+
+.pfm-objectif-label * {
+    color: var(--pfm-secondary) !important;
 }
 
 /* Section contenu */
@@ -236,7 +244,11 @@
     position: relative;
     font-size: 1rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: white !important;
+}
+
+.pfm-contenu-liste li * {
+    color: white !important;
 }
 
 .pfm-contenu-liste li::before {
@@ -245,7 +257,7 @@
     left: 0;
     font-weight: 900;
     font-size: 1.4rem;
-    color: var(--pfm-secondary);
+    color: var(--pfm-secondary) !important;
 }
 
 /* Badge évaluation */
