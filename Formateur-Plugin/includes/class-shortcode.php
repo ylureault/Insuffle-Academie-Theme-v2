@@ -40,11 +40,6 @@ class FFM_Shortcode {
         // Récupérer les données
         $data = FFM_Formateur_Manager::get_formateur_data($post_id);
 
-        // Si aucune donnée, retourner vide
-        if (empty($data['nom']) && empty($data['photo_id'])) {
-            return '';
-        }
-
         // Démarrer la sortie
         ob_start();
         ?>
