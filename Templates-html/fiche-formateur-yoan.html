@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoan Lureault - Formateur Expert en Intelligence Collective | Insuffle Académie</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #8E2183;
+            --secondary: #FFD466;
+            --accent: #FFC0CB;
+            --light: #FFFFFF;
+            --dark: #333333;
+            --grey: #F5F5F5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .fiche-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Header avec photo */
+        .header-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #6d1a66 100%);
+            padding: 60px 50px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,212,102,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .photo-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .photo-frame {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid var(--secondary);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .header-content {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+        
+        .header-content .tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .header-content .description {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        
+        /* Chiffres clés */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #6d1a66 100%);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,212,102,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--secondary);
+            line-height: 1;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+        
+        /* Citations */
+        .quote-section {
+            padding: 60px 50px;
+            background: white;
+            text-align: center;
+        }
+        
+        .quote-box {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .quote-author {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 30px;
+            }
+            
+            .photo-frame {
+                margin: 0 auto;
+            }
+            
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .quote-section {
+                padding: 40px 30px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fiche-container">
+        <!-- Header avec photo -->
+        <div class="header-section">
+            <div class="photo-container">
+                <div class="photo-frame">
+                    <img src="https://yoan.eu/wp-content/uploads/2023/10/yoan-lureault-scaled.jpg" alt="Yoan Lureault - Formateur Expert">
+                </div>
+            </div>
+            
+            <div class="header-content">
+                <div class="badge">Fondateur Insuffle Académie</div>
+                <h1>Yoan Lureault</h1>
+                <div class="tagline">Expert en Transformation Collective</div>
+                <p class="description">
+                    Facilitateur et stratège de la transformation organisationnelle, créateur des méthodologies 
+                    <strong>Futur Désiré®</strong> et <strong>Boussole 4C®</strong>. 
+                    15 ans d'expérience terrain à accompagner PME et ETI dans leur transformation par l'intelligence collective.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Chiffres clés -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <div class="stat-label">Années d'expérience terrain</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <div class="stat-label">Managers formés</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <div class="stat-label">Entreprises accompagnées</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <div class="stat-label">Méthodes propriétaires</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Citation -->
+        <div class="quote-section">
+            <div class="quote-box">
+                <div class="quote-icon">"</div>
+                <p class="quote-text">
+                    Le changement ne se décrète pas, il se facilite. Mon job n'est pas de vous dire quoi faire, 
+                    mais de révéler l'intelligence qui existe déjà dans vos équipes.
+                </p>
+                <p class="quote-author">— Yoan Lureault</p>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
