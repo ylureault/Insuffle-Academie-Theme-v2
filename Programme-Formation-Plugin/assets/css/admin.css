@@ -1,0 +1,27 @@
+/**
+ * Programme Formation - Admin Styles
+ * Styles pour l'interface d'administration
+ */
+
+/* Les styles de la metabox sont déjà inclus dans le template admin-metabox.php */
+/* Ce fichier est pour des styles admin supplémentaires si nécessaire */
+
+.pfm-admin-notice {
+    margin: 20px 0;
+    padding: 15px;
+    background: #e7f3ff;
+    border-left: 4px solid #0073aa;
+    border-radius: 4px;
+}
+
+.pfm-admin-notice p {
+    margin: 5px 0;
+}
+
+.pfm-sortable-placeholder {
+    background: #f0f0f0;
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    height: 100px;
+    margin-bottom: 15px;
+}

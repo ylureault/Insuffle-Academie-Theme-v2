@@ -1,0 +1,194 @@
+/**
+ * Programme Formation - Frontend Styles
+ * Styles identiques au HTML de référence avec préfixe "pfm-"
+ */
+
+:root {
+    --pfm-primary: #8E2183;
+    --pfm-secondary: #FFD466;
+    --pfm-accent: #FFC0CB;
+    --pfm-light: #FFFFFF;
+    --pfm-dark: #333333;
+    --pfm-grey: #F5F5F5;
+}
+
+/* Container principal */
+.pfm-programme-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Module */
+.pfm-module {
+    background: var(--pfm-light);
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    border-left: 6px solid var(--pfm-primary);
+}
+
+/* Module Header */
+.pfm-module-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Module Number */
+.pfm-module-number {
+    background: linear-gradient(135deg, var(--pfm-primary) 0%, #a52a9a 100%);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(142,33,131,0.3);
+}
+
+/* Module Title */
+.pfm-module-title {
+    flex: 1;
+}
+
+.pfm-module-title h3 {
+    margin: 0;
+    color: var(--pfm-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Module Content */
+.pfm-module-content {
+    color: var(--pfm-dark);
+    line-height: 1.7;
+}
+
+.pfm-module-content h4 {
+    color: var(--pfm-primary);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pfm-module-content ul {
+    margin: 15px 0;
+    padding-left: 30px;
+    list-style: none;
+}
+
+.pfm-module-content ul li {
+    margin: 10px 0;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 10px;
+}
+
+.pfm-module-content ul li:before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--pfm-primary);
+    border-radius: 50%;
+}
+
+.pfm-module-content p {
+    margin: 15px 0;
+    color: #666;
+}
+
+.pfm-module-content strong {
+    color: var(--pfm-primary);
+    font-weight: 600;
+}
+
+/* Quote Block */
+.pfm-quote-block {
+    background: linear-gradient(135deg, rgba(142,33,131,0.08) 0%, rgba(255,212,102,0.08) 100%);
+    padding: 20px 30px;
+    border-left: 5px solid var(--pfm-primary);
+    margin: 30px 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    border-radius: 0 10px 10px 0;
+    color: #555;
+}
+
+.pfm-quote-block strong {
+    font-style: normal;
+    color: var(--pfm-primary);
+}
+
+/* Notice */
+.pfm-notice {
+    background: #f7f7f7;
+    padding: 20px;
+    border-left: 4px solid var(--pfm-primary);
+    border-radius: 4px;
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pfm-module {
+        padding: 25px;
+    }
+
+    .pfm-module-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pfm-module-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .pfm-module-title h3 {
+        font-size: 1.5rem;
+    }
+
+    .pfm-module-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .pfm-quote-block {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pfm-programme-container {
+        padding: 0 10px;
+    }
+
+    .pfm-module {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .pfm-module-content ul {
+        padding-left: 20px;
+    }
+
+    .pfm-module-content ul li:before {
+        left: -15px;
+    }
+}
