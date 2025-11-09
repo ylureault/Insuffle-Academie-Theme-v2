@@ -1,0 +1,18 @@
+/**
+ * Calendrier Formation - Frontend Styles
+ * Styles pour l'affichage frontend des sessions
+ */
+
+/* Styles frontend (peuvent être personnalisés) */
+.cf-sessions-container {
+    margin: 20px 0;
+}
+
+.cf-no-sessions-message {
+    padding: 20px;
+    background: #f7f7f7;
+    border-left: 4px solid #0073aa;
+    border-radius: 4px;
+    text-align: center;
+    color: #666;
+}

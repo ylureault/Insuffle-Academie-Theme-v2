@@ -97,6 +97,26 @@ class CF_Agenda_Menu {
             array(CF_Diagnostic_404::get_instance(), 'render_diagnostic_page')
         );
 
+        // Sous-menu : Aide
+        add_submenu_page(
+            'calendrier-formation',
+            __('Aide & Documentation', 'calendrier-formation'),
+            '<span class="dashicons dashicons-book-alt" style="font-size: 17px; margin-right: 5px;"></span>' . __('Aide', 'calendrier-formation'),
+            'edit_pages',
+            'cf-help',
+            array(CF_Help_Page::get_instance(), 'render_help_page')
+        );
+
+        // Sous-menu : Aperçu
+        add_submenu_page(
+            'calendrier-formation',
+            __('Aperçu des Shortcodes', 'calendrier-formation'),
+            '<span class="dashicons dashicons-visibility" style="font-size: 17px; margin-right: 5px;"></span>' . __('Aperçu', 'calendrier-formation'),
+            'edit_pages',
+            'cf-preview',
+            array(CF_Preview_Page::get_instance(), 'render_preview_page')
+        );
+
         // Sous-menu : Paramètres
         add_submenu_page(
             'calendrier-formation',

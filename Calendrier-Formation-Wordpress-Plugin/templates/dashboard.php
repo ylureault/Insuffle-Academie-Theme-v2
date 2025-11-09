@@ -13,6 +13,38 @@ if (!defined('ABSPATH')) exit;
         <?php _e('Tableau de bord - Agenda Formation', 'calendrier-formation'); ?>
     </h1>
 
+    <!-- Widget de bienvenue -->
+    <div class="cf-welcome-panel">
+        <div class="cf-welcome-content">
+            <h2><?php _e('Bienvenue dans Calendrier Formation !', 'calendrier-formation'); ?></h2>
+            <p class="about-description">
+                <?php _e('Gérez facilement vos sessions de formation et réservations. Voici les actions rapides pour commencer :', 'calendrier-formation'); ?>
+            </p>
+            <div class="cf-welcome-actions">
+                <a href="?page=cf-calendar" class="cf-welcome-action">
+                    <span class="dashicons dashicons-calendar"></span>
+                    <strong><?php _e('Voir le calendrier', 'calendrier-formation'); ?></strong>
+                    <span class="cf-action-desc"><?php _e('Vue d\'ensemble des sessions', 'calendrier-formation'); ?></span>
+                </a>
+                <a href="?page=cf-sessions" class="cf-welcome-action">
+                    <span class="dashicons dashicons-plus-alt"></span>
+                    <strong><?php _e('Créer une session', 'calendrier-formation'); ?></strong>
+                    <span class="cf-action-desc"><?php _e('Ajouter une nouvelle session', 'calendrier-formation'); ?></span>
+                </a>
+                <a href="?page=cf-help" class="cf-welcome-action">
+                    <span class="dashicons dashicons-book-alt"></span>
+                    <strong><?php _e('Documentation', 'calendrier-formation'); ?></strong>
+                    <span class="cf-action-desc"><?php _e('Guides et shortcodes', 'calendrier-formation'); ?></span>
+                </a>
+                <a href="?page=cf-preview" class="cf-welcome-action">
+                    <span class="dashicons dashicons-visibility"></span>
+                    <strong><?php _e('Tester les shortcodes', 'calendrier-formation'); ?></strong>
+                    <span class="cf-action-desc"><?php _e('Aperçu en temps réel', 'calendrier-formation'); ?></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Statistiques -->
     <div class="cf-stats-grid">
         <div class="cf-stat-card cf-stat-formations">

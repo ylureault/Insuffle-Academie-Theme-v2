@@ -65,6 +65,8 @@ class Calendrier_Formation {
         require_once CF_PLUGIN_DIR . 'includes/class-booking-form.php';
         require_once CF_PLUGIN_DIR . 'includes/class-ajax-handler.php';
         require_once CF_PLUGIN_DIR . 'includes/class-diagnostic-404.php';
+        require_once CF_PLUGIN_DIR . 'includes/class-help-page.php';
+        require_once CF_PLUGIN_DIR . 'includes/class-preview-page.php';
     }
 
     /**
@@ -102,6 +104,8 @@ class Calendrier_Formation {
         CF_Booking_Form::get_instance();
         CF_Ajax_Handler::get_instance();
         CF_Diagnostic_404::get_instance();
+        CF_Help_Page::get_instance();
+        CF_Preview_Page::get_instance();
     }
 
     /**
