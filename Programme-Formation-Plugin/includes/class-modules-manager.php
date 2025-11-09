@@ -30,6 +30,7 @@ class PFM_Modules_Manager {
         $post_types = array('page', 'post');
 
         foreach ($post_types as $post_type) {
+            // Metabox modules
             add_meta_box(
                 'pfm_modules_metabox',
                 __('Programme de Formation - Modules', 'programme-formation'),
@@ -37,6 +38,16 @@ class PFM_Modules_Manager {
                 $post_type,
                 'normal',
                 'high'
+            );
+
+            // Metabox infos pratiques
+            add_meta_box(
+                'pfm_infos_metabox',
+                __('Programme de Formation - Informations Pratiques', 'programme-formation'),
+                array($this, 'render_infos_metabox'),
+                $post_type,
+                'normal',
+                'default'
             );
         }
     }
@@ -59,37 +70,70 @@ class PFM_Modules_Manager {
     }
 
     /**
+     * Affiche la metabox des infos pratiques
+     */
+    public function render_infos_metabox($post) {
+        // Nonce pour la sécurité
+        wp_nonce_field('pfm_save_infos', 'pfm_infos_nonce');
+
+        // Récupérer les données existantes
+        $infos = get_post_meta($post->ID, '_pfm_infos_pratiques', true);
+        if (empty($infos) || !is_array($infos)) {
+            $infos = array(
+                'methodes' => '',
+                'moyens' => '',
+                'evaluation' => ''
+            );
+        }
+
+        // Inclure le template
+        include PFM_PLUGIN_DIR . 'templates/admin-infos-metabox.php';
+    }
+
+    /**
      * Sauvegarde les modules
      */
     public function save_modules($post_id, $post) {
-        // Vérifications de sécurité
-        if (!isset($_POST['pfm_modules_nonce']) || !wp_verify_nonce($_POST['pfm_modules_nonce'], 'pfm_save_modules')) {
-            return;
-        }
+        // Vérifications de sécurité modules
+        if (isset($_POST['pfm_modules_nonce']) && wp_verify_nonce($_POST['pfm_modules_nonce'], 'pfm_save_modules')) {
+            if (!defined('DOING_AUTOSAVE') || !DOING_AUTOSAVE) {
+                if (current_user_can('edit_post', $post_id)) {
+                    // Récupérer et nettoyer les données
+                    $modules = array();
 
-        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-            return;
-        }
+                    if (isset($_POST['pfm_modules']) && is_array($_POST['pfm_modules'])) {
+                        foreach ($_POST['pfm_modules'] as $module_data) {
+                            $modules[] = array(
+                                'number' => sanitize_text_field($module_data['number'] ?? ''),
+                                'title' => sanitize_text_field($module_data['title'] ?? ''),
+                                'duree' => sanitize_text_field($module_data['duree'] ?? ''),
+                                'objectif' => wp_kses_post($module_data['objectif'] ?? ''),
+                                'content' => wp_kses_post($module_data['content'] ?? ''),
+                                'evaluation' => sanitize_text_field($module_data['evaluation'] ?? ''),
+                            );
+                        }
+                    }
 
-        if (!current_user_can('edit_post', $post_id)) {
-            return;
-        }
-
-        // Récupérer et nettoyer les données
-        $modules = array();
-
-        if (isset($_POST['pfm_modules']) && is_array($_POST['pfm_modules'])) {
-            foreach ($_POST['pfm_modules'] as $module_data) {
-                $modules[] = array(
-                    'number' => sanitize_text_field($module_data['number'] ?? ''),
-                    'title' => sanitize_text_field($module_data['title'] ?? ''),
-                    'content' => wp_kses_post($module_data['content'] ?? ''),
-                );
+                    // Sauvegarder
+                    update_post_meta($post_id, '_pfm_modules', $modules);
+                }
             }
         }
 
-        // Sauvegarder
-        update_post_meta($post_id, '_pfm_modules', $modules);
+        // Vérifications de sécurité infos pratiques
+        if (isset($_POST['pfm_infos_nonce']) && wp_verify_nonce($_POST['pfm_infos_nonce'], 'pfm_save_infos')) {
+            if (!defined('DOING_AUTOSAVE') || !DOING_AUTOSAVE) {
+                if (current_user_can('edit_post', $post_id)) {
+                    $infos = array(
+                        'methodes' => wp_kses_post($_POST['pfm_methodes'] ?? ''),
+                        'moyens' => wp_kses_post($_POST['pfm_moyens'] ?? ''),
+                        'evaluation' => wp_kses_post($_POST['pfm_evaluation'] ?? ''),
+                    );
+
+                    update_post_meta($post_id, '_pfm_infos_pratiques', $infos);
+                }
+            }
+        }
     }
 
     /**
@@ -103,5 +147,22 @@ class PFM_Modules_Manager {
         }
 
         return $modules;
+    }
+
+    /**
+     * Récupère les infos pratiques d'un post
+     */
+    public static function get_infos_pratiques($post_id) {
+        $infos = get_post_meta($post_id, '_pfm_infos_pratiques', true);
+
+        if (empty($infos) || !is_array($infos)) {
+            return array(
+                'methodes' => '',
+                'moyens' => '',
+                'evaluation' => ''
+            );
+        }
+
+        return $infos;
     }
 }

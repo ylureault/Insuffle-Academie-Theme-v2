@@ -11,7 +11,86 @@ if (!defined('ABSPATH')) exit;
     <div class="pfm-modules-list" id="pfm-modules-sortable">
         <?php if (!empty($modules)): ?>
             <?php foreach ($modules as $index => $module): ?>
-                <?php $this->render_module_row($module, $index); ?>
+                <div class="pfm-module-row" data-index="<?php echo esc_attr($index); ?>">
+                    <div class="pfm-module-handle">
+                        <span class="dashicons dashicons-menu"></span>
+                    </div>
+
+                    <div class="pfm-module-content">
+                        <div class="pfm-module-header-controls">
+                            <button type="button" class="pfm-toggle-module">
+                                <span class="dashicons dashicons-arrow-down-alt2"></span>
+                            </button>
+                            <span class="pfm-module-preview">
+                                <?php _e('Module', 'programme-formation'); ?>
+                                <span class="pfm-module-number-preview"><?php echo esc_html($module['number'] ?? ''); ?></span>:
+                                <span class="pfm-module-title-preview"><?php echo esc_html($module['title'] ?? __('Sans titre', 'programme-formation')); ?></span>
+                            </span>
+                            <button type="button" class="pfm-remove-module button button-link-delete">
+                                <?php _e('Supprimer', 'programme-formation'); ?>
+                            </button>
+                        </div>
+
+                        <div class="pfm-module-fields">
+                            <div class="pfm-field-row">
+                                <div class="pfm-field pfm-field-small">
+                                    <label><?php _e('Numéro', 'programme-formation'); ?></label>
+                                    <input type="text"
+                                           name="pfm_modules[<?php echo esc_attr($index); ?>][number]"
+                                           class="pfm-module-number-input"
+                                           value="<?php echo esc_attr($module['number'] ?? ''); ?>"
+                                           placeholder="<?php _e('1', 'programme-formation'); ?>">
+                                </div>
+
+                                <div class="pfm-field pfm-field-small">
+                                    <label><?php _e('Durée', 'programme-formation'); ?></label>
+                                    <input type="text"
+                                           name="pfm_modules[<?php echo esc_attr($index); ?>][duree]"
+                                           class="pfm-module-duree-input"
+                                           value="<?php echo esc_attr($module['duree'] ?? ''); ?>"
+                                           placeholder="<?php _e('3 heures', 'programme-formation'); ?>">
+                                </div>
+
+                                <div class="pfm-field pfm-field-large">
+                                    <label><?php _e('Titre du module', 'programme-formation'); ?></label>
+                                    <input type="text"
+                                           name="pfm_modules[<?php echo esc_attr($index); ?>][title]"
+                                           class="pfm-module-title-input widefat"
+                                           value="<?php echo esc_attr($module['title'] ?? ''); ?>"
+                                           placeholder="<?php _e('Maîtriser le principe...', 'programme-formation'); ?>">
+                                </div>
+                            </div>
+
+                            <div class="pfm-field">
+                                <label><?php _e('🎯 Objectif pédagogique (optionnel)', 'programme-formation'); ?></label>
+                                <textarea name="pfm_modules[<?php echo esc_attr($index); ?>][objectif]"
+                                          class="pfm-module-objectif-input widefat"
+                                          rows="3"
+                                          placeholder="<?php _e('À l\'issue de ce module, le stagiaire sera capable de...', 'programme-formation'); ?>"><?php echo esc_textarea($module['objectif'] ?? ''); ?></textarea>
+                            </div>
+
+                            <div class="pfm-field">
+                                <label><?php _e('📚 Contenu du module (optionnel)', 'programme-formation'); ?></label>
+                                <textarea name="pfm_modules[<?php echo esc_attr($index); ?>][content]"
+                                          class="pfm-module-content-input widefat"
+                                          rows="8"
+                                          placeholder="<?php _e('Entrez le contenu ligne par ligne (chaque ligne aura automatiquement une coche ✓)', 'programme-formation'); ?>"><?php echo esc_textarea($module['content'] ?? ''); ?></textarea>
+                                <p class="description">
+                                    <?php _e('Une ligne = un point de contenu (la coche ✓ sera ajoutée automatiquement).', 'programme-formation'); ?>
+                                </p>
+                            </div>
+
+                            <div class="pfm-field">
+                                <label><?php _e('📋 Texte évaluation (optionnel)', 'programme-formation'); ?></label>
+                                <input type="text"
+                                       name="pfm_modules[<?php echo esc_attr($index); ?>][evaluation]"
+                                       class="pfm-module-evaluation-input widefat"
+                                       value="<?php echo esc_attr($module['evaluation'] ?? ''); ?>"
+                                       placeholder="<?php _e('Évaluation Module 1', 'programme-formation'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
@@ -24,14 +103,15 @@ if (!defined('ABSPATH')) exit;
     </div>
 
     <div class="pfm-help-text">
-        <p><strong><?php _e('💡 Astuce :', 'programme-formation'); ?></strong> <?php _e('Vous pouvez réorganiser les modules par glisser-déposer.', 'programme-formation'); ?></p>
-        <p><?php _e('Tous les champs sont optionnels. Laissez vide les champs que vous ne souhaitez pas afficher.', 'programme-formation'); ?></p>
+        <p><strong><?php _e('💡 Astuce :', 'programme-formation'); ?></strong> <?php _e('Glissez-déposez pour réorganiser les modules.', 'programme-formation'); ?></p>
+        <p><?php _e('✓ Chaque ligne du contenu aura automatiquement une coche devant.', 'programme-formation'); ?></p>
+        <p><?php _e('Tous les champs sont optionnels.', 'programme-formation'); ?></p>
     </div>
 </div>
 
 <!-- Template pour nouveau module -->
 <script type="text/template" id="pfm-module-template">
-    <div class="pfm-module-row">
+    <div class="pfm-module-row" data-index="{{INDEX}}">
         <div class="pfm-module-handle">
             <span class="dashicons dashicons-menu"></span>
         </div>
@@ -50,32 +130,57 @@ if (!defined('ABSPATH')) exit;
             </div>
 
             <div class="pfm-module-fields">
-                <div class="pfm-field">
-                    <label><?php _e('Numéro du module (optionnel)', 'programme-formation'); ?></label>
-                    <input type="text"
-                           name="pfm_modules[{{INDEX}}][number]"
-                           class="pfm-module-number-input"
-                           placeholder="<?php _e('Ex: 1, 2, 3...', 'programme-formation'); ?>">
+                <div class="pfm-field-row">
+                    <div class="pfm-field pfm-field-small">
+                        <label><?php _e('Numéro', 'programme-formation'); ?></label>
+                        <input type="text"
+                               name="pfm_modules[{{INDEX}}][number]"
+                               class="pfm-module-number-input"
+                               placeholder="<?php _e('1', 'programme-formation'); ?>">
+                    </div>
+
+                    <div class="pfm-field pfm-field-small">
+                        <label><?php _e('Durée', 'programme-formation'); ?></label>
+                        <input type="text"
+                               name="pfm_modules[{{INDEX}}][duree]"
+                               class="pfm-module-duree-input"
+                               placeholder="<?php _e('3 heures', 'programme-formation'); ?>">
+                    </div>
+
+                    <div class="pfm-field pfm-field-large">
+                        <label><?php _e('Titre du module', 'programme-formation'); ?></label>
+                        <input type="text"
+                               name="pfm_modules[{{INDEX}}][title]"
+                               class="pfm-module-title-input widefat"
+                               placeholder="<?php _e('Maîtriser le principe...', 'programme-formation'); ?>">
+                    </div>
                 </div>
 
                 <div class="pfm-field">
-                    <label><?php _e('Titre du module (optionnel)', 'programme-formation'); ?></label>
-                    <input type="text"
-                           name="pfm_modules[{{INDEX}}][title]"
-                           class="pfm-module-title-input widefat"
-                           placeholder="<?php _e('Ex: Le principe du Sketchnoting', 'programme-formation'); ?>">
+                    <label><?php _e('🎯 Objectif pédagogique (optionnel)', 'programme-formation'); ?></label>
+                    <textarea name="pfm_modules[{{INDEX}}][objectif]"
+                              class="pfm-module-objectif-input widefat"
+                              rows="3"
+                              placeholder="<?php _e('À l\'issue de ce module, le stagiaire sera capable de...', 'programme-formation'); ?>"></textarea>
                 </div>
 
                 <div class="pfm-field">
-                    <label><?php _e('Contenu du module (optionnel - HTML autorisé)', 'programme-formation'); ?></label>
+                    <label><?php _e('📚 Contenu du module (optionnel)', 'programme-formation'); ?></label>
                     <textarea name="pfm_modules[{{INDEX}}][content]"
                               class="pfm-module-content-input widefat"
-                              rows="10"
-                              placeholder="<?php _e('Ajoutez le contenu HTML...', 'programme-formation'); ?>"></textarea>
+                              rows="8"
+                              placeholder="<?php _e('Entrez le contenu ligne par ligne (chaque ligne aura automatiquement une coche ✓)', 'programme-formation'); ?>"></textarea>
                     <p class="description">
-                        <?php _e('Vous pouvez utiliser du HTML : &lt;h4&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;strong&gt;, etc.', 'programme-formation'); ?>
-                        <br><?php _e('Utilisez la classe "pfm-quote-block" pour créer un encadré.', 'programme-formation'); ?>
+                        <?php _e('Une ligne = un point de contenu (la coche ✓ sera ajoutée automatiquement).', 'programme-formation'); ?>
                     </p>
+                </div>
+
+                <div class="pfm-field">
+                    <label><?php _e('📋 Texte évaluation (optionnel)', 'programme-formation'); ?></label>
+                    <input type="text"
+                           name="pfm_modules[{{INDEX}}][evaluation]"
+                           class="pfm-module-evaluation-input widefat"
+                           placeholder="<?php _e('Évaluation Module 1', 'programme-formation'); ?>">
                 </div>
             </div>
         </div>
@@ -100,23 +205,26 @@ if (!defined('ABSPATH')) exit;
         transition: all 0.3s ease;
     }
 
-    .pfm-module-row.ui-sortable-helper {
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    .pfm-module-row:hover {
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .pfm-module-handle {
-        width: 40px;
-        background: #8E2183;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
+        padding: 15px 10px;
         cursor: move;
-        border-radius: 4px 0 0 4px;
+        color: #999;
+        background: #f0f0f0;
+        border-right: 1px solid #ddd;
     }
 
     .pfm-module-handle .dashicons {
-        color: white;
         font-size: 20px;
+        width: 20px;
+        height: 20px;
     }
 
     .pfm-module-content {
@@ -130,30 +238,27 @@ if (!defined('ABSPATH')) exit;
         gap: 10px;
         margin-bottom: 15px;
         padding-bottom: 10px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #e0e0e0;
     }
 
     .pfm-toggle-module {
         background: none;
         border: none;
         cursor: pointer;
-        padding: 5px;
-        display: flex;
-        align-items: center;
-        transition: transform 0.3s ease;
-    }
-
-    .pfm-toggle-module .dashicons {
-        font-size: 20px;
+        padding: 0;
         color: #666;
     }
 
-    .pfm-module-row.pfm-collapsed .pfm-toggle-module {
-        transform: rotate(-90deg);
+    .pfm-toggle-module:hover {
+        color: #000;
     }
 
-    .pfm-module-row.pfm-collapsed .pfm-module-fields {
-        display: none;
+    .pfm-toggle-module .dashicons {
+        transition: transform 0.3s;
+    }
+
+    .pfm-module-row.collapsed .pfm-toggle-module .dashicons {
+        transform: rotate(-90deg);
     }
 
     .pfm-module-preview {
@@ -163,43 +268,30 @@ if (!defined('ABSPATH')) exit;
     }
 
     .pfm-module-number-preview {
-        display: inline-block;
-        min-width: 30px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-        background: #8E2183;
-        color: white;
-        border-radius: 50%;
-        font-size: 14px;
-    }
-
-    .pfm-module-title-preview {
         color: #8E2183;
     }
 
-    .pfm-remove-module {
-        color: #a00;
-        text-decoration: none;
+    .pfm-module-title-preview {
+        color: #666;
     }
 
-    .pfm-remove-module:hover {
-        color: #dc3232;
+    .pfm-remove-module {
+        color: #b32d2e;
     }
 
     .pfm-module-fields {
-        animation: slideDown 0.3s ease;
+        display: none;
     }
 
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .pfm-module-row:not(.collapsed) .pfm-module-fields {
+        display: block;
+    }
+
+    .pfm-field-row {
+        display: grid;
+        grid-template-columns: 80px 150px 1fr;
+        gap: 15px;
+        margin-bottom: 15px;
     }
 
     .pfm-field {
@@ -210,124 +302,66 @@ if (!defined('ABSPATH')) exit;
         display: block;
         font-weight: 600;
         margin-bottom: 5px;
+        font-size: 13px;
         color: #333;
     }
 
     .pfm-field input[type="text"],
     .pfm-field textarea {
         width: 100%;
-        padding: 8px;
+        padding: 8px 12px;
         border: 1px solid #ddd;
         border-radius: 4px;
-        font-family: monospace;
+        font-size: 14px;
+    }
+
+    .pfm-field input[type="text"]:focus,
+    .pfm-field textarea:focus {
+        border-color: #8E2183;
+        outline: none;
+        box-shadow: 0 0 0 1px #8E2183;
     }
 
     .pfm-field textarea {
-        font-size: 13px;
-        line-height: 1.6;
+        resize: vertical;
+        font-family: inherit;
     }
 
     .pfm-field .description {
         margin-top: 5px;
-        font-style: italic;
-        color: #666;
         font-size: 12px;
+        color: #666;
     }
 
     .pfm-add-module-container {
         text-align: center;
-        padding: 20px;
-        background: #f0f0f0;
-        border: 2px dashed #ddd;
-        border-radius: 4px;
-        margin-bottom: 20px;
+        margin: 20px 0;
     }
 
     .pfm-add-module {
         font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .pfm-add-module .dashicons {
-        margin-right: 5px;
+        font-weight: 600;
+        padding: 8px 20px;
     }
 
     .pfm-help-text {
         background: #e7f3ff;
         border-left: 4px solid #0073aa;
         padding: 15px;
+        margin-top: 20px;
         border-radius: 4px;
     }
 
     .pfm-help-text p {
         margin: 5px 0;
+        font-size: 13px;
+    }
+
+    .pfm-sortable-placeholder {
+        background: #FFD466;
+        border: 2px dashed #8E2183;
+        border-radius: 4px;
+        height: 100px;
+        margin-bottom: 15px;
     }
 </style>
-
-<?php
-// Fonction helper pour afficher une ligne de module
-function render_module_row($module, $index) {
-    ?>
-    <div class="pfm-module-row">
-        <div class="pfm-module-handle">
-            <span class="dashicons dashicons-menu"></span>
-        </div>
-
-        <div class="pfm-module-content">
-            <div class="pfm-module-header-controls">
-                <button type="button" class="pfm-toggle-module">
-                    <span class="dashicons dashicons-arrow-down-alt2"></span>
-                </button>
-                <span class="pfm-module-preview">
-                    <?php _e('Module', 'programme-formation'); ?>
-                    <?php if (!empty($module['number'])): ?>
-                        <span class="pfm-module-number-preview"><?php echo esc_html($module['number']); ?></span>
-                    <?php else: ?>
-                        <span class="pfm-module-number-preview">-</span>
-                    <?php endif; ?>
-                    :
-                    <span class="pfm-module-title-preview">
-                        <?php echo !empty($module['title']) ? esc_html($module['title']) : __('(Sans titre)', 'programme-formation'); ?>
-                    </span>
-                </span>
-                <button type="button" class="pfm-remove-module button button-link-delete">
-                    <?php _e('Supprimer', 'programme-formation'); ?>
-                </button>
-            </div>
-
-            <div class="pfm-module-fields">
-                <div class="pfm-field">
-                    <label><?php _e('Numéro du module (optionnel)', 'programme-formation'); ?></label>
-                    <input type="text"
-                           name="pfm_modules[<?php echo $index; ?>][number]"
-                           class="pfm-module-number-input"
-                           value="<?php echo esc_attr($module['number'] ?? ''); ?>"
-                           placeholder="<?php _e('Ex: 1, 2, 3...', 'programme-formation'); ?>">
-                </div>
-
-                <div class="pfm-field">
-                    <label><?php _e('Titre du module (optionnel)', 'programme-formation'); ?></label>
-                    <input type="text"
-                           name="pfm_modules[<?php echo $index; ?>][title]"
-                           class="pfm-module-title-input widefat"
-                           value="<?php echo esc_attr($module['title'] ?? ''); ?>"
-                           placeholder="<?php _e('Ex: Le principe du Sketchnoting', 'programme-formation'); ?>">
-                </div>
-
-                <div class="pfm-field">
-                    <label><?php _e('Contenu du module (optionnel - HTML autorisé)', 'programme-formation'); ?></label>
-                    <textarea name="pfm_modules[<?php echo $index; ?>][content]"
-                              class="pfm-module-content-input widefat"
-                              rows="10"
-                              placeholder="<?php _e('Ajoutez le contenu HTML...', 'programme-formation'); ?>"><?php echo esc_textarea($module['content'] ?? ''); ?></textarea>
-                    <p class="description">
-                        <?php _e('Vous pouvez utiliser du HTML : &lt;h4&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;strong&gt;, etc.', 'programme-formation'); ?>
-                        <br><?php _e('Utilisez la classe "pfm-quote-block" pour créer un encadré.', 'programme-formation'); ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
-}
-?>

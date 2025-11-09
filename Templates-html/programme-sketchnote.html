@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme Sketchnoting</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #8E2183;
+            --secondary: #FFD466;
+            --accent: #FFC0CB;
+            --light: #FFFFFF;
+            --dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #fafafa;
+        }
+
+        .programme-wrapper {
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .fil-conducteur {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                var(--primary) 5%,
+                var(--secondary) 50%,
+                var(--accent) 95%,
+                transparent 100%
+            );
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .fil-conducteur::before,
+        .fil-conducteur::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 0 8px rgba(142, 33, 131, 0.2);
+        }
+
+        .fil-conducteur::before {
+            top: 0;
+        }
+
+        .fil-conducteur::after {
+            bottom: 0;
+            background: var(--accent);
+            box-shadow: 0 0 0 8px rgba(255, 192, 203, 0.2);
+        }
+
+        .module-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .module-item {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .module-item:nth-child(1) { animation-delay: 0.1s; }
+        .module-item:nth-child(2) { animation-delay: 0.2s; }
+        .module-item:nth-child(3) { animation-delay: 0.3s; }
+        .module-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .module-item:nth-child(odd) .module-card {
+            grid-column: 1;
+        }
+
+        .module-item:nth-child(odd) .module-empty {
+            grid-column: 3;
+        }
+
+        .module-item:nth-child(even) .module-card {
+            grid-column: 3;
+        }
+
+        .module-item:nth-child(even) .module-empty {
+            grid-column: 1;
+        }
+
+        .module-dot {
+            grid-column: 2;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, #8E2183, #6d1a66);
+            box-shadow: 0 10px 40px rgba(142, 33, 131, 0.4);
+            border: 5px solid white;
+            z-index: 10;
+            position: relative;
+        }
+
+        .module-card {
+            background: linear-gradient(135deg, #8E2183 0%, #6d1a66 100%);
+            color: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,212,102,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(142, 33, 131, 0.3);
+        }
+
+        .module-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--secondary);
+        }
+
+        .duration-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            background: rgba(255, 212, 102, 0.3);
+            color: var(--secondary);
+        }
+
+        .objectif-box {
+            padding: 25px;
+            border-radius: 20px;
+            margin: 25px 0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            background: rgba(255, 212, 102, 0.2);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .objectif-label {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+        }
+
+        .contenu-section {
+            margin-top: 30px;
+        }
+
+        .contenu-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+        }
+
+        .contenu-liste {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contenu-liste li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contenu-liste li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--secondary);
+        }
+
+        .eval-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            margin-top: 30px;
+            font-size: 1rem;
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .infos-pratiques {
+            max-width: 1400px;
+            margin: 100px auto 60px;
+            padding: 0 20px;
+        }
+
+        .infos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 30px;
+            padding: 45px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .info-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 1024px) {
+            .fil-conducteur {
+                display: none;
+            }
+
+            .module-item {
+                grid-template-columns: 1fr !important;
+                gap: 20px;
+            }
+
+            .module-item .module-card {
+                grid-column: 1 !important;
+            }
+
+            .module-dot {
+                grid-column: 1 !important;
+                margin: 0 auto;
+            }
+
+            .module-empty {
+                display: none;
+            }
+
+            .module-card {
+                padding: 35px;
+            }
+
+            .module-title {
+                font-size: 2rem;
+            }
+
+            .infos-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .module-card {
+                padding: 30px;
+                border-radius: 20px;
+            }
+
+            .module-title {
+                font-size: 1.7rem;
+            }
+
+            .module-dot {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+
+            .info-card {
+                padding: 30px;
+            }
+
+            .info-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="programme-wrapper">
+        <div class="fil-conducteur"></div>
+
+        <div class="module-container">
+            <!-- Module 1 -->
+            <div class="module-item">
+                <div class="module-card">
+                    <div class="duration-badge">
+                        <span>⏱️</span>
+                        <span>3 heures</span>
+                    </div>
+                    <h2 class="module-title">Maîtriser le principe de Sketchnoting</h2>
+
+                    <div class="objectif-box">
+                        <div class="objectif-label">
+                            <span>🎯</span>
+                            <span>Objectif</span>
+                        </div>
+                        <p>À l'issue de ce module, le stagiaire sera capable de définir ce qu'est le sketchnoting et son utilité dans la transmission d'informations au sein d'une équipe.</p>
+                    </div>
+
+                    <div class="contenu-section">
+                        <div class="contenu-title">
+                            <span>📚</span>
+                            <span>Contenu</span>
+                        </div>
+                        <ul class="contenu-liste">
+                            <li>Définir le Sketchnoting</li>
+                            <li>Identifier le matériel nécessaire</li>
+                            <li>Identifier les avantages du Sketchnoting</li>
+                            <li>Identifier les différentes pratiques de la facilitation graphique</li>
+                            <li>Maîtriser les principes de base du Sketchnoting</li>
+                        </ul>
+                    </div>
+
+                    <div class="eval-badge">
+                        <span>📋</span>
+                        <span>Évaluation Module 1</span>
+                    </div>
+                </div>
+                <div class="module-dot">1</div>
+                <div class="module-empty"></div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-item">
+                <div class="module-empty"></div>
+                <div class="module-dot">2</div>
+                <div class="module-card">
+                    <div class="duration-badge">
+                        <span>⏱️</span>
+                        <span>4 heures</span>
+                    </div>
+                    <h2 class="module-title">Maîtriser le processus du Sketchnoting</h2>
+
+                    <div class="objectif-box">
+                        <div class="objectif-label">
+                            <span>🎯</span>
+                            <span>Objectif</span>
+                        </div>
+                        <p>À l'issue de ce module, le stagiaire sera capable d'utiliser les 4 approches de base d'une représentation visuelle.</p>
+                    </div>
+
+                    <div class="contenu-section">
+                        <div class="contenu-title">
+                            <span>📚</span>
+                            <span>Contenu</span>
+                        </div>
+                        <ul class="contenu-liste">
+                            <li>Maîtriser les techniques de représentations rapides d'une information</li>
+                            <li>Maîtriser la gestion de l'espace</li>
+                            <li>S'entraîner et pratiquer dans un contexte de réunion, d'un atelier et d'une présentation</li>
+                            <li>Maîtriser les 4 approches de la facilitation visuelle</li>
+                        </ul>
+                    </div>
+
+                    <div class="eval-badge">
+                        <span>📋</span>
+                        <span>Évaluation Module 2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="module-item">
+                <div class="module-card">
+                    <div class="duration-badge">
+                        <span>⏱️</span>
+                        <span>4 heures</span>
+                    </div>
+                    <h2 class="module-title">Maîtriser les éléments composant un SketchNote</h2>
+
+                    <div class="objectif-box">
+                        <div class="objectif-label">
+                            <span>🎯</span>
+                            <span>Objectif</span>
+                        </div>
+                        <p>À l'issue de ce module, le stagiaire sera capable de se constituer sa propre bibliothèque de représentations graphiques.</p>
+                    </div>
+
+                    <div class="contenu-section">
+                        <div class="contenu-title">
+                            <span>📚</span>
+                            <span>Contenu</span>
+                        </div>
+                        <ul class="contenu-liste">
+                            <li>Créer son propre vocabulaire visuel</li>
+                        </ul>
+                    </div>
+
+                    <div class="eval-badge">
+                        <span>📋</span>
+                        <span>Évaluation Module 3</span>
+                    </div>
+                </div>
+                <div class="module-dot">3</div>
+                <div class="module-empty"></div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="module-item">
+                <div class="module-empty"></div>
+                <div class="module-dot">4</div>
+                <div class="module-card">
+                    <div class="duration-badge">
+                        <span>⏱️</span>
+                        <span>3 heures</span>
+                    </div>
+                    <h2 class="module-title">Réaliser ses premiers sketchnotes</h2>
+
+                    <div class="objectif-box">
+                        <div class="objectif-label">
+                            <span>🎯</span>
+                            <span>Objectif</span>
+                        </div>
+                        <p>À l'issue de ce module, le stagiaire sera capable de sketchnoter une réunion, un atelier, un évènement.</p>
+                    </div>
+
+                    <div class="contenu-section">
+                        <div class="contenu-title">
+                            <span>📚</span>
+                            <span>Contenu</span>
+                        </div>
+                        <ul class="contenu-liste">
+                            <li>Maîtriser les canevas et les métaphores types</li>
+                            <li>Analyser des exemples de facilitation graphique</li>
+                            <li>Filtrer l'information</li>
+                            <li>Diffuser ses sketchnotes</li>
+                        </ul>
+                    </div>
+
+                    <div class="eval-badge">
+                        <span>📋</span>
+                        <span>Évaluation Module 4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infos-pratiques">
+        <div class="infos-grid">
+            <div class="info-card">
+                <h3>
+                    <span class="info-icon">🎯</span>
+                    <span>Méthodes pédagogiques</span>
+                </h3>
+                <p>Alternance d'apports théoriques et d'exercices pratiques. Approche progressive et expérientielle. Travaux individuels et collectifs, échanges et feedbacks réguliers.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>
+                    <span class="info-icon">🛠️</span>
+                    <span>Moyens techniques</span>
+                </h3>
+                <ul>
+                    <li>Supports visuels projetés</li>
+                    <li>Paperboards</li>
+                    <li>Feutres</li>
+                    <li>Tablettes</li>
+                    <li>Modèles de sketchnotes</li>
+                    <li>Fiches de repères graphiques</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>
+                    <span class="info-icon">✅</span>
+                    <span>Modalités d'évaluation</span>
+                </h3>
+                <p>Évaluation continue au fil des modules (exercices pratiques, autoévaluations) et réalisation d'un sketchnote final.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
