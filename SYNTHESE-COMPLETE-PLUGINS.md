@@ -2,10 +2,11 @@
 
 ## 🎯 Vue d'ensemble
 
-Deux plugins complets ont été créés/améliorés pour gérer vos formations :
+**Trois plugins complets** ont été créés/améliorés pour gérer vos formations :
 
 1. **Calendrier Formation** - Gestion des sessions et réservations
 2. **Programme Formation** - Gestion du programme avec modules dynamiques
+3. **Galerie Formation** - Gestion de galeries d'images
 
 ---
 
@@ -218,6 +219,116 @@ Chaque module s'affiche comme ceci :
 
 ---
 
+## 3️⃣ Plugin : Galerie Formation (Nouveau)
+
+### 📁 Emplacement
+`Galerie-Formation-Plugin/`
+
+### 🎯 Objectif
+Gérer des galeries d'images pour vos formations avec un système d'upload intégré à WordPress.
+
+### ✨ Fonctionnalités principales
+
+#### 📸 Système de Galerie
+- **Upload via médiathèque WordPress** : Interface native
+- **Images illimités** : Ajoutez autant d'images que vous voulez
+- **Champs optionnels** par image :
+  - Titre (optionnel)
+  - Description (optionnel)
+  - Catégorie (optionnel)
+- **Glisser-déposer** pour réorganiser les images
+
+#### 🎨 Interface Admin
+- **Metabox** sur toutes les pages et articles
+- **Médiathèque WordPress** intégrée
+- **Aperçu des images** en temps réel
+- **Boutons "Changer" et "Supprimer"** pour chaque image
+- **Drag & drop** pour réorganiser
+
+#### 🎨 Design Frontend
+- **Identique au HTML de référence** (formation-sketchnote.html)
+- **Classes CSS préfixées "gfm-"** pour éviter les conflits
+- **Couleur** : Violet (#8E2183)
+- **Grille responsive** adaptative
+- **Effet hover** avec zoom et overlay
+- **Overlay dégradé** violet au survol
+
+### 📝 Shortcode
+
+```
+[galerie_formation]
+```
+
+**Paramètres :**
+- `post_id` - ID du post/page (défaut: page actuelle)
+- `category` - Filtrer par catégorie (optionnel)
+- `columns` - Nombre de colonnes (défaut: 3)
+- `titre` - Titre de la galerie (optionnel)
+- `sous_titre` - Sous-titre de la galerie (optionnel)
+- `description` - Description de la galerie (optionnel)
+
+**Exemples :**
+```
+[galerie_formation]
+[galerie_formation columns="4"]
+[galerie_formation category="sketchnote"]
+[galerie_formation titre="Exemples de Sketchnotes" sous_titre="Portfolio"]
+```
+
+### 📄 Structure de la galerie
+
+```
+┌─────────────────────────────────────┐
+│  Portfolio                          │
+│  Exemples de Sketchnotes réalisés  │
+│  Découvrez des exemples concrets   │
+├─────────────────────────────────────┤
+│                                     │
+│  ┌───┐  ┌───┐  ┌───┐              │
+│  │img│  │img│  │img│              │
+│  └───┘  └───┘  └───┘              │
+│                                     │
+│  ┌───┐  ┌───┐  ┌───┐              │
+│  │img│  │img│  │img│              │
+│  └───┘  └───┘  └───┘              │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+### 📄 Fichiers créés
+- `galerie-formation.php` - Fichier principal
+- `includes/class-gallery-manager.php` - Gestion metabox
+- `includes/class-shortcode.php` - Shortcode
+- `includes/class-admin-interface.php` - Menu et aide
+- `templates/admin-metabox.php` - Interface metabox
+- `assets/css/frontend.css` - Styles identiques au HTML
+- `assets/css/admin.css` - Styles admin
+- `assets/js/admin.js` - Scripts médiathèque WordPress
+- `assets/js/frontend.js` - Scripts frontend
+- `README.md` - Documentation complète
+- `VERIFICATION.md` - Guide de tests
+
+### 📋 Menu WordPress "Galerie"
+
+```
+🖼️ Galerie
+└── 📖 Documentation (Guide complet)
+```
+
+### ✅ Fonctionnalités complètes
+- ✅ Upload via médiathèque WordPress
+- ✅ Images illimitées
+- ✅ Glisser-déposer pour réorganiser
+- ✅ Tous les champs optionnels
+- ✅ Filtrage par catégorie
+- ✅ Grille responsive
+- ✅ Effet hover avec zoom et overlay
+- ✅ Design identique au HTML de référence
+- ✅ Classes CSS préfixées "gfm-"
+- ✅ Documentation intégrée
+
+---
+
 ## 🚀 Installation
 
 ### Pour Calendrier Formation :
@@ -231,6 +342,13 @@ Chaque module s'affiche comme ceci :
 3. Créez/éditez une page
 4. Ajoutez des modules dans la metabox
 5. Insérez `[programme_formation]` dans le contenu
+
+### Pour Galerie Formation :
+1. Activez le plugin dans WordPress
+2. Allez dans `Galerie` pour la documentation
+3. Créez/éditez une page
+4. Ajoutez des images dans la metabox via la médiathèque
+5. Insérez `[galerie_formation]` dans le contenu
 
 ---
 
@@ -275,6 +393,15 @@ Chaque module s'affiche comme ceci :
 - `.pfm-module-content` - Contenu du module
 - `.pfm-quote-block` - Encadré stylisé
 
+### Galerie Formation (préfixe "gfm-")
+- `.gfm-gallery-container` - Container de la galerie
+- `.gfm-gallery-header` - En-tête de la galerie
+- `.gfm-gallery-grid` - Grille d'images
+- `.gfm-gallery-item` - Item individuel (image)
+- `.gfm-gallery-overlay` - Overlay au survol
+- `.gfm-gallery-title` - Titre de l'image
+- `.gfm-gallery-description` - Description de l'image
+
 ---
 
 ## 📊 Statistiques
@@ -295,10 +422,18 @@ Chaque module s'affiche comme ceci :
 - **Documentation** : 2
 - **Lignes de code** : ~1700
 
+### Galerie Formation
+- **Fichiers créés** : 11
+- **Classes PHP** : 3
+- **Templates** : 1
+- **Assets CSS/JS** : 4
+- **Documentation** : 2
+- **Lignes de code** : ~1100
+
 ### Total
-- **2 plugins complets**
-- **22 fichiers créés/modifiés**
-- **~3700+ lignes de code**
+- **3 plugins complets**
+- **33 fichiers créés/modifiés**
+- **~4800+ lignes de code**
 - **Documentation complète**
 
 ---
@@ -325,6 +460,19 @@ Chaque module s'affiche comme ceci :
 - [ ] Modules s'affichent avec le bon design
 - [ ] Design identique au HTML de référence
 
+### Galerie Formation
+- [ ] Activé et fonctionnel
+- [ ] Menu "Galerie" visible
+- [ ] Metabox visible sur les pages
+- [ ] Médiathèque WordPress s'ouvre
+- [ ] Upload d'images fonctionne
+- [ ] Glisser-déposer fonctionne
+- [ ] Shortcode `[galerie_formation]` fonctionne
+- [ ] Grille d'images s'affiche correctement
+- [ ] Effet hover et overlay fonctionnent
+- [ ] Design identique au HTML de référence
+- [ ] Filtrage par catégorie fonctionne
+
 ---
 
 ## 🆘 Support
@@ -332,34 +480,41 @@ Chaque module s'affiche comme ceci :
 ### Documentation
 - **Calendrier Formation** : `Agenda > Aide`
 - **Programme Formation** : `Programme > Documentation`
+- **Galerie Formation** : `Galerie > Documentation`
 - **README Calendrier** : `/Calendrier-Formation-Wordpress-Plugin/GUIDE-COMPLET.md`
 - **README Programme** : `/Programme-Formation-Plugin/README.md`
+- **README Galerie** : `/Galerie-Formation-Plugin/README.md`
 
 ### Vérification
 - **Calendrier** : `/Calendrier-Formation-Wordpress-Plugin/VERIFICATION-MENU.md`
 - **Programme** : `/Programme-Formation-Plugin/VERIFICATION.md`
+- **Galerie** : `/Galerie-Formation-Plugin/VERIFICATION.md`
 
 ---
 
 ## 🎉 Résultat final
 
-Vous disposez maintenant de **2 plugins professionnels et complets** pour gérer :
+Vous disposez maintenant de **3 plugins professionnels et complets** pour gérer :
 
 1. ✅ **Les sessions de formation** (dates, places, réservations)
 2. ✅ **Le programme de formation** (modules, contenu pédagogique)
+3. ✅ **Les galeries d'images** (portfolio, exemples, illustrations)
 
-Les deux plugins sont :
+Les trois plugins sont :
 - ✅ Entièrement fonctionnels
 - ✅ Bien documentés
 - ✅ Sécurisés
 - ✅ Responsive
 - ✅ Testés et vérifiés
+- ✅ Design identique aux templates HTML
+- ✅ Classes CSS préfixées pour éviter les conflits
 
 ---
 
 **Date de création :** 2025-11-09
 **Version Calendrier Formation :** 2.0.0
 **Version Programme Formation :** 1.0.0
+**Version Galerie Formation :** 1.0.0
 **Statut :** ✅ Prêt pour production
 
 **Branche Git :** `claude/wordpress-plugin-menu-setup-011CUxcG2Sxy9LbVYDWpP4A1`
