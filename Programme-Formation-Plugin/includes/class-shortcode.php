@@ -276,21 +276,29 @@ class PFM_Shortcode {
                     <div class="pfm-section-subtitle">Tarifs</div>
                     <h2 class="pfm-section-title">Tarifs de la formation</h2>
 
-                    <div class="pfm-highlight-box">
+                    <div class="pfm-tarifs-grid">
                         <?php if (!empty($tarifs['intra'])): ?>
-                            <p><strong>Tarif Intra-entreprise :</strong> <?php echo esc_html($tarifs['intra']); ?></p>
+                            <div class="pfm-tarif-card">
+                                <div class="pfm-tarif-icon">💼</div>
+                                <h3 class="pfm-tarif-type">Tarif Intra-entreprise</h3>
+                                <div class="pfm-tarif-prix"><?php echo esc_html($tarifs['intra']); ?></div>
+                            </div>
                         <?php endif; ?>
 
                         <?php if (!empty($tarifs['inter'])): ?>
-                            <p><strong>Tarif Inter-entreprises :</strong> <?php echo esc_html($tarifs['inter']); ?></p>
-                        <?php endif; ?>
-
-                        <?php if (!empty($tarifs['notes'])): ?>
-                            <div style="margin-top: 20px;">
-                                <?php echo wpautop(wp_kses_post($tarifs['notes'])); ?>
+                            <div class="pfm-tarif-card">
+                                <div class="pfm-tarif-icon">👥</div>
+                                <h3 class="pfm-tarif-type">Tarif Inter-entreprises</h3>
+                                <div class="pfm-tarif-prix"><?php echo esc_html($tarifs['inter']); ?></div>
                             </div>
                         <?php endif; ?>
                     </div>
+
+                    <?php if (!empty($tarifs['notes'])): ?>
+                        <div class="pfm-tarifs-notes">
+                            <?php echo wpautop(wp_kses_post($tarifs['notes'])); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </section>
         <?php endif; ?>
