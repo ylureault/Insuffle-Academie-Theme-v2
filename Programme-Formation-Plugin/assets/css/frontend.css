@@ -589,6 +589,26 @@ section.pfm-informations-section {
     padding: 0 20px !important;
 }
 
+.pfm-informations-section .pfm-section-subtitle {
+    color: #8E2183 !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+}
+
+.pfm-informations-section .pfm-section-title {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #333333 !important;
+    margin-bottom: 30px !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+    display: block !important;
+}
+
 /* Table styles - exactement comme index.html */
 .pfm-table {
     width: 100% !important;
@@ -696,6 +716,26 @@ section.pfm-benefices-section {
     padding: 0 20px !important;
 }
 
+.pfm-benefices-section .pfm-section-subtitle {
+    color: #8E2183 !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+}
+
+.pfm-benefices-section .pfm-section-title {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #333333 !important;
+    margin-bottom: 30px !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+    display: block !important;
+}
+
 /* =======================
    SECTION TARIFS
    ======================= */
@@ -709,6 +749,26 @@ section.pfm-tarifs-section {
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 0 20px !important;
+}
+
+.pfm-tarifs-section .pfm-section-subtitle {
+    color: #8E2183 !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+}
+
+.pfm-tarifs-section .pfm-section-title {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #333333 !important;
+    margin-bottom: 30px !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+    display: block !important;
 }
 
 /* Grille de tarifs */
