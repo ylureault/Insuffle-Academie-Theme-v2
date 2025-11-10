@@ -1,0 +1,266 @@
+/**
+ * Articles Blog Formation - Frontend Styles
+ */
+
+/* =======================
+   SECTION ARTICLES
+   ======================= */
+
+section.abf-articles-section {
+    padding: 80px 0 !important;
+    background-color: #F5F5F5 !important;
+}
+
+.abf-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* Section subtitle */
+.abf-section-subtitle {
+    color: #8E2183 !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+}
+
+/* Section title */
+.abf-section-title {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #333333 !important;
+    margin-bottom: 50px !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+    display: block !important;
+}
+
+/* =======================
+   GRILLE D'ARTICLES
+   ======================= */
+
+.abf-articles-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 40px !important;
+    margin-bottom: 50px !important;
+}
+
+/* =======================
+   CARD ARTICLE
+   ======================= */
+
+.abf-article-card {
+    background: #FFFFFF !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+    transition: all 0.4s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.abf-article-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 40px rgba(142,33,131,0.15) !important;
+}
+
+/* Image de l'article */
+.abf-article-image {
+    width: 100% !important;
+    height: 220px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.abf-article-image a {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.abf-article-image .abf-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.4s ease !important;
+}
+
+.abf-article-card:hover .abf-article-image .abf-img {
+    transform: scale(1.1) !important;
+}
+
+/* Contenu de l'article */
+.abf-article-content {
+    padding: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+/* Meta information */
+.abf-article-meta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-bottom: 15px !important;
+    flex-wrap: wrap !important;
+}
+
+.abf-article-date {
+    color: #666 !important;
+    font-size: 0.85rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+}
+
+.abf-article-date .dashicons {
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.abf-article-category {
+    background: linear-gradient(135deg, #8E2183 0%, #a52a9a 100%) !important;
+    color: white !important;
+    padding: 4px 12px !important;
+    border-radius: 20px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Titre de l'article */
+.abf-article-title {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+    line-height: 1.4 !important;
+    margin-top: 0 !important;
+}
+
+.abf-article-title a {
+    color: #333333 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+.abf-article-title a:hover {
+    color: #8E2183 !important;
+}
+
+/* Extrait */
+.abf-article-excerpt {
+    color: #555 !important;
+    line-height: 1.7 !important;
+    margin-bottom: 20px !important;
+    flex-grow: 1 !important;
+}
+
+/* Lien "Lire l'article" */
+.abf-article-link {
+    color: #8E2183 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    transition: all 0.3s ease !important;
+}
+
+.abf-article-link:hover {
+    gap: 10px !important;
+    color: #a52a9a !important;
+}
+
+.abf-article-link .dashicons {
+    font-size: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.abf-article-link:hover .dashicons {
+    transform: translateX(5px) !important;
+}
+
+/* =======================
+   BOUTON "VOIR TOUS"
+   ======================= */
+
+.abf-view-all {
+    text-align: center !important;
+    margin-top: 20px !important;
+}
+
+.abf-button {
+    display: inline-block !important;
+    background: linear-gradient(135deg, #8E2183 0%, #a52a9a 100%) !important;
+    color: white !important;
+    padding: 18px 40px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 5px 20px rgba(142,33,131,0.3) !important;
+}
+
+.abf-button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 30px rgba(142,33,131,0.4) !important;
+    color: white !important;
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+
+@media (max-width: 768px) {
+    .abf-section-title {
+        font-size: 2rem !important;
+    }
+
+    .abf-articles-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .abf-article-card {
+        border-radius: 15px !important;
+    }
+
+    .abf-article-content {
+        padding: 25px !important;
+    }
+
+    .abf-article-title {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    section.abf-articles-section {
+        padding: 50px 0 !important;
+    }
+
+    .abf-section-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    .abf-article-image {
+        height: 180px !important;
+    }
+
+    .abf-button {
+        padding: 15px 30px !important;
+        font-size: 1rem !important;
+    }
+}
