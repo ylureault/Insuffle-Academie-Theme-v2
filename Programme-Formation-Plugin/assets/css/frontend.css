@@ -629,15 +629,17 @@ section.pfm-informations-section {
     background-color: rgba(142,33,131,0.03) !important;
 }
 
-/* Cards Grid - exactement comme index.html */
-.pfm-cards-grid {
+/* Cards Grid - exactement comme index.html - Sélecteurs spécifiques pour éviter conflits */
+.pfm-informations-section .pfm-cards-grid,
+.pfm-benefices-section .pfm-cards-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
     gap: 30px !important;
     margin-top: 50px !important;
 }
 
-.pfm-card {
+.pfm-informations-section .pfm-card,
+.pfm-benefices-section .pfm-card {
     background: #FFFFFF !important;
     padding: 35px !important;
     border-radius: 15px !important;
@@ -646,29 +648,34 @@ section.pfm-informations-section {
     border-top: 4px solid #8E2183 !important;
 }
 
-.pfm-card:hover {
+.pfm-informations-section .pfm-card:hover,
+.pfm-benefices-section .pfm-card:hover {
     transform: translateY(-10px) !important;
     box-shadow: 0 15px 40px rgba(142,33,131,0.15) !important;
 }
 
-.pfm-card h3 {
+.pfm-informations-section .pfm-card h3,
+.pfm-benefices-section .pfm-card h3 {
     font-size: 1.4rem !important;
     color: #8E2183 !important;
     margin-bottom: 15px !important;
     font-weight: 700 !important;
 }
 
-.pfm-card p {
+.pfm-informations-section .pfm-card p,
+.pfm-benefices-section .pfm-card p {
     color: #666 !important;
     line-height: 1.7 !important;
 }
 
-.pfm-card ul {
+.pfm-informations-section .pfm-card ul,
+.pfm-benefices-section .pfm-card ul {
     padding-left: 20px !important;
     list-style: disc !important;
 }
 
-.pfm-card ul li {
+.pfm-informations-section .pfm-card ul li,
+.pfm-benefices-section .pfm-card ul li {
     margin-bottom: 8px !important;
     line-height: 1.7 !important;
     color: #666 !important;
