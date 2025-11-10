@@ -54,6 +54,24 @@ class PFM_Shortcode {
             );
         }
 
+        // Récupérer les informations pratiques
+        $informations = get_post_meta($post_id, '_pfm_informations', true);
+        if (empty($informations) || !is_array($informations)) {
+            $informations = array('tableau' => array(), 'moyens_techniques' => '', 'encadrement' => '', 'suivi_post' => '');
+        }
+
+        // Récupérer les bénéfices
+        $benefices = get_post_meta($post_id, '_pfm_benefices', true);
+        if (empty($benefices) || !is_array($benefices)) {
+            $benefices = array();
+        }
+
+        // Récupérer les tarifs
+        $tarifs = get_post_meta($post_id, '_pfm_tarifs', true);
+        if (empty($tarifs) || !is_array($tarifs)) {
+            $tarifs = array('intra' => '', 'inter' => '', 'notes' => '');
+        }
+
         // Générer le HTML
         ob_start();
         ?>
@@ -158,6 +176,123 @@ class PFM_Shortcode {
                     <?php endif; ?>
                 </div>
             </div>
+        <?php endif; ?>
+
+        <?php if (!empty($informations['tableau']) || !empty($informations['moyens_techniques']) || !empty($informations['encadrement']) || !empty($informations['suivi_post'])): ?>
+            <section class="pfm-informations-section" id="pratique">
+                <div class="pfm-container">
+                    <div class="pfm-section-subtitle">Informations</div>
+                    <h2 class="pfm-section-title">Informations pratiques</h2>
+
+                    <?php if (!empty($informations['tableau'])): ?>
+                        <table class="pfm-table">
+                            <thead>
+                                <tr>
+                                    <th>Élément</th>
+                                    <th>Détail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($informations['tableau'] as $row): ?>
+                                    <tr>
+                                        <td><strong><?php echo esc_html($row['element']); ?></strong></td>
+                                        <td><?php echo esc_html($row['detail']); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    <?php endif; ?>
+
+                    <?php if (!empty($informations['moyens_techniques']) || !empty($informations['encadrement'])): ?>
+                        <h3 style="margin-top: 50px; color: #8E2183; font-size: 1.8rem;">Moyens techniques et d'encadrement</h3>
+
+                        <div class="pfm-cards-grid">
+                            <?php if (!empty($informations['moyens_techniques'])): ?>
+                                <div class="pfm-card">
+                                    <h3>🏢 Moyens techniques</h3>
+                                    <ul>
+                                        <?php
+                                        $moyens_lines = array_filter(array_map('trim', explode("\n", $informations['moyens_techniques'])));
+                                        foreach ($moyens_lines as $ligne):
+                                        ?>
+                                            <li><?php echo esc_html($ligne); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if (!empty($informations['encadrement'])): ?>
+                                <div class="pfm-card">
+                                    <h3>👨‍🏫 Encadrement</h3>
+                                    <ul>
+                                        <?php
+                                        $encadrement_lines = array_filter(array_map('trim', explode("\n", $informations['encadrement'])));
+                                        foreach ($encadrement_lines as $ligne):
+                                        ?>
+                                            <li><?php echo esc_html($ligne); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if (!empty($informations['suivi_post'])): ?>
+                        <h3 style="margin-top: 40px; color: #8E2183; font-size: 1.6rem;">Suivi post-formation</h3>
+                        <ul style="font-size: 1.1rem; line-height: 2; max-width: 800px; margin: 30px auto;">
+                            <?php
+                            $suivi_lines = array_filter(array_map('trim', explode("\n", $informations['suivi_post'])));
+                            foreach ($suivi_lines as $ligne):
+                            ?>
+                                <li><?php echo esc_html($ligne); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
+            </section>
+        <?php endif; ?>
+
+        <?php if (!empty($benefices)): ?>
+            <section class="pfm-benefices-section" id="resultats">
+                <div class="pfm-container">
+                    <div class="pfm-section-subtitle">Bénéfices</div>
+                    <h2 class="pfm-section-title">Ce que vous allez développer</h2>
+
+                    <div class="pfm-cards-grid">
+                        <?php foreach ($benefices as $benefice): ?>
+                            <div class="pfm-card">
+                                <h3><?php echo esc_html($benefice['icone']); ?> <?php echo esc_html($benefice['titre']); ?></h3>
+                                <p><?php echo wp_kses_post($benefice['description']); ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
+
+        <?php if (!empty($tarifs['intra']) || !empty($tarifs['inter']) || !empty($tarifs['notes'])): ?>
+            <section class="pfm-tarifs-section">
+                <div class="pfm-container">
+                    <div class="pfm-section-subtitle">Tarifs</div>
+                    <h2 class="pfm-section-title">Tarifs de la formation</h2>
+
+                    <div class="pfm-highlight-box">
+                        <?php if (!empty($tarifs['intra'])): ?>
+                            <p><strong>Tarif Intra-entreprise :</strong> <?php echo esc_html($tarifs['intra']); ?></p>
+                        <?php endif; ?>
+
+                        <?php if (!empty($tarifs['inter'])): ?>
+                            <p><strong>Tarif Inter-entreprises :</strong> <?php echo esc_html($tarifs['inter']); ?></p>
+                        <?php endif; ?>
+
+                        <?php if (!empty($tarifs['notes'])): ?>
+                            <div style="margin-top: 20px;">
+                                <?php echo wpautop(wp_kses_post($tarifs['notes'])); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </section>
         <?php endif; ?>
 
         <?php

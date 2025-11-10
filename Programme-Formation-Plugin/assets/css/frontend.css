@@ -555,6 +555,151 @@ section.pfm-preambule-section {
     }
 }
 
+/* =======================
+   SECTION INFORMATIONS - Copié de index.html
+   ======================= */
+
+section.pfm-informations-section {
+    padding: 80px 0 !important;
+    background-color: transparent !important;
+}
+
+.pfm-informations-section .pfm-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* Table styles - exactement comme index.html */
+.pfm-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 40px 0 !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+.pfm-table th {
+    background-color: #8E2183 !important;
+    color: white !important;
+    padding: 20px !important;
+    text-align: left !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 0.95rem !important;
+}
+
+.pfm-table td {
+    padding: 20px !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    color: #333 !important;
+}
+
+.pfm-table td strong {
+    color: #8E2183 !important;
+}
+
+.pfm-table tr:last-child td {
+    border-bottom: none !important;
+}
+
+.pfm-table tr:hover {
+    background-color: rgba(142,33,131,0.03) !important;
+}
+
+/* Cards Grid - exactement comme index.html */
+.pfm-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 30px !important;
+    margin-top: 50px !important;
+}
+
+.pfm-card {
+    background: #FFFFFF !important;
+    padding: 35px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+    transition: all 0.3s ease !important;
+    border-top: 4px solid #8E2183 !important;
+}
+
+.pfm-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 40px rgba(142,33,131,0.15) !important;
+}
+
+.pfm-card h3 {
+    font-size: 1.4rem !important;
+    color: #8E2183 !important;
+    margin-bottom: 15px !important;
+    font-weight: 700 !important;
+}
+
+.pfm-card p {
+    color: #666 !important;
+    line-height: 1.7 !important;
+}
+
+.pfm-card ul {
+    padding-left: 20px !important;
+    list-style: disc !important;
+}
+
+.pfm-card ul li {
+    margin-bottom: 8px !important;
+    line-height: 1.7 !important;
+    color: #666 !important;
+}
+
+/* =======================
+   SECTION BÉNÉFICES
+   ======================= */
+
+section.pfm-benefices-section {
+    padding: 80px 0 !important;
+    background-color: #F5F5F5 !important;
+}
+
+.pfm-benefices-section .pfm-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* =======================
+   SECTION TARIFS
+   ======================= */
+
+section.pfm-tarifs-section {
+    padding: 80px 0 !important;
+    background-color: transparent !important;
+}
+
+.pfm-tarifs-section .pfm-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.pfm-tarifs-section .pfm-highlight-box p {
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+    line-height: 1.7 !important;
+}
+
+.pfm-tarifs-section .pfm-highlight-box strong {
+    color: #8E2183 !important;
+    font-weight: 700 !important;
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+
 @media (max-width: 640px) {
     .pfm-module-card {
         padding: 30px;
@@ -581,5 +726,13 @@ section.pfm-preambule-section {
 
     .pfm-infos-grid {
         grid-template-columns: 1fr;
+    }
+
+    .pfm-cards-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .pfm-table, .pfm-table th, .pfm-table td {
+        font-size: 0.9rem !important;
     }
 }
