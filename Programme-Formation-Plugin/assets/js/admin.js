@@ -176,11 +176,11 @@
      * Gestion des bénéfices
      */
     function initBenefices() {
-        let beneficeIndex = $('#pfm-benefices-list .pfm-benefice-card').length;
-
-        // Ajouter un bénéfice
-        $('.pfm-add-benefice').on('click', function(e) {
+        // Utiliser la délégation d'événements pour le bouton add
+        $(document).on('click', '.pfm-add-benefice', function(e) {
             e.preventDefault();
+
+            const beneficeIndex = $('#pfm-benefices-list .pfm-benefice-card').length;
 
             const html = `
                 <div class="pfm-benefice-card">
@@ -192,8 +192,6 @@
             `;
 
             $('#pfm-benefices-list').append(html);
-            beneficeIndex++;
-            initRemoveBenefice();
         });
 
         initRemoveBenefice();
