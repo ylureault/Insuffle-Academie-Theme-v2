@@ -24,3 +24,89 @@
     height: 16px;
     margin-right: 5px;
 }
+
+/* Info table rows */
+.pfm-info-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.pfm-info-row input[type="text"] {
+    flex: 1;
+}
+
+.pfm-info-row .regular-text {
+    min-width: 200px;
+}
+
+.pfm-info-row .large-text {
+    flex: 2;
+}
+
+.pfm-info-row .button {
+    flex-shrink: 0;
+}
+
+/* Benefice cards */
+.pfm-benefice-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.pfm-benefice-card input,
+.pfm-benefice-card textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.pfm-benefice-card input[type="text"]:first-child {
+    width: 80px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.pfm-benefice-card input[type="text"]:nth-child(2) {
+    width: calc(100% - 100px);
+    display: inline-block;
+}
+
+.pfm-benefice-card .button {
+    margin-top: 10px;
+}
+
+/* Containers */
+.pfm-informations-container,
+.pfm-benefices-container,
+.pfm-tarifs-container {
+    padding: 20px;
+}
+
+.pfm-informations-container h3,
+.pfm-benefices-container h3,
+.pfm-tarifs-container h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.pfm-info-group {
+    margin-bottom: 30px;
+}
+
+.pfm-info-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.pfm-optional {
+    color: #999;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-left: 5px;
+}

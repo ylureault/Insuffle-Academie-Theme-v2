@@ -140,11 +140,11 @@
      * Gestion du tableau d'informations
      */
     function initInfoTableRows() {
-        let rowIndex = $('#pfm-info-tableau-list .pfm-info-row').length;
-
-        // Ajouter une ligne
-        $('.pfm-add-info-row').on('click', function(e) {
+        // Utiliser la délégation d'événements
+        $(document).on('click', '.pfm-add-info-row', function(e) {
             e.preventDefault();
+
+            const rowIndex = $('#pfm-info-tableau-list .pfm-info-row').length;
 
             const html = `
                 <div class="pfm-info-row">
@@ -155,8 +155,6 @@
             `;
 
             $('#pfm-info-tableau-list').append(html);
-            rowIndex++;
-            initRemoveInfoRow();
         });
 
         initRemoveInfoRow();
