@@ -3,12 +3,31 @@
  * Design basé sur programme-sketchnote.html avec préfixe "pfm-"
  */
 
+/* Import Google Fonts - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
 :root {
     --pfm-primary: #8E2183;
     --pfm-secondary: #FFD466;
     --pfm-accent: #FFC0CB;
     --pfm-light: #FFFFFF;
     --pfm-dark: #333333;
+}
+
+/* Forcer la police Montserrat sur tous les éléments du plugin */
+section.pfm-objectifs-section,
+section.pfm-objectifs-section *,
+section.pfm-preambule-section,
+section.pfm-preambule-section *,
+section.pfm-informations-section,
+section.pfm-informations-section *,
+section.pfm-benefices-section,
+section.pfm-benefices-section *,
+section.pfm-tarifs-section,
+section.pfm-tarifs-section *,
+.pfm-programme-wrapper,
+.pfm-programme-wrapper * {
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 /* =======================

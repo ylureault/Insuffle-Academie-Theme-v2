@@ -2,6 +2,15 @@
  * Articles Blog Formation - Frontend Styles
  */
 
+/* Import Google Fonts - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+/* Forcer la police Montserrat sur tous les éléments du plugin */
+section.abf-articles-section,
+section.abf-articles-section * {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 /* =======================
    SECTION ARTICLES
    ======================= */
