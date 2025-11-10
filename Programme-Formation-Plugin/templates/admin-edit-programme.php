@@ -43,12 +43,50 @@ if (isset($_POST['pfm_save_programme']) && check_admin_referer('pfm_save_program
 
     update_post_meta($formation_id, '_pfm_objectifs', $objectifs_data);
 
+    // Sauvegarder les informations pratiques détaillées
+    $informations_data = array(
+        'tableau' => isset($_POST['pfm_info_tableau']) && is_array($_POST['pfm_info_tableau']) ? array_map(function($row) {
+            return array(
+                'element' => sanitize_text_field($row['element'] ?? ''),
+                'detail' => sanitize_text_field($row['detail'] ?? ''),
+            );
+        }, $_POST['pfm_info_tableau']) : array(),
+        'moyens_techniques' => wp_kses_post($_POST['pfm_moyens_techniques'] ?? ''),
+        'encadrement' => wp_kses_post($_POST['pfm_encadrement'] ?? ''),
+        'suivi_post' => wp_kses_post($_POST['pfm_suivi_post'] ?? ''),
+    );
+
+    update_post_meta($formation_id, '_pfm_informations', $informations_data);
+
+    // Sauvegarder les bénéfices
+    $benefices_data = isset($_POST['pfm_benefices']) && is_array($_POST['pfm_benefices']) ? array_map(function($benefice) {
+        return array(
+            'icone' => sanitize_text_field($benefice['icone'] ?? ''),
+            'titre' => sanitize_text_field($benefice['titre'] ?? ''),
+            'description' => wp_kses_post($benefice['description'] ?? ''),
+        );
+    }, $_POST['pfm_benefices']) : array();
+
+    update_post_meta($formation_id, '_pfm_benefices', $benefices_data);
+
+    // Sauvegarder les tarifs
+    $tarifs_data = array(
+        'intra' => sanitize_text_field($_POST['pfm_tarif_intra'] ?? ''),
+        'inter' => sanitize_text_field($_POST['pfm_tarif_inter'] ?? ''),
+        'notes' => wp_kses_post($_POST['pfm_tarif_notes'] ?? ''),
+    );
+
+    update_post_meta($formation_id, '_pfm_tarifs', $tarifs_data);
+
     echo '<div class="notice notice-success is-dismissible"><p><strong>' . __('Programme sauvegardé avec succès !', 'programme-formation') . '</strong></p></div>';
 
     // Recharger les données
     $modules = PFM_Modules_Manager::get_modules($formation_id);
     $infos = PFM_Modules_Manager::get_infos_pratiques($formation_id);
     $objectifs = get_post_meta($formation_id, '_pfm_objectifs', true);
+    $informations = get_post_meta($formation_id, '_pfm_informations', true);
+    $benefices = get_post_meta($formation_id, '_pfm_benefices', true);
+    $tarifs = get_post_meta($formation_id, '_pfm_tarifs', true);
 }
 
 // Récupérer les objectifs si pas encore chargés
@@ -60,6 +98,39 @@ if (!isset($objectifs) || !is_array($objectifs)) {
             'objectifs' => '',
             'preambule_titre' => '',
             'preambule_contenu' => '',
+        );
+    }
+}
+
+// Récupérer les informations si pas encore chargées
+if (!isset($informations) || !is_array($informations)) {
+    $informations = get_post_meta($formation_id, '_pfm_informations', true);
+    if (empty($informations) || !is_array($informations)) {
+        $informations = array(
+            'tableau' => array(),
+            'moyens_techniques' => '',
+            'encadrement' => '',
+            'suivi_post' => '',
+        );
+    }
+}
+
+// Récupérer les bénéfices si pas encore chargés
+if (!isset($benefices) || !is_array($benefices)) {
+    $benefices = get_post_meta($formation_id, '_pfm_benefices', true);
+    if (empty($benefices) || !is_array($benefices)) {
+        $benefices = array();
+    }
+}
+
+// Récupérer les tarifs si pas encore chargés
+if (!isset($tarifs) || !is_array($tarifs)) {
+    $tarifs = get_post_meta($formation_id, '_pfm_tarifs', true);
+    if (empty($tarifs) || !is_array($tarifs)) {
+        $tarifs = array(
+            'intra' => '',
+            'inter' => '',
+            'notes' => '',
         );
     }
 }
@@ -91,9 +162,21 @@ if (!isset($objectifs) || !is_array($objectifs)) {
                 <span class="dashicons dashicons-list-view"></span>
                 <?php _e('Modules du programme', 'programme-formation'); ?>
             </a>
+            <a href="#informations" class="nav-tab">
+                <span class="dashicons dashicons-clipboard"></span>
+                <?php _e('Informations', 'programme-formation'); ?>
+            </a>
+            <a href="#benefices" class="nav-tab">
+                <span class="dashicons dashicons-star-filled"></span>
+                <?php _e('Bénéfices', 'programme-formation'); ?>
+            </a>
+            <a href="#tarifs" class="nav-tab">
+                <span class="dashicons dashicons-money-alt"></span>
+                <?php _e('Tarifs', 'programme-formation'); ?>
+            </a>
             <a href="#infos" class="nav-tab">
                 <span class="dashicons dashicons-info"></span>
-                <?php _e('Informations pratiques', 'programme-formation'); ?>
+                <?php _e('Méthodes pédagogiques', 'programme-formation'); ?>
             </a>
         </h2>
 
@@ -193,7 +276,103 @@ Le rôle du facilitateur dans la transformation des organisations"><?php echo es
                 </div>
             </div>
 
-            <!-- Tab: Infos pratiques -->
+            <!-- Tab: Informations -->
+            <div id="informations" class="pfm-tab-panel">
+                <div class="pfm-informations-container">
+                    <h3>📋 Tableau des informations pratiques</h3>
+                    <p class="description">Remplissez le tableau avec les éléments et leurs détails (optionnel)</p>
+
+                    <div id="pfm-info-tableau-list">
+                        <?php if (!empty($informations['tableau'])): ?>
+                            <?php foreach ($informations['tableau'] as $index => $row): ?>
+                                <div class="pfm-info-row">
+                                    <input type="text" name="pfm_info_tableau[<?php echo $index; ?>][element]" class="regular-text" placeholder="Ex: Durée totale" value="<?php echo esc_attr($row['element']); ?>">
+                                    <input type="text" name="pfm_info_tableau[<?php echo $index; ?>][detail]" class="large-text" placeholder="Ex: 21 heures (3 jours consécutifs)" value="<?php echo esc_attr($row['detail']); ?>">
+                                    <button type="button" class="button pfm-remove-row">Supprimer</button>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+
+                    <button type="button" class="button button-secondary pfm-add-info-row">
+                        <span class="dashicons dashicons-plus-alt"></span>
+                        Ajouter une ligne
+                    </button>
+
+                    <hr style="margin: 40px 0;">
+
+                    <h3>🏢 Moyens techniques</h3>
+                    <textarea name="pfm_moyens_techniques" rows="8" class="large-text" placeholder="Un élément par ligne (sera affiché en liste à puces dans une card)"><?php echo esc_textarea($informations['moyens_techniques']); ?></textarea>
+
+                    <h3>👨‍🏫 Encadrement</h3>
+                    <textarea name="pfm_encadrement" rows="5" class="large-text" placeholder="Un élément par ligne"><?php echo esc_textarea($informations['encadrement']); ?></textarea>
+
+                    <h3>📚 Suivi post-formation</h3>
+                    <textarea name="pfm_suivi_post" rows="5" class="large-text" placeholder="Un élément par ligne"><?php echo esc_textarea($informations['suivi_post']); ?></textarea>
+                </div>
+            </div>
+
+            <!-- Tab: Bénéfices -->
+            <div id="benefices" class="pfm-tab-panel">
+                <div class="pfm-benefices-container">
+                    <h3>✨ Bénéfices de la formation</h3>
+                    <p class="description">Ajoutez les bénéfices sous forme de cards (icône, titre, description)</p>
+
+                    <div id="pfm-benefices-list">
+                        <?php if (!empty($benefices)): ?>
+                            <?php foreach ($benefices as $index => $benefice): ?>
+                                <div class="pfm-benefice-card">
+                                    <input type="text" name="pfm_benefices[<?php echo $index; ?>][icone]" class="small-text" placeholder="🧘" value="<?php echo esc_attr($benefice['icone']); ?>" style="width: 60px;">
+                                    <input type="text" name="pfm_benefices[<?php echo $index; ?>][titre]" class="regular-text" placeholder="Ex: Posture de facilitateur" value="<?php echo esc_attr($benefice['titre']); ?>">
+                                    <textarea name="pfm_benefices[<?php echo $index; ?>][description]" rows="3" class="large-text" placeholder="Description du bénéfice..."><?php echo esc_textarea($benefice['description']); ?></textarea>
+                                    <button type="button" class="button pfm-remove-benefice">Supprimer</button>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+
+                    <button type="button" class="button button-primary button-large pfm-add-benefice">
+                        <span class="dashicons dashicons-plus-alt"></span>
+                        Ajouter un bénéfice
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab: Tarifs -->
+            <div id="tarifs" class="pfm-tab-panel">
+                <div class="pfm-tarifs-container">
+                    <h3>💰 Tarifs de la formation</h3>
+                    <p class="description">Indiquez les tarifs intra-entreprise et inter-entreprises (optionnel)</p>
+
+                    <div class="pfm-info-group">
+                        <label>
+                            <strong>Tarif Intra-entreprise</strong>
+                            <span class="pfm-optional">(optionnel)</span>
+                        </label>
+                        <input type="text" name="pfm_tarif_intra" class="regular-text" placeholder="Ex: 4 500€ HT" value="<?php echo esc_attr($tarifs['intra'] ?? ''); ?>">
+                        <p class="description">Format libre. Ex: "4 500€ HT pour un groupe de 6 à 12 personnes"</p>
+                    </div>
+
+                    <div class="pfm-info-group">
+                        <label>
+                            <strong>Tarif Inter-entreprises</strong>
+                            <span class="pfm-optional">(optionnel)</span>
+                        </label>
+                        <input type="text" name="pfm_tarif_inter" class="regular-text" placeholder="Ex: 1 500€ HT par personne" value="<?php echo esc_attr($tarifs['inter'] ?? ''); ?>">
+                        <p class="description">Format libre. Ex: "1 500€ HT par participant"</p>
+                    </div>
+
+                    <div class="pfm-info-group">
+                        <label>
+                            <strong>Informations complémentaires sur les tarifs</strong>
+                            <span class="pfm-optional">(optionnel)</span>
+                        </label>
+                        <textarea name="pfm_tarif_notes" rows="5" class="large-text" placeholder="Ex: Financement possible par OPCO..."><?php echo esc_textarea($tarifs['notes'] ?? ''); ?></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Méthodes pédagogiques (ancien "Infos pratiques") -->
             <div id="infos" class="pfm-tab-panel">
                 <div class="pfm-infos-container">
                     <div class="pfm-info-group">

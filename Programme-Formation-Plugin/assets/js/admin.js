@@ -13,6 +13,8 @@
         initRemoveModule();
         initToggleModule();
         initPreviewUpdate();
+        initInfoTableRows();
+        initBenefices();
     });
 
     /**
@@ -131,6 +133,85 @@
                     $(this).attr('name', newName);
                 }
             });
+        });
+    }
+
+    /**
+     * Gestion du tableau d'informations
+     */
+    function initInfoTableRows() {
+        let rowIndex = $('#pfm-info-tableau-list .pfm-info-row').length;
+
+        // Ajouter une ligne
+        $('.pfm-add-info-row').on('click', function(e) {
+            e.preventDefault();
+
+            const html = `
+                <div class="pfm-info-row">
+                    <input type="text" name="pfm_info_tableau[${rowIndex}][element]" class="regular-text" placeholder="Ex: Durée totale">
+                    <input type="text" name="pfm_info_tableau[${rowIndex}][detail]" class="large-text" placeholder="Ex: 21 heures (3 jours consécutifs)">
+                    <button type="button" class="button pfm-remove-row">Supprimer</button>
+                </div>
+            `;
+
+            $('#pfm-info-tableau-list').append(html);
+            rowIndex++;
+            initRemoveInfoRow();
+        });
+
+        initRemoveInfoRow();
+    }
+
+    /**
+     * Supprime une ligne du tableau
+     */
+    function initRemoveInfoRow() {
+        $('.pfm-remove-row').off('click').on('click', function(e) {
+            e.preventDefault();
+            $(this).closest('.pfm-info-row').slideUp(300, function() {
+                $(this).remove();
+            });
+        });
+    }
+
+    /**
+     * Gestion des bénéfices
+     */
+    function initBenefices() {
+        let beneficeIndex = $('#pfm-benefices-list .pfm-benefice-card').length;
+
+        // Ajouter un bénéfice
+        $('.pfm-add-benefice').on('click', function(e) {
+            e.preventDefault();
+
+            const html = `
+                <div class="pfm-benefice-card">
+                    <input type="text" name="pfm_benefices[${beneficeIndex}][icone]" class="small-text" placeholder="🧘" style="width: 60px;">
+                    <input type="text" name="pfm_benefices[${beneficeIndex}][titre]" class="regular-text" placeholder="Ex: Posture de facilitateur">
+                    <textarea name="pfm_benefices[${beneficeIndex}][description]" rows="3" class="large-text" placeholder="Description du bénéfice..."></textarea>
+                    <button type="button" class="button pfm-remove-benefice">Supprimer</button>
+                </div>
+            `;
+
+            $('#pfm-benefices-list').append(html);
+            beneficeIndex++;
+            initRemoveBenefice();
+        });
+
+        initRemoveBenefice();
+    }
+
+    /**
+     * Supprime un bénéfice
+     */
+    function initRemoveBenefice() {
+        $('.pfm-remove-benefice').off('click').on('click', function(e) {
+            e.preventDefault();
+            if (confirm('Supprimer ce bénéfice ?')) {
+                $(this).closest('.pfm-benefice-card').slideUp(300, function() {
+                    $(this).remove();
+                });
+            }
         });
     }
 
