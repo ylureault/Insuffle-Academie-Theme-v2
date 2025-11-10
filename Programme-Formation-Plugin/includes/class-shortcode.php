@@ -43,9 +43,66 @@ class PFM_Shortcode {
         // Récupérer les infos pratiques
         $infos = PFM_Modules_Manager::get_infos_pratiques($post_id);
 
+        // Récupérer les objectifs pédagogiques
+        $objectifs = get_post_meta($post_id, '_pfm_objectifs', true);
+        if (empty($objectifs) || !is_array($objectifs)) {
+            $objectifs = array(
+                'introduction' => '',
+                'objectifs' => '',
+                'preambule_titre' => '',
+                'preambule_contenu' => '',
+            );
+        }
+
         // Générer le HTML
         ob_start();
         ?>
+
+        <?php if (!empty($objectifs['objectifs'])): ?>
+            <section class="pfm-objectifs-section">
+                <div class="pfm-section-subtitle">Compétences développées</div>
+                <h2 class="pfm-section-title">Objectifs pédagogiques de la formation</h2>
+
+                <?php if (!empty($objectifs['introduction'])): ?>
+                    <p class="pfm-section-description"><?php echo wp_kses_post($objectifs['introduction']); ?></p>
+                <?php endif; ?>
+
+                <ul class="pfm-objectives-list">
+                    <?php
+                    $objectifs_lines = array_filter(array_map('trim', explode("\n", $objectifs['objectifs'])));
+                    foreach ($objectifs_lines as $objectif):
+                        // Convertir **texte** en <strong>texte</strong>
+                        $objectif = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $objectif);
+                    ?>
+                        <li><?php echo wp_kses_post($objectif); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </section>
+        <?php endif; ?>
+
+        <?php if (!empty($objectifs['preambule_titre']) || !empty($objectifs['preambule_contenu'])): ?>
+            <section class="pfm-preambule-section">
+                <div class="pfm-section-subtitle">Contenu de la formation</div>
+                <h2 class="pfm-section-title">Programme détaillé de la formation</h2>
+
+                <div class="pfm-highlight-box">
+                    <?php if (!empty($objectifs['preambule_titre'])): ?>
+                        <h3><?php echo esc_html($objectifs['preambule_titre']); ?></h3>
+                    <?php endif; ?>
+
+                    <?php if (!empty($objectifs['preambule_contenu'])): ?>
+                        <ul>
+                            <?php
+                            $preambule_lines = array_filter(array_map('trim', explode("\n", $objectifs['preambule_contenu'])));
+                            foreach ($preambule_lines as $ligne):
+                            ?>
+                                <li><?php echo esc_html($ligne); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
+            </section>
+        <?php endif; ?>
 
         <div class="pfm-programme-wrapper">
             <div class="pfm-fil-conducteur"></div>
