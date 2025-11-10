@@ -60,46 +60,50 @@ class PFM_Shortcode {
 
         <?php if (!empty($objectifs['objectifs'])): ?>
             <section class="pfm-objectifs-section">
-                <div class="pfm-section-subtitle">Compétences développées</div>
-                <h2 class="pfm-section-title">Objectifs pédagogiques de la formation</h2>
+                <div class="pfm-container">
+                    <div class="pfm-section-subtitle">Compétences développées</div>
+                    <h2 class="pfm-section-title">Objectifs pédagogiques de la formation</h2>
 
-                <?php if (!empty($objectifs['introduction'])): ?>
-                    <p class="pfm-section-description"><?php echo wp_kses_post($objectifs['introduction']); ?></p>
-                <?php endif; ?>
+                    <?php if (!empty($objectifs['introduction'])): ?>
+                        <p class="pfm-section-description"><?php echo wp_kses_post($objectifs['introduction']); ?></p>
+                    <?php endif; ?>
 
-                <ul class="pfm-objectives-list">
-                    <?php
-                    $objectifs_lines = array_filter(array_map('trim', explode("\n", $objectifs['objectifs'])));
-                    foreach ($objectifs_lines as $objectif):
-                        // Convertir **texte** en <strong>texte</strong>
-                        $objectif = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $objectif);
-                    ?>
-                        <li><?php echo wp_kses_post($objectif); ?></li>
-                    <?php endforeach; ?>
-                </ul>
+                    <ul class="pfm-objectives-list">
+                        <?php
+                        $objectifs_lines = array_filter(array_map('trim', explode("\n", $objectifs['objectifs'])));
+                        foreach ($objectifs_lines as $objectif):
+                            // Convertir **texte** en <strong>texte</strong>
+                            $objectif = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $objectif);
+                        ?>
+                            <li><?php echo wp_kses_post($objectif); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
             </section>
         <?php endif; ?>
 
         <?php if (!empty($objectifs['preambule_titre']) || !empty($objectifs['preambule_contenu'])): ?>
             <section class="pfm-preambule-section">
-                <div class="pfm-section-subtitle">Contenu de la formation</div>
-                <h2 class="pfm-section-title">Programme détaillé de la formation</h2>
+                <div class="pfm-container">
+                    <div class="pfm-section-subtitle">Contenu de la formation</div>
+                    <h2 class="pfm-section-title">Programme détaillé de la formation</h2>
 
-                <div class="pfm-highlight-box">
-                    <?php if (!empty($objectifs['preambule_titre'])): ?>
-                        <h3><?php echo esc_html($objectifs['preambule_titre']); ?></h3>
-                    <?php endif; ?>
+                    <div class="pfm-highlight-box">
+                        <?php if (!empty($objectifs['preambule_titre'])): ?>
+                            <h3><?php echo esc_html($objectifs['preambule_titre']); ?></h3>
+                        <?php endif; ?>
 
-                    <?php if (!empty($objectifs['preambule_contenu'])): ?>
-                        <ul>
-                            <?php
-                            $preambule_lines = array_filter(array_map('trim', explode("\n", $objectifs['preambule_contenu'])));
-                            foreach ($preambule_lines as $ligne):
-                            ?>
-                                <li><?php echo esc_html($ligne); ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php endif; ?>
+                        <?php if (!empty($objectifs['preambule_contenu'])): ?>
+                            <ul>
+                                <?php
+                                $preambule_lines = array_filter(array_map('trim', explode("\n", $objectifs['preambule_contenu'])));
+                                foreach ($preambule_lines as $ligne):
+                                ?>
+                                    <li><?php echo esc_html($ligne); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </section>
         <?php endif; ?>

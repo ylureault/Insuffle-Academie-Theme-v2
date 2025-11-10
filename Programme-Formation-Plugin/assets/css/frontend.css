@@ -12,121 +12,156 @@
 }
 
 /* =======================
-   SECTION OBJECTIFS PÉDAGOGIQUES
+   SECTION OBJECTIFS PÉDAGOGIQUES - Styles forcés avec !important
+   Copié exactement de index.html pour correspondance parfaite
    ======================= */
 
-.pfm-objectifs-section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+section.pfm-objectifs-section {
+    padding: 80px 0 !important;
+    background-color: transparent !important;
 }
 
-.pfm-section-subtitle {
-    color: var(--pfm-primary);
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    text-align: center;
+.pfm-objectifs-section .pfm-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
 }
 
-.pfm-section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--pfm-dark);
-    margin-bottom: 30px;
-    line-height: 1.2;
-    text-align: center;
+.pfm-objectifs-section .pfm-section-subtitle {
+    color: #8E2183 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
 }
 
-.pfm-section-description {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 50px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    line-height: 1.7;
+.pfm-objectifs-section .pfm-section-title {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #333333 !important;
+    margin-bottom: 30px !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+    display: block !important;
 }
 
-/* Liste des objectifs */
-.pfm-objectives-list {
-    list-style: none;
-    padding: 0;
-    max-width: 900px;
-    margin: 40px auto;
+.pfm-objectifs-section .pfm-section-description {
+    font-size: 1.2rem !important;
+    color: #666 !important;
+    margin-bottom: 50px !important;
+    max-width: 800px !important;
+    line-height: 1.7 !important;
+    display: block !important;
 }
 
-.pfm-objectives-list li {
-    padding: 20px 20px 20px 70px;
-    position: relative;
-    background: var(--pfm-light);
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    line-height: 1.7;
+/* Liste des objectifs - Exactement comme dans index.html */
+.pfm-objectifs-section .pfm-objectives-list {
+    list-style: none !important;
+    padding: 0 !important;
+    max-width: 900px !important;
+    margin: 40px auto !important;
 }
 
-.pfm-objectives-list li:hover {
-    transform: translateX(10px);
-    box-shadow: 0 5px 20px rgba(142,33,131,0.1);
+.pfm-objectifs-section .pfm-objectives-list li {
+    padding: 20px 20px 20px 70px !important;
+    position: relative !important;
+    background: #FFFFFF !important;
+    margin-bottom: 15px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    list-style: none !important;
+    color: #333 !important;
 }
 
-.pfm-objectives-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, var(--pfm-primary) 0%, #a52a9a 100%);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.2rem;
+.pfm-objectifs-section .pfm-objectives-list li:hover {
+    transform: translateX(10px) !important;
+    box-shadow: 0 5px 20px rgba(142,33,131,0.1) !important;
 }
 
-/* Section Préambule */
-.pfm-preambule-section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.pfm-objectifs-section .pfm-objectives-list li::before {
+    content: '✓' !important;
+    position: absolute !important;
+    left: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 35px !important;
+    height: 35px !important;
+    background: linear-gradient(135deg, #8E2183 0%, #a52a9a 100%) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
+    line-height: 1 !important;
 }
 
-/* Highlight Box (pour préambule) */
-.pfm-highlight-box {
-    background: linear-gradient(135deg, rgba(142,33,131,0.05) 0%, rgba(255,212,102,0.05) 100%);
-    padding: 35px;
-    border-radius: 12px;
-    border: 2px solid var(--pfm-primary);
-    margin: 40px auto;
-    max-width: 1100px;
+/* Section Préambule - Styles forcés avec !important */
+section.pfm-preambule-section {
+    padding: 80px 0 !important;
+    background-color: #F5F5F5 !important;
 }
 
-.pfm-highlight-box h3 {
-    color: var(--pfm-primary);
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-    font-weight: 700;
+.pfm-preambule-section .pfm-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
 }
 
-.pfm-highlight-box ul {
-    margin-top: 15px;
-    padding-left: 25px;
+.pfm-preambule-section .pfm-section-subtitle {
+    color: #8E2183 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
 }
 
-.pfm-highlight-box ul li {
-    margin-bottom: 12px;
-    line-height: 1.7;
-    font-size: 1.05rem;
+.pfm-preambule-section .pfm-section-title {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #333333 !important;
+    margin-bottom: 30px !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+    display: block !important;
+}
+
+/* Highlight Box (pour préambule) - Exactement comme dans index.html */
+.pfm-preambule-section .pfm-highlight-box {
+    background: linear-gradient(135deg, rgba(142,33,131,0.05) 0%, rgba(255,212,102,0.05) 100%) !important;
+    padding: 35px !important;
+    border-radius: 12px !important;
+    border: 2px solid #8E2183 !important;
+    margin: 40px 0 !important;
+}
+
+.pfm-preambule-section .pfm-highlight-box h3 {
+    color: #8E2183 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+}
+
+.pfm-preambule-section .pfm-highlight-box ul {
+    margin-top: 15px !important;
+    padding-left: 25px !important;
+    list-style: disc !important;
+}
+
+.pfm-preambule-section .pfm-highlight-box ul li {
+    margin-bottom: 12px !important;
+    line-height: 1.7 !important;
+    color: #333 !important;
+    display: list-item !important;
+    list-style: disc !important;
 }
 
 /* =======================
