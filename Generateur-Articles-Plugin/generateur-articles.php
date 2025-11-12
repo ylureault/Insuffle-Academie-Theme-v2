@@ -17,6 +17,10 @@ define('GAR_VERSION', '1.0.0');
 define('GAR_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('GAR_PLUGIN_URL', plugin_dir_url(__FILE__));
 
+// API Gemini
+define('GAR_GEMINI_API_KEY', 'AIzaSyCTGsQvbFkEmWrjc7tnbnw0TJH406NbL-Y');
+define('GAR_GEMINI_API_URL', 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent');
+
 /**
  * Classe principale du plugin
  */
@@ -493,6 +497,56 @@ class Generateur_Articles_IA {
     }
 
     /**
+     * Helper: Appeler l'API Google Gemini
+     */
+    private function call_gemini_api($prompt) {
+        $api_url = GAR_GEMINI_API_URL . '?key=' . GAR_GEMINI_API_KEY;
+
+        $body = array(
+            'contents' => array(
+                array(
+                    'parts' => array(
+                        array('text' => $prompt)
+                    )
+                )
+            ),
+            'generationConfig' => array(
+                'temperature' => 0.9,
+                'topK' => 40,
+                'topP' => 0.95,
+                'maxOutputTokens' => 8000,
+            )
+        );
+
+        $response = wp_remote_post($api_url, array(
+            'headers' => array(
+                'Content-Type' => 'application/json'
+            ),
+            'body' => json_encode($body),
+            'timeout' => 60
+        ));
+
+        if (is_wp_error($response)) {
+            return array('error' => $response->get_error_message());
+        }
+
+        $response_body = wp_remote_retrieve_body($response);
+        $response_code = wp_remote_retrieve_response_code($response);
+
+        if ($response_code !== 200) {
+            return array('error' => 'API Error: ' . $response_code . ' - ' . $response_body);
+        }
+
+        $data = json_decode($response_body, true);
+
+        if (isset($data['candidates'][0]['content']['parts'][0]['text'])) {
+            return array('success' => true, 'text' => $data['candidates'][0]['content']['parts'][0]['text']);
+        }
+
+        return array('error' => 'Format de réponse inattendu');
+    }
+
+    /**
      * AJAX: Générer de nouveaux articles basés sur l'analyse
      */
     public function ajax_generate_from_analysis() {
@@ -503,15 +557,170 @@ class Generateur_Articles_IA {
         }
 
         $count = isset($_POST['count']) ? intval($_POST['count']) : 10;
+        $count = max(1, min(50, $count)); // Limiter entre 1 et 50
 
-        // Générer X nouvelles idées basées sur le style analysé
-        // Pour l'instant, on retourne un message de succès
-        // Dans une vraie implémentation, on utiliserait l'API OpenAI ou similar
+        // Récupérer l'analyse existante
+        $args = array(
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'posts_per_page' => 5,
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+        $recent_articles = get_posts($args);
 
-        wp_send_json_success(array(
-            'message' => $count . ' nouvelles idées d\'articles générées !',
-            'count' => $count
-        ));
+        // Construire le contexte pour Gemini
+        $context = "Tu es un expert en création de contenu pour Insufflé Académie, un organisme de formation spécialisé en facilitation, intelligence collective et management.\n\n";
+
+        $context .= "STYLE D'ÉCRITURE À RESPECTER :\n";
+        $context .= "- Ton personnel utilisant le 'je'\n";
+        $context .= "- Titres accrocheurs, souvent avec des questions ou parenthèses\n";
+        $context .= "- Structure claire en listes numérotées\n";
+        $context .= "- Anecdotes personnelles et exemples concrets\n";
+        $context .= "- Phrases courtes et percutantes\n";
+        $context .= "- Utilisation d'émojis pour aérer (2-3 par article)\n";
+        $context .= "- Focus sur la transformation et l'actionnable\n";
+        $context .= "- Longueur : 1500-3000 mots\n\n";
+
+        if (!empty($recent_articles)) {
+            $context .= "EXEMPLES DE TITRES D'ARTICLES EXISTANTS :\n";
+            foreach ($recent_articles as $article) {
+                $context .= "- " . $article->post_title . "\n";
+            }
+            $context .= "\n";
+        }
+
+        $context .= "THÉMATIQUES À COUVRIR : facilitation, intelligence collective, management, réunions efficaces, animation d'équipe, leadership collaboratif, transformation organisationnelle, agilité, soft skills.\n\n";
+
+        $context .= "TÂCHE : Génère " . $count . " idées d'articles de blog complètes.\n\n";
+
+        $context .= "FORMAT DE RÉPONSE (STRICT) - Pour chaque article, utilise EXACTEMENT ce format avec les balises :\n\n";
+        $context .= "[ARTICLE_START]\n";
+        $context .= "[TITRE]Le titre accrocheur ici[/TITRE]\n";
+        $context .= "[SLUG]le-slug-optimise-seo[/SLUG]\n";
+        $context .= "[CATEGORY]facilitation[/CATEGORY]\n";
+        $context .= "[META_DESC]Meta description SEO optimisée (150-160 caractères)[/META_DESC]\n";
+        $context .= "[KEYWORDS]mot-clé1, mot-clé2, mot-clé3[/KEYWORDS]\n";
+        $context .= "[EXCERPT]Extrait court de 2-3 phrases qui donne envie de lire[/EXCERPT]\n";
+        $context .= "[CONTENT]\n";
+        $context .= "Le contenu complet de l'article en HTML...\n";
+        $context .= "[/CONTENT]\n";
+        $context .= "[ARTICLE_END]\n\n";
+
+        $context .= "IMPORTANT :\n";
+        $context .= "- Les catégories possibles : facilitation, intelligence-collective, management, leadership\n";
+        $context .= "- Le contenu doit être en HTML avec des balises <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>\n";
+        $context .= "- Inclure des émojis pertinents dans le contenu\n";
+        $context .= "- Chaque article doit faire 1500-3000 mots\n";
+        $context .= "- Respect STRICT du format avec les balises\n\n";
+
+        $context .= "Génère maintenant " . $count . " articles complets :";
+
+        // Appeler Gemini
+        $result = $this->call_gemini_api($context);
+
+        if (isset($result['error'])) {
+            wp_send_json_error('Erreur Gemini : ' . $result['error']);
+        }
+
+        // Parser la réponse et créer les idées
+        $generated_text = $result['text'];
+        $created_count = $this->parse_and_save_articles($generated_text);
+
+        if ($created_count > 0) {
+            wp_send_json_success(array(
+                'message' => $created_count . ' nouvelles idées d\'articles générées !',
+                'count' => $created_count
+            ));
+        } else {
+            wp_send_json_error('Aucune idée n\'a pu être générée. Veuillez réessayer.');
+        }
+    }
+
+    /**
+     * Parser et sauvegarder les articles générés par Gemini
+     */
+    private function parse_and_save_articles($text) {
+        global $wpdb;
+        $count = 0;
+
+        // Extraire tous les articles avec regex
+        preg_match_all('/\[ARTICLE_START\](.*?)\[ARTICLE_END\]/s', $text, $matches);
+
+        if (empty($matches[1])) {
+            return 0;
+        }
+
+        foreach ($matches[1] as $article_data) {
+            // Extraire chaque champ
+            $title = '';
+            $slug = '';
+            $category = '';
+            $meta_desc = '';
+            $keywords = '';
+            $excerpt = '';
+            $content = '';
+
+            if (preg_match('/\[TITRE\](.*?)\[\/TITRE\]/s', $article_data, $m)) {
+                $title = trim($m[1]);
+            }
+            if (preg_match('/\[SLUG\](.*?)\[\/SLUG\]/s', $article_data, $m)) {
+                $slug = trim($m[1]);
+            }
+            if (preg_match('/\[CATEGORY\](.*?)\[\/CATEGORY\]/s', $article_data, $m)) {
+                $category = trim($m[1]);
+            }
+            if (preg_match('/\[META_DESC\](.*?)\[\/META_DESC\]/s', $article_data, $m)) {
+                $meta_desc = trim($m[1]);
+            }
+            if (preg_match('/\[KEYWORDS\](.*?)\[\/KEYWORDS\]/s', $article_data, $m)) {
+                $keywords = trim($m[1]);
+            }
+            if (preg_match('/\[EXCERPT\](.*?)\[\/EXCERPT\]/s', $article_data, $m)) {
+                $excerpt = trim($m[1]);
+            }
+            if (preg_match('/\[CONTENT\](.*?)\[\/CONTENT\]/s', $article_data, $m)) {
+                $content = trim($m[1]);
+            }
+
+            // Valider les données minimales
+            if (empty($title) || empty($content)) {
+                continue;
+            }
+
+            // Générer slug si absent
+            if (empty($slug)) {
+                $slug = sanitize_title($title);
+            }
+
+            // Catégorie par défaut
+            if (empty($category)) {
+                $category = 'facilitation';
+            }
+
+            // Insérer dans la base de données
+            $inserted = $wpdb->insert(
+                $this->table_name,
+                array(
+                    'title' => $title,
+                    'slug' => $slug,
+                    'category' => $category,
+                    'excerpt' => $excerpt,
+                    'content' => $content,
+                    'meta_description' => $meta_desc,
+                    'meta_keywords' => $keywords,
+                    'status' => 'pending',
+                    'created_at' => current_time('mysql')
+                ),
+                array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
+            );
+
+            if ($inserted) {
+                $count++;
+            }
+        }
+
+        return $count;
     }
 }
 
