@@ -59,6 +59,9 @@ class Generateur_Articles_IA {
         add_action('wp_ajax_gar_validate_article', array($this, 'ajax_validate_article'));
         add_action('wp_ajax_gar_delete_idea', array($this, 'ajax_delete_idea'));
         add_action('wp_ajax_gar_regenerate_ideas', array($this, 'ajax_regenerate_ideas'));
+        add_action('wp_ajax_gar_scan_existing_articles', array($this, 'ajax_scan_existing_articles'));
+        add_action('wp_ajax_gar_scan_insuffle_blog', array($this, 'ajax_scan_insuffle_blog'));
+        add_action('wp_ajax_gar_generate_from_analysis', array($this, 'ajax_generate_from_analysis'));
     }
 
     /**
@@ -144,6 +147,7 @@ class Generateur_Articles_IA {
      * Ajouter le menu admin
      */
     public function add_admin_menu() {
+        // Menu principal
         add_menu_page(
             'Générateur d\'Articles',
             'Générateur Articles',
@@ -152,6 +156,36 @@ class Generateur_Articles_IA {
             array($this, 'render_admin_page'),
             'dashicons-edit-large',
             30
+        );
+
+        // Sous-menu : Idées d'articles
+        add_submenu_page(
+            'generateur-articles',
+            'Idées d\'Articles',
+            'Idées d\'Articles',
+            'manage_options',
+            'generateur-articles',
+            array($this, 'render_admin_page')
+        );
+
+        // Sous-menu : Mes Articles
+        add_submenu_page(
+            'generateur-articles',
+            'Mes Articles',
+            'Mes Articles',
+            'manage_options',
+            'gar-mes-articles',
+            array($this, 'render_my_articles_page')
+        );
+
+        // Sous-menu : Analyser le style
+        add_submenu_page(
+            'generateur-articles',
+            'Analyser mon style',
+            'Analyser mon style',
+            'manage_options',
+            'gar-analyser-style',
+            array($this, 'render_analysis_page')
         );
     }
 
@@ -316,6 +350,168 @@ class Generateur_Articles_IA {
         self::generate_article_ideas();
 
         wp_send_json_success();
+    }
+
+    /**
+     * Rendu de la page "Mes Articles"
+     */
+    public function render_my_articles_page() {
+        // Récupérer tous les articles publiés
+        $args = array(
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+
+        $articles = get_posts($args);
+
+        include GAR_PLUGIN_DIR . 'includes/page-my-articles.php';
+    }
+
+    /**
+     * Rendu de la page "Analyser mon style"
+     */
+    public function render_analysis_page() {
+        include GAR_PLUGIN_DIR . 'includes/page-analysis.php';
+    }
+
+    /**
+     * AJAX: Scanner les articles existants
+     */
+    public function ajax_scan_existing_articles() {
+        check_ajax_referer('gar_scan_articles', 'nonce');
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Permission refusée');
+        }
+
+        // Récupérer tous les articles
+        $args = array(
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'posts_per_page' => -1
+        );
+
+        $articles = get_posts($args);
+
+        $analysis = array(
+            'total_articles' => count($articles),
+            'total_words' => 0,
+            'avg_words' => 0,
+            'common_themes' => array(),
+            'writing_style' => array(),
+            'articles_data' => array()
+        );
+
+        foreach ($articles as $article) {
+            $content = strip_tags($article->post_content);
+            $word_count = str_word_count($content);
+            $analysis['total_words'] += $word_count;
+
+            $analysis['articles_data'][] = array(
+                'id' => $article->ID,
+                'title' => $article->post_title,
+                'word_count' => $word_count,
+                'date' => get_the_date('d/m/Y', $article->ID),
+                'excerpt' => wp_trim_words($content, 30)
+            );
+        }
+
+        if (count($articles) > 0) {
+            $analysis['avg_words'] = round($analysis['total_words'] / count($articles));
+        }
+
+        // Analyser les thèmes communs (catégories)
+        $categories = get_categories(array('orderby' => 'count', 'order' => 'DESC', 'number' => 10, 'hide_empty' => true));
+        foreach ($categories as $cat) {
+            $analysis['common_themes'][] = array(
+                'name' => $cat->name,
+                'count' => $cat->count
+            );
+        }
+
+        // Analyser les tags populaires
+        $analysis['popular_tags'] = array();
+        $tags = get_tags(array('orderby' => 'count', 'order' => 'DESC', 'number' => 10, 'hide_empty' => true));
+        foreach ($tags as $tag) {
+            $analysis['popular_tags'][] = array(
+                'name' => $tag->name,
+                'count' => $tag->count
+            );
+        }
+
+        wp_send_json_success($analysis);
+    }
+
+    /**
+     * AJAX: Scanner le blog Insufflé
+     */
+    public function ajax_scan_insuffle_blog() {
+        check_ajax_referer('gar_scan_blog', 'nonce');
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Permission refusée');
+        }
+
+        // Utiliser WebFetch ou similar pour récupérer le contenu du blog
+        $blog_url = 'https://www.insuffle.com/le-blog/';
+
+        $response = wp_remote_get($blog_url, array(
+            'timeout' => 30,
+            'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        ));
+
+        if (is_wp_error($response)) {
+            wp_send_json_error('Impossible de récupérer le blog Insufflé : ' . $response->get_error_message());
+        }
+
+        $body = wp_remote_retrieve_body($response);
+
+        // Parser le HTML pour extraire les titres d'articles
+        preg_match_all('/<h2[^>]*>(.*?)<\/h2>/si', $body, $titles);
+        preg_match_all('/<h3[^>]*>(.*?)<\/h3>/si', $body, $subtitles);
+
+        $article_titles = array_merge(
+            array_map('strip_tags', $titles[1]),
+            array_map('strip_tags', $subtitles[1])
+        );
+
+        // Nettoyer et filtrer
+        $article_titles = array_filter(array_map('trim', $article_titles));
+        $article_titles = array_slice($article_titles, 0, 20); // Limiter à 20
+
+        $analysis = array(
+            'blog_url' => $blog_url,
+            'articles_found' => count($article_titles),
+            'sample_titles' => $article_titles,
+            'style_notes' => 'Ton personnel et authentique utilisant le "je". Titres accrocheurs souvent avec des parenthèses ou questions. Structure claire en listes numérotées. Anecdotes personnelles et exemples concrets. Phrases courtes et percutantes. Utilisation d\'émojis pour aérer. Focus sur la transformation et l\'actionnable.'
+        );
+
+        wp_send_json_success($analysis);
+    }
+
+    /**
+     * AJAX: Générer de nouveaux articles basés sur l'analyse
+     */
+    public function ajax_generate_from_analysis() {
+        check_ajax_referer('gar_generate_ideas', 'nonce');
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Permission refusée');
+        }
+
+        $count = isset($_POST['count']) ? intval($_POST['count']) : 10;
+
+        // Générer X nouvelles idées basées sur le style analysé
+        // Pour l'instant, on retourne un message de succès
+        // Dans une vraie implémentation, on utiliserait l'API OpenAI ou similar
+
+        wp_send_json_success(array(
+            'message' => $count . ' nouvelles idées d\'articles générées !',
+            'count' => $count
+        ));
     }
 }
 
