@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple d'intégration du Widget Formation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .widget-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
+        }
+
+        .widget-section h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .widget-section p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .note strong {
+            color: #856404;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+        }
+
+        /* Style pour le widget */
+        .widget-container {
+            margin-top: 30px;
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Widget Formation Insufflé Académie</h1>
+            <p>Exemple d'intégration sur un site externe</p>
+        </div>
+
+        <div class="widget-section">
+            <h2>📦 Méthode 1 : iframe (Recommandé)</h2>
+            <p>La méthode la plus simple. Copiez-collez ce code dans votre page HTML :</p>
+
+            <div class="code-block">
+&lt;iframe
+    src="https://insuffle-academie.com/widget-formation/VOTRE_ID_WIDGET"
+    width="100%"
+    height="auto"
+    frameborder="0"
+    scrolling="no"
+    style="min-height: 400px; background: transparent;"
+    allowtransparency="true"
+&gt;&lt;/iframe&gt;
+            </div>
+
+            <div class="widget-container">
+                <!-- Remplacez VOTRE_ID_WIDGET par l'ID de votre widget -->
+                <iframe
+                    src="https://insuffle-academie.com/widget-formation/123"
+                    width="100%"
+                    height="auto"
+                    frameborder="0"
+                    scrolling="no"
+                    style="min-height: 400px; background: transparent;"
+                    allowtransparency="true"
+                ></iframe>
+            </div>
+
+            <div class="note">
+                <strong>💡 Note :</strong> Remplacez <code>123</code> par l'ID de votre widget (visible dans l'admin WordPress)
+            </div>
+        </div>
+
+        <div class="widget-section">
+            <h2>⚡ Méthode 2 : JavaScript (Avancé)</h2>
+            <p>Pour un redimensionnement automatique et plus de contrôle :</p>
+
+            <div class="code-block">
+&lt;div id="insuffle-widget-123"&gt;&lt;/div&gt;
+&lt;script&gt;
+(function(){
+    var iframe=document.createElement('iframe');
+    iframe.src='https://insuffle-academie.com/widget-formation/123';
+    iframe.style.width='100%';
+    iframe.style.border='none';
+    iframe.style.minHeight='400px';
+    iframe.setAttribute('allowtransparency','true');
+    document.getElementById('insuffle-widget-123').appendChild(iframe);
+})();
+&lt;/script&gt;
+            </div>
+
+            <div class="note">
+                <strong>⚙️ Avantage :</strong> Le widget s'adapte automatiquement à sa hauteur réelle sans espace vide.
+            </div>
+        </div>
+
+        <div class="widget-section">
+            <h2>🎯 Cas d'usage</h2>
+            <p><strong>Exemple concret :</strong></p>
+            <ol style="padding-left: 30px; line-height: 2;">
+                <li>Vous avez un site Insufflé sur le sketchnote</li>
+                <li>Vous voulez promouvoir votre formation Sketchnote d'Insufflé Académie</li>
+                <li>Vous créez un widget avec cette formation</li>
+                <li>Vous intégrez le widget dans votre page sketchnote</li>
+                <li>Les visiteurs cliquent → nouvelle page vers la formation sur Insufflé Académie</li>
+            </ol>
+
+            <p style="margin-top: 20px;"><strong>✅ Résultat :</strong> Conversion des visiteurs de votre site en clients de vos formations !</p>
+        </div>
+
+        <div class="widget-section">
+            <h2>🎨 Personnalisation</h2>
+            <p>Le widget utilise les couleurs d'Insufflé Académie :</p>
+            <ul style="padding-left: 30px; line-height: 2;">
+                <li><strong>Couleur principale :</strong> Violet #8E2183</li>
+                <li><strong>Police :</strong> Montserrat (Google Fonts)</li>
+                <li><strong>Fond :</strong> Transparent ou dégradé violet</li>
+                <li><strong>Logos :</strong> Insufflé Académie + Qualiopi (optionnels)</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Propulsé par <strong>Insufflé Académie</strong> • Certifié Qualiopi</p>
+        </div>
+    </div>
+
+    <script>
+        // Script pour auto-redimensionner l'iframe
+        window.addEventListener('message', function(e) {
+            if (e.data.type === 'insuffle-widget-resize') {
+                var iframes = document.querySelectorAll('iframe');
+                iframes.forEach(function(iframe) {
+                    if (iframe.contentWindow === e.source) {
+                        iframe.style.height = e.data.height + 'px';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
