@@ -172,6 +172,17 @@
 </head>
 <body>
     <?php
+    // Récupérer l'ID du widget depuis l'URL
+    $widget_id = get_query_var('widget_formation_id');
+
+    // Sécurité : vérifier que c'est un entier valide
+    $widget_id = intval($widget_id);
+
+    if (!$widget_id) {
+        echo '<p style="text-align:center;color:#666;">ID de widget invalide.</p>';
+        exit;
+    }
+
     // Récupérer le widget
     $widget_post = get_post($widget_id);
 
