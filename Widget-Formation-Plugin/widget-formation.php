@@ -58,6 +58,9 @@ class Widget_Formation_Manager {
 
         // Enregistrer les scripts pour l'admin
         add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
+
+        // AJAX pour récupérer les données des formations
+        add_action('wp_ajax_wfm_get_formation_data', array($this, 'ajax_get_formation_data'));
     }
 
     /**
@@ -121,19 +124,14 @@ class Widget_Formation_Manager {
     public function render_meta_box($post) {
         wp_nonce_field('wfm_save_widget', 'wfm_widget_nonce');
 
+        // Media uploader
+        wp_enqueue_media();
+
         // Récupérer les données existantes
         $formations = get_post_meta($post->ID, '_wfm_formations', true);
-        $show_logo_ia = get_post_meta($post->ID, '_wfm_show_logo_ia', true);
-        $show_logo_qualiopi = get_post_meta($post->ID, '_wfm_show_logo_qualiopi', true);
 
         if (empty($formations)) {
             $formations = array();
-        }
-        if ($show_logo_ia === '') {
-            $show_logo_ia = '1';
-        }
-        if ($show_logo_qualiopi === '') {
-            $show_logo_qualiopi = '1';
         }
 
         // Récupérer toutes les formations (pages enfants de la page 51)
@@ -150,13 +148,43 @@ class Widget_Formation_Manager {
                 'show_excerpt' => '1',
                 'show_formateur' => '1',
                 'show_duree' => '1',
-                'show_prix' => '0',
-                'show_cta_text' => 'En savoir plus',
-                'card_style' => 'modern', // modern, minimal, classic
+                'show_prix' => '1',
+                'show_modules_count' => '1',
+                'card_style' => 'insuffle', // insuffle, modern, minimal
+                'bg_color' => '#FFFFFF',
+                'text_color' => '#333333',
+                'accent_color' => '#8E2183',
             );
         }
 
-        include WFM_PLUGIN_DIR . 'templates/meta-box-config-new.php';
+        // Récupérer les options CTA
+        $cta_options = get_post_meta($post->ID, '_wfm_cta_options', true);
+        if (empty($cta_options) || !is_array($cta_options)) {
+            $cta_options = array(
+                'text' => 'Découvrir la formation',
+                'style' => 'solid', // solid, outline, gradient
+                'bg_color' => '#8E2183',
+                'text_color' => '#FFFFFF',
+                'hover_bg_color' => '#6B1762',
+                'target' => '_blank',
+            );
+        }
+
+        // Récupérer les logos
+        $logo_options = get_post_meta($post->ID, '_wfm_logo_options', true);
+        if (empty($logo_options) || !is_array($logo_options)) {
+            $logo_options = array(
+                'show_logo_ia' => '1',
+                'logo_ia_id' => '',
+                'show_logo_qualiopi' => '1',
+                'logo_qualiopi_id' => '',
+                'show_logo_custom' => '0',
+                'logo_custom_id' => '',
+                'logos_position' => 'bottom', // top, bottom, both
+            );
+        }
+
+        include WFM_PLUGIN_DIR . 'templates/meta-box-config-pro.php';
     }
 
     /**
@@ -194,20 +222,42 @@ class Widget_Formation_Manager {
             : array();
         update_post_meta($post_id, '_wfm_formations', $formations);
 
-        // Sauvegarder les options d'affichage des logos
-        update_post_meta($post_id, '_wfm_show_logo_ia', isset($_POST['wfm_show_logo_ia']) ? '1' : '0');
-        update_post_meta($post_id, '_wfm_show_logo_qualiopi', isset($_POST['wfm_show_logo_qualiopi']) ? '1' : '0');
-
         // Sauvegarder les options d'affichage
         $display_options = array(
             'show_excerpt' => isset($_POST['wfm_show_excerpt']) ? '1' : '0',
             'show_formateur' => isset($_POST['wfm_show_formateur']) ? '1' : '0',
             'show_duree' => isset($_POST['wfm_show_duree']) ? '1' : '0',
             'show_prix' => isset($_POST['wfm_show_prix']) ? '1' : '0',
-            'show_cta_text' => sanitize_text_field($_POST['wfm_cta_text'] ?? 'En savoir plus'),
-            'card_style' => sanitize_text_field($_POST['wfm_card_style'] ?? 'modern'),
+            'show_modules_count' => isset($_POST['wfm_show_modules_count']) ? '1' : '0',
+            'card_style' => sanitize_text_field($_POST['wfm_card_style'] ?? 'insuffle'),
+            'bg_color' => sanitize_hex_color($_POST['wfm_bg_color'] ?? '#FFFFFF'),
+            'text_color' => sanitize_hex_color($_POST['wfm_text_color'] ?? '#333333'),
+            'accent_color' => sanitize_hex_color($_POST['wfm_accent_color'] ?? '#8E2183'),
         );
         update_post_meta($post_id, '_wfm_display_options', $display_options);
+
+        // Sauvegarder les options CTA
+        $cta_options = array(
+            'text' => sanitize_text_field($_POST['wfm_cta_text'] ?? 'Découvrir la formation'),
+            'style' => sanitize_text_field($_POST['wfm_cta_style'] ?? 'solid'),
+            'bg_color' => sanitize_hex_color($_POST['wfm_cta_bg_color'] ?? '#8E2183'),
+            'text_color' => sanitize_hex_color($_POST['wfm_cta_text_color'] ?? '#FFFFFF'),
+            'hover_bg_color' => sanitize_hex_color($_POST['wfm_cta_hover_bg_color'] ?? '#6B1762'),
+            'target' => sanitize_text_field($_POST['wfm_cta_target'] ?? '_blank'),
+        );
+        update_post_meta($post_id, '_wfm_cta_options', $cta_options);
+
+        // Sauvegarder les options de logos
+        $logo_options = array(
+            'show_logo_ia' => isset($_POST['wfm_show_logo_ia']) ? '1' : '0',
+            'logo_ia_id' => isset($_POST['wfm_logo_ia_id']) ? intval($_POST['wfm_logo_ia_id']) : '',
+            'show_logo_qualiopi' => isset($_POST['wfm_show_logo_qualiopi']) ? '1' : '0',
+            'logo_qualiopi_id' => isset($_POST['wfm_logo_qualiopi_id']) ? intval($_POST['wfm_logo_qualiopi_id']) : '',
+            'show_logo_custom' => isset($_POST['wfm_show_logo_custom']) ? '1' : '0',
+            'logo_custom_id' => isset($_POST['wfm_logo_custom_id']) ? intval($_POST['wfm_logo_custom_id']) : '',
+            'logos_position' => sanitize_text_field($_POST['wfm_logos_position'] ?? 'bottom'),
+        );
+        update_post_meta($post_id, '_wfm_logo_options', $logo_options);
     }
 
     /**
@@ -244,7 +294,73 @@ class Widget_Formation_Manager {
         if (($hook === 'post.php' || $hook === 'post-new.php') && $post_type === 'widget_formation') {
             wp_enqueue_style('wfm-admin', WFM_PLUGIN_URL . 'assets/css/admin.css', array(), WFM_VERSION);
             wp_enqueue_script('wfm-admin', WFM_PLUGIN_URL . 'assets/js/admin.js', array('jquery'), WFM_VERSION, true);
+
+            // Passer les données AJAX
+            wp_localize_script('wfm-admin', 'wfmAjax', array(
+                'ajaxurl' => admin_url('admin-ajax.php'),
+                'nonce' => wp_create_nonce('wfm_get_formation_data')
+            ));
         }
+    }
+
+    /**
+     * AJAX: Récupérer les données d'une formation
+     */
+    public function ajax_get_formation_data() {
+        check_ajax_referer('wfm_get_formation_data', 'nonce');
+
+        $formation_id = isset($_POST['formation_id']) ? intval($_POST['formation_id']) : 0;
+
+        if (!$formation_id) {
+            wp_send_json_error('ID de formation invalide');
+        }
+
+        $formation = get_post($formation_id);
+
+        if (!$formation) {
+            wp_send_json_error('Formation introuvable');
+        }
+
+        // Récupérer les données de base
+        $data = array(
+            'id' => $formation->ID,
+            'title' => $formation->post_title,
+            'excerpt' => $formation->post_excerpt ? $formation->post_excerpt : wp_trim_words($formation->post_content, 30),
+            'url' => get_permalink($formation->ID),
+            'featured_image' => get_the_post_thumbnail_url($formation->ID, 'medium'),
+        );
+
+        // Récupérer les données du programme (si plugin Programme Formation est actif)
+        if (class_exists('PFM_Modules_Manager')) {
+            $pfm_infos = get_post_meta($formation->ID, '_pfm_infos_pratiques', true);
+            $pfm_modules = get_post_meta($formation->ID, '_pfm_modules', true);
+
+            $data['duree'] = isset($pfm_infos['duree']) ? $pfm_infos['duree'] : '';
+            $data['prix'] = isset($pfm_infos['prix']) ? $pfm_infos['prix'] : '';
+            $data['modules_count'] = is_array($pfm_modules) ? count($pfm_modules) : 0;
+        }
+
+        // Récupérer les données du formateur (si plugin Formateur est actif)
+        if (class_exists('FFM_Formateur_Manager')) {
+            // Chercher le formateur lié à cette formation
+            $formateur_id = get_post_meta($formation->ID, '_wfm_formateur_id', true);
+
+            if ($formateur_id) {
+                $formateur_data = get_post_meta($formateur_id, '_ffm_formateur_data', true);
+
+                if ($formateur_data) {
+                    $data['formateur'] = array(
+                        'id' => $formateur_id,
+                        'nom' => isset($formateur_data['nom']) ? $formateur_data['nom'] : '',
+                        'tagline' => isset($formateur_data['tagline']) ? $formateur_data['tagline'] : '',
+                        'photo' => isset($formateur_data['photo_id']) ? wp_get_attachment_image_url($formateur_data['photo_id'], 'thumbnail') : '',
+                        'badge' => isset($formateur_data['badge']) ? $formateur_data['badge'] : '',
+                    );
+                }
+            }
+        }
+
+        wp_send_json_success($data);
     }
 }
 
