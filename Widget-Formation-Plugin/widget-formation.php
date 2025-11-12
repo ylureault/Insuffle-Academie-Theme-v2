@@ -136,15 +136,27 @@ class Widget_Formation_Manager {
             $show_logo_qualiopi = '1';
         }
 
-        // Récupérer toutes les formations disponibles
-        $all_formations = get_posts(array(
-            'post_type' => 'programme-formation',
-            'posts_per_page' => -1,
-            'orderby' => 'title',
-            'order' => 'ASC',
+        // Récupérer toutes les formations (pages enfants de la page 51)
+        $all_formations = get_pages(array(
+            'child_of' => 51,
+            'sort_column' => 'post_title',
+            'sort_order' => 'ASC',
         ));
 
-        include WFM_PLUGIN_DIR . 'templates/meta-box-config.php';
+        // Récupérer les options d'affichage
+        $display_options = get_post_meta($post->ID, '_wfm_display_options', true);
+        if (empty($display_options) || !is_array($display_options)) {
+            $display_options = array(
+                'show_excerpt' => '1',
+                'show_formateur' => '1',
+                'show_duree' => '1',
+                'show_prix' => '0',
+                'show_cta_text' => 'En savoir plus',
+                'card_style' => 'modern', // modern, minimal, classic
+            );
+        }
+
+        include WFM_PLUGIN_DIR . 'templates/meta-box-config-new.php';
     }
 
     /**
@@ -185,6 +197,17 @@ class Widget_Formation_Manager {
         // Sauvegarder les options d'affichage des logos
         update_post_meta($post_id, '_wfm_show_logo_ia', isset($_POST['wfm_show_logo_ia']) ? '1' : '0');
         update_post_meta($post_id, '_wfm_show_logo_qualiopi', isset($_POST['wfm_show_logo_qualiopi']) ? '1' : '0');
+
+        // Sauvegarder les options d'affichage
+        $display_options = array(
+            'show_excerpt' => isset($_POST['wfm_show_excerpt']) ? '1' : '0',
+            'show_formateur' => isset($_POST['wfm_show_formateur']) ? '1' : '0',
+            'show_duree' => isset($_POST['wfm_show_duree']) ? '1' : '0',
+            'show_prix' => isset($_POST['wfm_show_prix']) ? '1' : '0',
+            'show_cta_text' => sanitize_text_field($_POST['wfm_cta_text'] ?? 'En savoir plus'),
+            'card_style' => sanitize_text_field($_POST['wfm_card_style'] ?? 'modern'),
+        );
+        update_post_meta($post_id, '_wfm_display_options', $display_options);
     }
 
     /**
