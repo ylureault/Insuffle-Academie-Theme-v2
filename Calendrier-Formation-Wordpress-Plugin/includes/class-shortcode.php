@@ -246,10 +246,14 @@ class CF_Shortcode {
                     <button class="cf-btn-table cf-btn-disabled" disabled>
                         <?php _e('Complet', 'calendrier-formation'); ?>
                     </button>
-                <?php else: ?>
+                <?php elseif ($booking_url): ?>
                     <a href="<?php echo esc_url($booking_url); ?>" class="cf-btn-table cf-btn-primary">
                         <?php _e('Réserver', 'calendrier-formation'); ?>
                     </a>
+                <?php else: ?>
+                    <span class="cf-no-booking-text" style="color: #666; font-size: 13px;">
+                        <?php _e('Non disponible', 'calendrier-formation'); ?>
+                    </span>
                 <?php endif; ?>
                 <a href="<?php echo esc_url($contact_url); ?>" class="cf-btn-table cf-btn-secondary">
                     <?php _e('+ d\'infos', 'calendrier-formation'); ?>
@@ -367,11 +371,15 @@ class CF_Shortcode {
                     <button class="cf-btn cf-btn-disabled" disabled>
                         <?php _e('Session complète', 'calendrier-formation'); ?>
                     </button>
-                <?php else: ?>
+                <?php elseif ($booking_url): ?>
                     <a href="<?php echo esc_url($booking_url); ?>" class="cf-btn cf-btn-primary">
                         <?php echo esc_html(CF_Settings::get_setting('text_button_reserve', __('Réserver ma place', 'calendrier-formation'))); ?>
                         <span class="dashicons dashicons-arrow-right-alt"></span>
                     </a>
+                <?php else: ?>
+                    <p class="cf-no-booking-message" style="color: #666; font-size: 14px; margin: 0; text-align: center;">
+                        <?php _e('Inscription non disponible en ligne', 'calendrier-formation'); ?>
+                    </p>
                 <?php endif; ?>
             </div>
         </div>
@@ -380,6 +388,7 @@ class CF_Shortcode {
 
     /**
      * Génère l'URL de réservation avec les paramètres
+     * @return string|false L'URL de réservation ou false si aucune URL n'est disponible
      */
     private function generate_booking_url($session, $form_url) {
         // Vérifier si la session a une URL de réservation personnalisée
@@ -400,6 +409,10 @@ class CF_Shortcode {
 
             // Construire l'URL avec les paramètres
             $iframe_url = get_permalink($page_id);
+            if (!$iframe_url) {
+                return false;
+            }
+
             $params = array(
                 'url' => urlencode($session->reservation_url),
                 'session' => $session->id
@@ -409,25 +422,25 @@ class CF_Shortcode {
         }
 
         // Comportement par défaut : formulaire interne
-        // Si form_url est vide, utiliser l'ID de page d'inscription
+        // Si form_url est vide, ne pas afficher de bouton
         if (empty($form_url)) {
             $settings = get_option('cf_settings', array());
             $inscription_page_id = isset($settings['inscription_page_id']) ? intval($settings['inscription_page_id']) : 0;
 
-            // Si pas d'ID ou page inexistante, créer la page maintenant
-            if (!$inscription_page_id || !get_post($inscription_page_id)) {
-                $inscription_page_id = $this->create_inscription_page();
+            // Si pas d'ID de page d'inscription configurée, retourner false
+            if (!$inscription_page_id) {
+                return false;
+            }
 
-                // Sauvegarder l'ID dans les settings
-                $settings['inscription_page_id'] = $inscription_page_id;
-                update_option('cf_settings', $settings);
+            // Vérifier que la page existe
+            if (!get_post($inscription_page_id)) {
+                return false;
             }
 
             $form_url = get_permalink($inscription_page_id);
 
             if (!$form_url) {
-                // Fallback: retourner l'URL de base avec message
-                return home_url('?cf_error=no_booking_page');
+                return false;
             }
         }
 
