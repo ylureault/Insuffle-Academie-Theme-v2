@@ -91,6 +91,9 @@ class Calendrier_Formation {
         // Charger la traduction
         load_plugin_textdomain('calendrier-formation', false, dirname(CF_PLUGIN_BASENAME) . '/languages');
 
+        // S'assurer que le champ reservation_url existe (pour les installations existantes)
+        $this->ensure_reservation_url_field_exists();
+
         // Initialiser les migrations de base de données
         CF_Database_Migration::get_instance();
 
@@ -106,6 +109,53 @@ class Calendrier_Formation {
         CF_Booking_Form::get_instance();
         CF_Ajax_Handler::get_instance();
         CF_Diagnostic_404::get_instance();
+    }
+
+    /**
+     * Vérifie et ajoute le champ reservation_url si nécessaire
+     */
+    private function ensure_reservation_url_field_exists() {
+        // Vérifier si la migration a déjà été faite
+        $migration_done = get_option('cf_reservation_url_field_added', false);
+        if ($migration_done) {
+            return; // Déjà fait, pas besoin de revérifier
+        }
+
+        global $wpdb;
+        $table_sessions = $wpdb->prefix . 'cf_sessions';
+
+        // Vérifier si la table existe
+        $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_sessions'") === $table_sessions;
+
+        if (!$table_exists) {
+            return; // La table sera créée par dbDelta
+        }
+
+        // Vérifier si la colonne existe déjà
+        $column_exists = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS
+                WHERE TABLE_SCHEMA = %s
+                AND TABLE_NAME = %s
+                AND COLUMN_NAME = 'reservation_url'",
+                DB_NAME,
+                $table_sessions
+            )
+        );
+
+        if (empty($column_exists)) {
+            // Ajouter la colonne
+            $sql = "ALTER TABLE $table_sessions ADD COLUMN reservation_url VARCHAR(500) DEFAULT '' AFTER status";
+            $result = $wpdb->query($sql);
+
+            // Marquer la migration comme faite si succès
+            if ($result !== false) {
+                update_option('cf_reservation_url_field_added', true);
+            }
+        } else {
+            // La colonne existe déjà, marquer comme fait
+            update_option('cf_reservation_url_field_added', true);
+        }
     }
 
     /**
@@ -130,6 +180,7 @@ class Calendrier_Formation {
             places_total int(11) DEFAULT 0,
             places_disponibles int(11) DEFAULT 0,
             status varchar(20) DEFAULT 'active',
+            reservation_url varchar(500) DEFAULT '',
             created_at datetime DEFAULT CURRENT_TIMESTAMP,
             updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             PRIMARY KEY  (id),
@@ -140,6 +191,9 @@ class Calendrier_Formation {
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
+
+        // Vérifier si le champ reservation_url existe, sinon l'ajouter
+        $this->ensure_reservation_url_field_exists();
 
         // Table pour les réservations
         $table_bookings = $wpdb->prefix . 'cf_bookings';
