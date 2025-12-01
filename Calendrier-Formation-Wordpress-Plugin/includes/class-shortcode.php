@@ -247,7 +247,12 @@ class CF_Shortcode {
                         <?php _e('Complet', 'calendrier-formation'); ?>
                     </button>
                 <?php elseif ($booking_url): ?>
-                    <a href="<?php echo esc_url($booking_url); ?>" class="cf-btn-table cf-btn-primary">
+                    <?php
+                    // Déterminer si c'est un lien externe
+                    $is_external = $this->has_external_booking_url($session);
+                    $link_attrs = $is_external ? 'target="_blank" rel="noopener noreferrer"' : '';
+                    ?>
+                    <a href="<?php echo esc_url($booking_url); ?>" class="cf-btn-table cf-btn-primary" <?php echo $link_attrs; ?>>
                         <?php _e('Réserver', 'calendrier-formation'); ?>
                     </a>
                 <?php else: ?>
@@ -372,7 +377,12 @@ class CF_Shortcode {
                         <?php _e('Session complète', 'calendrier-formation'); ?>
                     </button>
                 <?php elseif ($booking_url): ?>
-                    <a href="<?php echo esc_url($booking_url); ?>" class="cf-btn cf-btn-primary">
+                    <?php
+                    // Déterminer si c'est un lien externe
+                    $is_external = $this->has_external_booking_url($session);
+                    $link_attrs = $is_external ? 'target="_blank" rel="noopener noreferrer"' : '';
+                    ?>
+                    <a href="<?php echo esc_url($booking_url); ?>" class="cf-btn cf-btn-primary" <?php echo $link_attrs; ?>>
                         <?php echo esc_html(CF_Settings::get_setting('text_button_reserve', __('Réserver ma place', 'calendrier-formation'))); ?>
                         <span class="dashicons dashicons-arrow-right-alt"></span>
                     </a>
@@ -393,32 +403,8 @@ class CF_Shortcode {
     private function generate_booking_url($session, $form_url) {
         // Vérifier si la session a une URL de réservation personnalisée
         if (!empty($session->reservation_url)) {
-            // Trouver une page utilisant le template de réservation iframe
-            $iframe_pages = get_pages(array(
-                'meta_key' => '_wp_page_template',
-                'meta_value' => 'template-reservation-iframe.php',
-                'number' => 1
-            ));
-
-            // Si aucune page n'existe, créer une page
-            if (empty($iframe_pages)) {
-                $page_id = $this->create_reservation_iframe_page();
-            } else {
-                $page_id = $iframe_pages[0]->ID;
-            }
-
-            // Construire l'URL avec les paramètres
-            $iframe_url = get_permalink($page_id);
-            if (!$iframe_url) {
-                return false;
-            }
-
-            $params = array(
-                'url' => urlencode($session->reservation_url),
-                'session' => $session->id
-            );
-
-            return add_query_arg($params, $iframe_url);
+            // Retourner directement l'URL personnalisée (sera ouverte dans un nouvel onglet)
+            return esc_url($session->reservation_url);
         }
 
         // Comportement par défaut : formulaire interne
@@ -457,6 +443,14 @@ class CF_Shortcode {
     }
 
     /**
+     * Vérifie si une session a une URL de réservation personnalisée (externe)
+     * @return bool
+     */
+    private function has_external_booking_url($session) {
+        return !empty($session->reservation_url);
+    }
+
+    /**
      * Génère une clé unique pour la réservation
      */
     private function generate_booking_key($session) {
@@ -478,29 +472,5 @@ class CF_Shortcode {
         );
 
         return wp_insert_post($inscription_page);
-    }
-
-    /**
-     * Crée la page de réservation iframe si elle n'existe pas
-     */
-    private function create_reservation_iframe_page() {
-        $page_data = array(
-            'post_title'    => __('Réservation', 'calendrier-formation'),
-            'post_content'  => '',
-            'post_status'   => 'publish',
-            'post_type'     => 'page',
-            'post_author'   => get_current_user_id(),
-            'comment_status' => 'closed',
-            'ping_status'   => 'closed'
-        );
-
-        $page_id = wp_insert_post($page_data);
-
-        if ($page_id && !is_wp_error($page_id)) {
-            // Assigner le template à la page
-            update_post_meta($page_id, '_wp_page_template', 'template-reservation-iframe.php');
-        }
-
-        return $page_id;
     }
 }

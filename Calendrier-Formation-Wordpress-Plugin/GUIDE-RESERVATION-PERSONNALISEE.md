@@ -2,7 +2,7 @@
 
 ## Vue d'ensemble
 
-Cette fonctionnalité permet d'utiliser des liens de réservation externes (comme Digiforma) pour chaque session de formation, tout en gardant l'expérience utilisateur intégrée au site Insuffle Académie.
+Cette fonctionnalité permet d'utiliser des liens de réservation externes (comme Digiforma) pour chaque session de formation. Les liens externes s'ouvrent automatiquement dans un nouvel onglet pour une meilleure expérience utilisateur.
 
 ## Comment ça fonctionne ?
 
@@ -19,16 +19,17 @@ Cette fonctionnalité permet d'utiliser des liens de réservation externes (comm
 Lorsqu'un visiteur clique sur "Réserver ma place" pour une session avec un lien personnalisé :
 
 1. Le système détecte automatiquement que la session a un lien externe
-2. Au lieu d'afficher le formulaire interne, il redirige vers une page spéciale
-3. Cette page encapsule le lien externe dans une iframe élégante
-4. L'expérience reste fluide : l'utilisateur a l'impression de rester sur le site Insuffle Académie
+2. Le lien s'ouvre dans un **nouvel onglet** (target="_blank")
+3. L'attribut `rel="noopener noreferrer"` est ajouté pour la sécurité
+4. Le visiteur peut revenir facilement à la page des formations
 
 ### 3. Avantages
 
-✅ **Aucune redirection externe visible** : le visiteur reste sur votre domaine
-✅ **Expérience cohérente** : design unifié avec le site
+✅ **Ouverture dans nouvel onglet** : l'utilisateur garde la page d'origine ouverte
+✅ **Compatible avec tous les services** : fonctionne même si le service externe bloque les iframes
 ✅ **Flexibilité** : utilisez Digiforma ou tout autre outil
 ✅ **Pas de régression** : les sessions sans lien personnalisé fonctionnent comme avant
+✅ **Sécurisé** : attributs de sécurité ajoutés automatiquement
 
 ## Architecture technique
 
@@ -39,16 +40,7 @@ Lorsqu'un visiteur clique sur "Réserver ma place" pour une session avec un lien
 - Action : Ajoute le champ `reservation_url` à la table `wp_cf_sessions`
 - Exécution : Automatique lors du chargement du plugin
 
-#### 2. Template d'encapsulation
-- Fichier : `theme/V2/template-reservation-iframe.php`
-- Template WordPress qui affiche le lien externe dans une iframe
-- Fonctionnalités :
-  - Header avec titre de la session et bouton retour
-  - Iframe plein écran pour le formulaire externe
-  - Indicateur de chargement
-  - Design responsive
-
-#### 3. Modifications du plugin
+#### 2. Modifications du plugin
 
 **Formulaire d'administration** (`templates/sessions.php`)
 - Nouveau champ pour saisir l'URL de réservation
@@ -61,8 +53,8 @@ Lorsqu'un visiteur clique sur "Réserver ma place" pour une session avec un lien
 
 **Shortcode** (`includes/class-shortcode.php`)
 - Détection automatique des liens personnalisés
-- Génération de l'URL vers le template iframe
-- Création automatique de la page "Réservation" si nécessaire
+- Les liens externes s'ouvrent dans un nouvel onglet avec `target="_blank"`
+- Attribut `rel="noopener noreferrer"` ajouté pour la sécurité
 - Fallback sur le formulaire interne si pas de lien personnalisé
 
 ## Utilisation
@@ -128,15 +120,19 @@ Dans l'administration :
 **Vérifier :**
 - Le lien est bien une URL valide (commence par `https://`)
 - Le lien est accessible depuis un navigateur
-- La page "Réservation" existe bien dans WordPress (Pages > Toutes les pages)
+- Le bouton "Réserver ma place" s'affiche bien sur la session
 
-### L'iframe ne s'affiche pas
+### Le lien ne s'ouvre pas dans un nouvel onglet
 
 **Causes possibles :**
-- Le site externe bloque l'affichage en iframe (X-Frame-Options)
-- Solutions :
-  - Contacter le support de l'outil externe
-  - Vérifier les paramètres de sécurité de Digiforma
+- Le navigateur bloque les popups
+- Extension de navigateur qui interfère
+- JavaScript désactivé
+
+**Solutions :**
+- Autoriser les popups pour votre site
+- Tester dans un autre navigateur
+- Désactiver temporairement les extensions
 
 ### La migration ne s'est pas exécutée
 
@@ -155,29 +151,31 @@ ALTER TABLE wp_cf_sessions ADD COLUMN reservation_url VARCHAR(500) DEFAULT '' AF
 ### Sécurité
 
 - Les URLs sont sanitizées avec `esc_url_raw()`
-- Les paramètres GET sont encodés avec `urlencode()`
+- Attribut `rel="noopener noreferrer"` pour éviter les failles de sécurité window.opener
 - Validation du format URL côté formulaire
+- Échappement systématique des URLs avec `esc_url()`
 
 ### Performance
 
 - Pas d'impact sur les sessions sans lien personnalisé
-- La page iframe est créée une seule fois et réutilisée
-- Chargement asynchrone de l'iframe
+- Détection du type de lien en une seule vérification
+- Pas de requêtes supplémentaires à la base de données
 
 ### Compatibilité
 
 - WordPress 5.0+
 - PHP 7.4+
 - Testé avec Digiforma
-- Compatible avec tout outil acceptant l'encapsulation iframe
+- Compatible avec tous les services de réservation en ligne
+- Fonctionne même si le service externe bloque les iframes (contrairement à la version précédente)
 
 ## Évolutions futures possibles
 
 - [ ] Prévisualisation du lien avant enregistrement
 - [ ] Statistiques de clics sur les liens personnalisés
 - [ ] Gestion de plusieurs liens par session (fallback)
-- [ ] Détection automatique des erreurs iframe
-- [ ] Personnalisation du design de la page iframe par session
+- [ ] Option pour choisir entre nouvel onglet et même fenêtre
+- [ ] Tracking des conversions par lien
 
 ## Support
 
