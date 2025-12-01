@@ -404,8 +404,11 @@ jQuery(document).ready(function($) {
     }
 
     function formatDateForInput(dateStr) {
-        const date = new Date(dateStr);
-        return date.toISOString().slice(0, 10);
+        // Extraire uniquement la partie date (YYYY-MM-DD) sans conversion de fuseau horaire
+        // Les dates MySQL sont au format "YYYY-MM-DD HH:MM:SS"
+        // On prend juste les 10 premiers caractères pour éviter les problèmes de timezone
+        if (!dateStr) return '';
+        return dateStr.substring(0, 10);
     }
 
     function showNotification(type, message) {
