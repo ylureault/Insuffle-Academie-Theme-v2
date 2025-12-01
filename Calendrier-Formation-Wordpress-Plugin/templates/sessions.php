@@ -241,6 +241,19 @@ if (!defined('ABSPATH')) exit;
                         <input type="number" id="cf-places-disponibles" name="places_disponibles" min="0" required>
                     </div>
                 </div>
+
+                <div class="cf-form-row">
+                    <div class="cf-form-group cf-form-group-full">
+                        <label for="cf-reservation-url">
+                            <?php _e('Lien de réservation personnalisé', 'calendrier-formation'); ?>
+                            <span style="color: #999; font-weight: normal; font-size: 12px;">(Facultatif - ex: lien Digiforma)</span>
+                        </label>
+                        <input type="url" id="cf-reservation-url" name="reservation_url" placeholder="https://app.digiforma.com/guest/...">
+                        <p style="margin: 5px 0 0; font-size: 12px; color: #666;">
+                            Si vous utilisez un outil externe (Digiforma, etc.), collez le lien ici. Il sera automatiquement encapsulé dans le site.
+                        </p>
+                    </div>
+                </div>
             </form>
         </div>
 
@@ -380,6 +393,7 @@ jQuery(document).ready(function($) {
                     $('#cf-places-total').val(session.places_total);
                     $('#cf-places-disponibles').val(session.places_disponibles);
                     $('#cf-status').val(session.status);
+                    $('#cf-reservation-url').val(session.reservation_url || '');
 
                     $('#cf-session-modal').fadeIn(200);
                 } else {
@@ -482,7 +496,8 @@ jQuery(document).ready(function($) {
             location_details: $('#cf-location-details').val(),
             places_total: $('#cf-places-total').val(),
             places_disponibles: $('#cf-places-disponibles').val(),
-            status: $('#cf-status').val()
+            status: $('#cf-status').val(),
+            reservation_url: $('#cf-reservation-url').val()
         };
 
         $('.cf-submit-text').hide();

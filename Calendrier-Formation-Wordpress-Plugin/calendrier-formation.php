@@ -54,6 +54,7 @@ class Calendrier_Formation {
      * Charge les fichiers nécessaires
      */
     private function load_dependencies() {
+        require_once CF_PLUGIN_DIR . 'includes/class-database-migration.php';
         require_once CF_PLUGIN_DIR . 'includes/class-formations-scanner.php';
         require_once CF_PLUGIN_DIR . 'includes/class-agenda-menu.php';
         require_once CF_PLUGIN_DIR . 'includes/class-calendar-view.php';
@@ -89,6 +90,9 @@ class Calendrier_Formation {
     public function init() {
         // Charger la traduction
         load_plugin_textdomain('calendrier-formation', false, dirname(CF_PLUGIN_BASENAME) . '/languages');
+
+        // Initialiser les migrations de base de données
+        CF_Database_Migration::get_instance();
 
         // Initialiser les composants
         CF_Formations_Scanner::get_instance();

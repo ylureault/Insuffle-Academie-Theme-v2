@@ -382,6 +382,33 @@ class CF_Shortcode {
      * Génère l'URL de réservation avec les paramètres
      */
     private function generate_booking_url($session, $form_url) {
+        // Vérifier si la session a une URL de réservation personnalisée
+        if (!empty($session->reservation_url)) {
+            // Trouver une page utilisant le template de réservation iframe
+            $iframe_pages = get_pages(array(
+                'meta_key' => '_wp_page_template',
+                'meta_value' => 'template-reservation-iframe.php',
+                'number' => 1
+            ));
+
+            // Si aucune page n'existe, créer une page
+            if (empty($iframe_pages)) {
+                $page_id = $this->create_reservation_iframe_page();
+            } else {
+                $page_id = $iframe_pages[0]->ID;
+            }
+
+            // Construire l'URL avec les paramètres
+            $iframe_url = get_permalink($page_id);
+            $params = array(
+                'url' => urlencode($session->reservation_url),
+                'session' => $session->id
+            );
+
+            return add_query_arg($params, $iframe_url);
+        }
+
+        // Comportement par défaut : formulaire interne
         // Si form_url est vide, utiliser l'ID de page d'inscription
         if (empty($form_url)) {
             $settings = get_option('cf_settings', array());
@@ -438,5 +465,29 @@ class CF_Shortcode {
         );
 
         return wp_insert_post($inscription_page);
+    }
+
+    /**
+     * Crée la page de réservation iframe si elle n'existe pas
+     */
+    private function create_reservation_iframe_page() {
+        $page_data = array(
+            'post_title'    => __('Réservation', 'calendrier-formation'),
+            'post_content'  => '',
+            'post_status'   => 'publish',
+            'post_type'     => 'page',
+            'post_author'   => get_current_user_id(),
+            'comment_status' => 'closed',
+            'ping_status'   => 'closed'
+        );
+
+        $page_id = wp_insert_post($page_data);
+
+        if ($page_id && !is_wp_error($page_id)) {
+            // Assigner le template à la page
+            update_post_meta($page_id, '_wp_page_template', 'template-reservation-iframe.php');
+        }
+
+        return $page_id;
     }
 }

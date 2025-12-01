@@ -100,6 +100,7 @@ class CF_Ajax_Handler {
             'places_total' => $places_total,
             'places_disponibles' => $places_disponibles,
             'status' => isset($_POST['status']) ? sanitize_text_field($_POST['status']) : 'active',
+            'reservation_url' => isset($_POST['reservation_url']) ? esc_url_raw($_POST['reservation_url']) : '',
         );
 
         // Validation des données
@@ -111,7 +112,7 @@ class CF_Ajax_Handler {
         $result = $wpdb->insert(
             $table_sessions,
             $data,
-            array('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s')
+            array('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%s')
         );
 
         if ($result) {
@@ -162,13 +163,14 @@ class CF_Ajax_Handler {
             'places_total' => $places_total,
             'places_disponibles' => $places_disponibles,
             'status' => isset($_POST['status']) ? sanitize_text_field($_POST['status']) : 'active',
+            'reservation_url' => isset($_POST['reservation_url']) ? esc_url_raw($_POST['reservation_url']) : '',
         );
 
         $result = $wpdb->update(
             $table_sessions,
             $data,
             array('id' => $session_id),
-            array('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s'),
+            array('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%s'),
             array('%d')
         );
 
